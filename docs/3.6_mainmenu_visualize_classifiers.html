@@ -528,12 +528,12 @@ Visualization in NeuroMiner also applies to the calculation of the model-based p
 <p><strong>SE</strong></p>
 <p>The standard error of the weights across all models selected during the CV1 cycle</p>
 <p><strong>CVratio</strong></p>
-<p>This is the sum of the median weights across all CV1 folds divided by the standard error. It is a measure of stability.</p>
+<p>This is the sum of the median weights across all CV1 folds divided by the standard deviation. It is a measure of stability.</p>
 </section>
 <section id="grand-mean-results">
 <h2>Grand mean results<a class="headerlink" href="#grand-mean-results" title="Permalink to this headline">#</a></h2>
 <p><strong>Mean-GrM</strong></p>
-<p>Within a nested cross-validation framework, the grand median (GrM) in Neu roMiner is defined as the sum of the median weights of selected CV1 models for each CV2 fold, divided by the number of CV2 folds.</p>
+<p>Within a nested cross-validation framework, the grand median (GrM) in NeuroMiner is defined as the sum of the median weights of selected CV1 models for each CV2 fold, divided by the number of CV2 folds.</p>
 <p><strong>SE-GrM</strong></p>
 <p>The grand median standard error is the sum of the standard error values of selected CV1 models for each CV2 fold, divided by the number of CV2 folds.</p>
 <p><strong>CVratio-GrM</strong></p>
@@ -543,7 +543,7 @@ Visualization in NeuroMiner also applies to the calculation of the model-based p
 <p><strong>Prob95CI-GrM</strong></p>
 <p>Across selected models for CV2 folds, this is the amount of times that the median value has been greater or less than the 95% confidence interval.</p>
 <p><strong>Sign-Based-Consistency</strong></p>
-<p>Sign-based consistency mapping for features is based on the logic outlined in Gomez-Verdejo et al., 2019. Sign-based consistency mappin. The importance is calculated as the number of times that the sign of the feature (i.e., a positive ”+” or negative ”-” sign) is consistent within an ensemble (e.g., number of times that it is consistently positive) multiplied by the number of times that the variable was non-zero (e.g., in the case of a L1-regularized SVM or regression, the weights can be set to zero and thus the more that this happens the lower the importance of the feature). The measure is between 0 to 1, with 1 representing perfect consistency within the ensemble and 0 if the weights are equally positive and negative or when the feature is omitted with a zero weight. A p-value is then calculated by defining a hypothesis test for the importance score with a null hypothesis of 0 and an alternative hypothesis of ¿0. A z-score was calculated as the importance divided by the square root of the variance of the importance scores. A standard p-value was then calculated using a normal cumulative distribution function to choose the right-tailed significance. P-values are then corrected using the false-discovery rate.</p>
+<p>Sign-based consistency mapping for features is based on the logic outlined in <a class="reference external" href="https://link.springer.com/article/10.1007/s12021-019-9415-3">Gomez-Verdejo et al., 2019</a>. The importance of each input variable is calculated as the number of times that the sign of the feature (i.e., a positive ”+” or negative ”-” sign) is consistent within an ensemble (e.g., number of times that it is consistently positive) multiplied by the number of times that the variable was non-zero (e.g., in the case of a L1-regularized SVM or regression, the weights can be set to zero and thus the more that this happens the lower the importance of the feature). The measure is between 0 to 1, with 1 representing perfect consistency within the ensemble and 0 if the weights are equally positive and negative or when the feature is omitted with a zero weight. A p-value is then calculated by defining a hypothesis test for the importance score with a null hypothesis of 0 and an alternative hypothesis of not 0. A z-score was calculated as the importance divided by the square root of the variance of the importance scores. A standard p-value was then calculated using a normal cumulative distribution function to choose the right-tailed significance. P-values are then corrected using the false-discovery rate.</p>
 <div class="admonition-z-and-p-score-images admonition">
 <p class="admonition-title">Z and P score images</p>
 <p>Visualization can also include the derivation of Z or P scores for the entire models (i.e., not the individual features) using permutation testing. These are outlined in <a class="reference internal" href="3.2.06_paramtemp_visualization_options.html#paramtemp-visualization-options"><span class="std std-ref">visualization options</span></a>.</p>

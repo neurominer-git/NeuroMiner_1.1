@@ -656,8 +656,18 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#specify-maximum-of-unique-values-in-non-numeric-variables-for-dummy-coding">
+       Specify maximum # of unique values in non-numeric variables for dummy-coding
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id9">
        Inspect matrix data and select features for import
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#survival-analysis">
+       Survival analysis
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -926,8 +936,18 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#specify-maximum-of-unique-values-in-non-numeric-variables-for-dummy-coding">
+       Specify maximum # of unique values in non-numeric variables for dummy-coding
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id9">
        Inspect matrix data and select features for import
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#survival-analysis">
+       Survival analysis
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -1108,7 +1128,7 @@ Inspect image information and check registration This option will allow the user
 </section>
 <section id="id2">
 <h4>Describe data<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
-<p>Enter a short description of the data (e.g., ”COBRE mwrp1 images”). This is important if there is more than one .</p>
+<p>It is good scientific practice to describe your data here so that you know what you analyzed when you return to your analysis a couple of months later or want to combine the given data modality with others in the same NM structure.</p>
 </section>
 <section id="import-nifti">
 <h4>IMPORT nifti<a class="headerlink" href="#import-nifti" title="Permalink to this headline">#</a></h4>
@@ -1166,7 +1186,7 @@ A common situation is when you have a vector containing numbers representing gro
 </section>
 <section id="id3">
 <h4>Describe data<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
-<p>Enter a description of the data.</p>
+<p>It is good scientific practice to describe your data here so that you know what you analyzed when you return to your analysis a couple of months later or want to combine the given data modality with others in the same NM structure.</p>
 </section>
 <section id="import-data">
 <h4>IMPORT data<a class="headerlink" href="#import-data" title="Permalink to this headline">#</a></h4>
@@ -1211,7 +1231,7 @@ A common situation is when you have a vector containing numbers representing gro
 </section>
 <section id="id5">
 <h4>Describe data<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
-<p>Describe data Enter a description of the data. This is important if you are entering multiple modalities.</p>
+<p>It is good scientific practice to describe your data here so that you know what you analyzed when you return to your analysis a couple of months later or want to combine the given data modality with others in the same NM structure.</p>
 </section>
 <section id="id6">
 <h4>IMPORT data<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
@@ -1236,6 +1256,10 @@ A common situation is when you have a vector containing numbers representing gro
 <h4>Define column header containing the case IDs<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <p>Write name of the column header variable name for the case IDs in your spreadsheet file; e.g., ”ID”. These <strong>must</strong> be string variables (i.e., ’ID123’ instead of 123).</p>
 </section>
+<section id="specify-maximum-of-unique-values-in-non-numeric-variables-for-dummy-coding">
+<h4>Specify maximum # of unique values in non-numeric variables for dummy-coding<a class="headerlink" href="#specify-maximum-of-unique-values-in-non-numeric-variables-for-dummy-coding" title="Permalink to this headline">#</a></h4>
+<p>This menu item only appears if NM detected string values in your predictor matrix. In this case the software assumes that the given variable is categorical and will try to expand it into a binary matrix of dummy regressors. Here you can define the maximum number of unique values per string column for this operation. If NM encounters more unique entries an error will be thrown, indicating potential problems with your data matrix (e.g. accidental string values such as . or , in an otherwise numeric variable). In general, it is highly recommended to carefully check your spreadsheet data before entering into NM.</p>
+</section>
 <section id="id9">
 <h4>Inspect matrix data and select features for import<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p>This feature opens a results display where the data can be viewed as a heatmap, scaled, and features can be added or removed either by the user or they can be filtered based on a threshold (see Figure 4). For example, after scaling features, you could establish a threshold where features with a scaled value above 0.8 are removed from the analysis.</p>
@@ -1244,9 +1268,13 @@ A common situation is when you have a vector containing numbers representing gro
 <p>The formatting of the item selector along with some functionalities might alter between MATLAB versions older than 2021a and more recent versions. This is due to incompatibilities of MATLAB’s App Designer with these older versions.</p>
 </div>
 </section>
+<section id="survival-analysis">
+<h4>Survival analysis<a class="headerlink" href="#survival-analysis" title="Permalink to this headline">#</a></h4>
+<p>This menu item enables the user to provide censoring information in case of a longitudinal analysis. If survival analysis is activated, an adaptive version of the Cox proportional hazards models can be selected from the algorithm list (see <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/34482951/">Koutsouleris et al. 2021</a>).</p>
+</section>
 <section id="id10">
 <h4>Describe data<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
-<p>Describe data Enter a description of the data. This is important if you are entering multiple modalities.</p>
+<p>It is good scientific practice to describe your data here so that you know what you analyzed when you return to your analysis a couple of months later or want to combine the given data modality with others in the same NM structure.</p>
 </section>
 <section id="id11">
 <h4>IMPORT data<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
@@ -1267,6 +1295,10 @@ A common situation is when you have a vector containing numbers representing gro
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>It is critical to note that the subject identifiers have to be the same for each modality. In the case of NIfTI or SPM import, NeuroMiner will identify the subject IDs from the unique data in the file paths and thus any other data needs to have the same subject IDs (e.g., matrix data).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to combine imaging data with other modalities it is highly recommended to read in the imaging data first. Then, use the identifiers in the variable ‘NM.cases’ to replace the IDs of your sample in the other data modalities (example: spreadsheets) before attempting to import these additional data modalities.</p>
 </div>
 </section>
 <section id="modify-modality-in-nm-workspace">
