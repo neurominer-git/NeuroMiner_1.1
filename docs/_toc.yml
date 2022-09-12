@@ -1,0 +1,49 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Getting started
+    chapters:
+      - file: 1.0_introduction
+      - file: 1.1_prerequisites
+      - file: 1.2_gettingstarted
+  - caption: NeuroMiner interface
+    chapters:
+      - file: 3.0_mainmenu
+      - file: 3.1_mainmenu_input_data
+      - file: 3.2_mainmenu_define_parameter_template
+        sections:
+          - file: 3.2.00_paramtemp_data_fusion
+          - file: 3.2.01_paramtemp_cv_settings
+          - file: 3.2.02_paramtemp_preprocessing_pipeline
+          - file: 3.2.03_paramtemp_classification_algorithm
+          - file: 3.2.04_paramtemp_learning_algorithm_parameters
+          - file: 3.2.05_paramtemp_ensemble_generation_strategies
+          - file: 3.2.06_paramtemp_visualization_options
+          - file: 3.2.07_paramtemp_interpretation_options
+          - file: 3.2.08_paramtemp_model_saving_options
+          - file: 3.2.09_paramtemp_define_verbosity
+          - file: 3.2.11_paramtemp_inspect_workspace
+          - file: 3.2.12_paramtemp_save_parameter_template
+          - file: 3.2.13_paramtemp_load_training_template
+          - file: 3.2.14_paramtemp_define_verbosity_level
+          - file: 3.2.15_paramtemp_stacking
+      - file: 3.3_mainmenu_initialize_delete_analyses
+      - file: 3.4_mainmenu_preprocess_features
+      - file: 3.5_mainmenu_train_supervised_classifiers
+      - file: 3.6_mainmenu_visualize_classifiers
+      - file: 3.7_mainmenu_display_training_results
+      - file: 3.8_mainmenu_OOCV_analysis
+      - file: 3.9_mainmenu_load_struct
+      - file: 3.10_mainmenu_save_struct
+      - file: 3.11_mainmenu_change_wd
+      - file: 3.12_mainmenu_investigate_sample_size
+      - file: 3.13_mainmenu_utilities
+#  - caption: Examples
+#    chapters:
+#      - file: docs/4.0_Example
+  #- caption: Functions in development
+  #  chapters:
+      #- file: docs/DEV_brain_network_analysis
