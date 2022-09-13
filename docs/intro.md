@@ -8,11 +8,6 @@ alt: neurominer logo
 ```
 ## Manual for NeuroMiner Version 1.1
 
-PRONIA, Personalized Prognostic Tools for
-Early Psychosis Management
-
-Ludwig-Maximilians-Universität München
-
 Software written by Nikolaos Koutsouleris, Clara Vetter & Ariane Wiegand
 
 Manual written by Dom Dwyer
@@ -24,13 +19,7 @@ Version release date: 12th September 2022
 
 ## How to cite NeuroMiner
 
-> Koutsouleris, Vetter & Wiegand (2022). Neurominer [Computer software]. Retrieved from
->        https://github.com/neurominer-git/NeuroMiner_1.1
-
-or
-
-> NeuroMiner [Computer software] (2022). Retrieved from
->         https://github.com/neurominer-git/NeuroMiner_1.1
+> Koutsouleris, Vetter & Wiegand (2022). Neurominer [Computer software]. Retrieved from https://github.com/neurominer-git/NeuroMiner_1.1
 
 
 ## Machine learning for precision psychiatry
