@@ -8,7 +8,7 @@ The current release 1.1 of NeuroMiner has been tested in the [Section for Precis
 
 # Quick start
 
-To use NeuroMiner, download this repository and add the 'Code' directory to your Matlab path (including subdirectories). 
+To use NeuroMiner, download this repository and add the 'NeuroMiner1.1_code' directory to your Matlab path (including subdirectories). 
 For further information on installation and configuration see the [installation guide](https://neurominer-git.github.io/NeuroMiner_1.1/docs/1.2_gettingstarted.html). 
 
 ## NeuroMiner Manual
