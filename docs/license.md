@@ -1,5 +1,7 @@
+---
+
 (license)=
-# License
+## License
 
 NeuroMiner is copyright, distributed under the GNU General Public License.
 
