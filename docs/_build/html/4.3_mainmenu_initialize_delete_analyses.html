@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Preprocess features" href="4.4_mainmenu_preprocess_features.html" />
-    <link rel="prev" title="Stacking" href="4.2.15_paramtemp_stacking.html" />
+    <link rel="prev" title="Stacking" href="4.2.14_paramtemp_stacking.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="license.html">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -218,27 +218,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -372,7 +387,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +404,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2F4.3_mainmenu_initialize_delete_analyses.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.3_mainmenu_initialize_delete_analyses.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -548,12 +563,12 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="initialize-analyses">
 <span id="initialize-delete-analyses"></span><h1>Initialize analyses<a class="headerlink" href="#initialize-analyses" title="Permalink to this headline">#</a></h1>
 <p><strong>–&gt; After defining analyses you must initialize them</strong></p>
-<p>After the machine learning parameters have been defined in the <span class="xref myst">parameter template</span> then you have to initialize them for further analysis using the initialization manager. If analyses in the parameter template are changed, you must also re-initialise them using this menu. You can initialize and change as many analyses as you like.</p>
+<p>After the machine learning parameters have been defined in the <a class="reference internal" href="4.2.02_paramtemp_preprocessing_pipeline.html#preprocessing-pipeline"><span class="std std-ref">parameter template</span></a> then you have to initialize them for further analysis using the initialization manager. If analyses in the parameter template are changed, you must also re-initialise them using this menu. You can initialize and change as many analyses as you like.</p>
 <p>When an analysis is first initialized, a directory will be created containing details and parameters of the analysis in a log file (see below). During processing, NeuroMiner will store analysis files in this location for this analysis. These data reporting features allow you to keep track of analyses and provide a standardized NeuroMiner output format.</p>
-<p>Within NeuroMiner you can initialize one analysis, then change settings in the <span class="xref myst">parameter template</span>, and then initialize another analysis. This has two implications:</p>
+<p>Within NeuroMiner you can initialize one analysis, then change settings in the <a class="reference internal" href="4.2.02_paramtemp_preprocessing_pipeline.html#preprocessing-pipeline"><span class="std std-ref">parameter template</span></a>, and then initialize another analysis. This has two implications:</p>
 <ol class="simple">
 <li><p>the results from different analyses can be compared;</p></li>
-<li><p>with the results of different classifiers, you can use the advanced feature called <span class="xref myst">stacked generalization</span>.</p></li>
+<li><p>with the results of different classifiers, you can use the advanced feature called <a class="reference internal" href="4.2.05_paramtemp_ensemble_generation_strategies.html#ensemble-generation-strategies"><span class="std std-ref">stacked generalization</span></a>.</p></li>
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -659,7 +674,7 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="4.2.15_paramtemp_stacking.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="4.2.14_paramtemp_stacking.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>

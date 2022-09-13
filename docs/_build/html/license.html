@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>GNU GENERAL PUBLIC LICENSE &#8212; NeuroMiner Manual</title>
+    <title>License &#8212; NeuroMiner Manual</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -218,27 +218,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -372,7 +387,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +404,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2Flicense.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2Flicense.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -476,114 +491,114 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gnu-general-public-license">
    GNU GENERAL PUBLIC LICENSE
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preamble">
    Preamble
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#terms-and-conditions">
    TERMS AND CONDITIONS
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#definitions">
      0. Definitions.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#source-code">
      1. Source Code.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-permissions">
      2. Basic Permissions.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#protecting-users-legal-rights-from-anti-circumvention-law">
      3. Protecting Users’ Legal Rights From Anti-Circumvention Law.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conveying-verbatim-copies">
      4. Conveying Verbatim Copies.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conveying-modified-source-versions">
      5. Conveying Modified Source Versions.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conveying-non-source-forms">
      6. Conveying Non-Source Forms.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#additional-terms">
      7. Additional Terms.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#termination">
      8. Termination.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#acceptance-not-required-for-having-copies">
      9. Acceptance Not Required for Having Copies.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#automatic-licensing-of-downstream-recipients">
      10. Automatic Licensing of Downstream Recipients.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#patents">
      11. Patents.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#no-surrender-of-others-freedom">
      12. No Surrender of Others’ Freedom.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#use-with-the-gnu-affero-general-public-license">
      13. Use with the GNU Affero General Public License.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#revised-versions-of-this-license">
      14. Revised Versions of this License.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#disclaimer-of-warranty">
      15. Disclaimer of Warranty.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#limitation-of-liability">
      16. Limitation of Liability.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpretation-of-sections-15-and-16">
      17. Interpretation of Sections 15 and 16.
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-apply-these-terms-to-your-new-programs">
    How to Apply These Terms to Your New Programs
   </a>
@@ -597,7 +612,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>GNU GENERAL PUBLIC LICENSE</h1>
+                <h1>License</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -607,114 +622,114 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gnu-general-public-license">
    GNU GENERAL PUBLIC LICENSE
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preamble">
    Preamble
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#terms-and-conditions">
    TERMS AND CONDITIONS
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#definitions">
      0. Definitions.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#source-code">
      1. Source Code.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-permissions">
      2. Basic Permissions.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#protecting-users-legal-rights-from-anti-circumvention-law">
      3. Protecting Users’ Legal Rights From Anti-Circumvention Law.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conveying-verbatim-copies">
      4. Conveying Verbatim Copies.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conveying-modified-source-versions">
      5. Conveying Modified Source Versions.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conveying-non-source-forms">
      6. Conveying Non-Source Forms.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#additional-terms">
      7. Additional Terms.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#termination">
      8. Termination.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#acceptance-not-required-for-having-copies">
      9. Acceptance Not Required for Having Copies.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#automatic-licensing-of-downstream-recipients">
      10. Automatic Licensing of Downstream Recipients.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#patents">
      11. Patents.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#no-surrender-of-others-freedom">
      12. No Surrender of Others’ Freedom.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#use-with-the-gnu-affero-general-public-license">
      13. Use with the GNU Affero General Public License.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#revised-versions-of-this-license">
      14. Revised Versions of this License.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#disclaimer-of-warranty">
      15. Disclaimer of Warranty.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#limitation-of-liability">
      16. Limitation of Liability.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpretation-of-sections-15-and-16">
      17. Interpretation of Sections 15 and 16.
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-apply-these-terms-to-your-new-programs">
    How to Apply These Terms to Your New Programs
   </a>
@@ -729,7 +744,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>NeuroMiner is free software; you can distribute it and/or modify it under
+  <section class="tex2jax_ignore mathjax_ignore" id="license">
+<span id="id1"></span><h1>License<a class="headerlink" href="#license" title="Permalink to this headline">#</a></h1>
+<p>NeuroMiner is copyright, distributed under the GNU General Public License.</p>
+<p>This does not apply to any third-party software used by NeuroMiner. These
+is subject to the original license they were first distributed under.</p>
+<hr class="docutils" />
+<p>NeuroMiner is free software; you can distribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free
 Software Foundation; either version 2 of the License, or (at your option)
 any later version.</p>
@@ -738,7 +759,7 @@ any later version.</p>
 No formal support or maintenance is provided or implied.</p>
 <hr class="docutils" />
 <section id="gnu-general-public-license">
-<h1>GNU GENERAL PUBLIC LICENSE<a class="headerlink" href="#gnu-general-public-license" title="Permalink to this headline">#</a></h1>
+<h2>GNU GENERAL PUBLIC LICENSE<a class="headerlink" href="#gnu-general-public-license" title="Permalink to this headline">#</a></h2>
 <p>Version 3, 29 June 2007</p>
 <p>Copyright (C) 2007 Free Software Foundation, Inc.
 <a class="reference external" href="https://fsf.org/">https://fsf.org/</a></p>
@@ -746,7 +767,7 @@ No formal support or maintenance is provided or implied.</p>
 license document, but changing it is not allowed.</p>
 </section>
 <section id="preamble">
-<h1>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">#</a></h1>
+<h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">#</a></h2>
 <p>The GNU General Public License is a free, copyleft license for
 software and other kinds of works.</p>
 <p>The licenses for most software and other practical works are designed
@@ -802,9 +823,9 @@ assures that patents cannot be used to render the program non-free.</p>
 modification follow.</p>
 </section>
 <section id="terms-and-conditions">
-<h1>TERMS AND CONDITIONS<a class="headerlink" href="#terms-and-conditions" title="Permalink to this headline">#</a></h1>
+<h2>TERMS AND CONDITIONS<a class="headerlink" href="#terms-and-conditions" title="Permalink to this headline">#</a></h2>
 <section id="definitions">
-<h2>0. Definitions.<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h2>
+<h3>0. Definitions.<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h3>
 <p>“This License” refers to version 3 of the GNU General Public License.</p>
 <p>“Copyright” also means copyright-like laws that apply to other kinds
 of works, such as semiconductor masks.</p>
@@ -837,7 +858,7 @@ the interface presents a list of user commands or options, such as a
 menu, a prominent item in the list meets this criterion.</p>
 </section>
 <section id="source-code">
-<h2>1. Source Code.<a class="headerlink" href="#source-code" title="Permalink to this headline">#</a></h2>
+<h3>1. Source Code.<a class="headerlink" href="#source-code" title="Permalink to this headline">#</a></h3>
 <p>The “source code” for a work means the preferred form of the work for
 making modifications to it. “Object code” means any non-source form of
 a work.</p>
@@ -873,7 +894,7 @@ regenerate automatically from other parts of the Corresponding Source.</p>
 work.</p>
 </section>
 <section id="basic-permissions">
-<h2>2. Basic Permissions.<a class="headerlink" href="#basic-permissions" title="Permalink to this headline">#</a></h2>
+<h3>2. Basic Permissions.<a class="headerlink" href="#basic-permissions" title="Permalink to this headline">#</a></h3>
 <p>All rights granted under this License are granted for the term of
 copyright on the Program, and are irrevocable provided the stated
 conditions are met. This License explicitly affirms your unlimited
@@ -896,7 +917,7 @@ conditions stated below. Sublicensing is not allowed; section 10 makes
 it unnecessary.</p>
 </section>
 <section id="protecting-users-legal-rights-from-anti-circumvention-law">
-<h2>3. Protecting Users’ Legal Rights From Anti-Circumvention Law.<a class="headerlink" href="#protecting-users-legal-rights-from-anti-circumvention-law" title="Permalink to this headline">#</a></h2>
+<h3>3. Protecting Users’ Legal Rights From Anti-Circumvention Law.<a class="headerlink" href="#protecting-users-legal-rights-from-anti-circumvention-law" title="Permalink to this headline">#</a></h3>
 <p>No covered work shall be deemed part of an effective technological
 measure under any applicable law fulfilling obligations under article
 11 of the WIPO copyright treaty adopted on 20 December 1996, or
@@ -911,7 +932,7 @@ the work’s users, your or third parties’ legal rights to forbid
 circumvention of technological measures.</p>
 </section>
 <section id="conveying-verbatim-copies">
-<h2>4. Conveying Verbatim Copies.<a class="headerlink" href="#conveying-verbatim-copies" title="Permalink to this headline">#</a></h2>
+<h3>4. Conveying Verbatim Copies.<a class="headerlink" href="#conveying-verbatim-copies" title="Permalink to this headline">#</a></h3>
 <p>You may convey verbatim copies of the Program’s source code as you
 receive it, in any medium, provided that you conspicuously and
 appropriately publish on each copy an appropriate copyright notice;
@@ -923,7 +944,7 @@ recipients a copy of this License along with the Program.</p>
 and you may offer support or warranty protection for a fee.</p>
 </section>
 <section id="conveying-modified-source-versions">
-<h2>5. Conveying Modified Source Versions.<a class="headerlink" href="#conveying-modified-source-versions" title="Permalink to this headline">#</a></h2>
+<h3>5. Conveying Modified Source Versions.<a class="headerlink" href="#conveying-modified-source-versions" title="Permalink to this headline">#</a></h3>
 <p>You may convey a work based on the Program, or the modifications to
 produce it from the Program, in the form of source code under the
 terms of section 4, provided that you also meet all of these
@@ -958,7 +979,7 @@ in an aggregate does not cause this License to apply to the other
 parts of the aggregate.</p>
 </section>
 <section id="conveying-non-source-forms">
-<h2>6. Conveying Non-Source Forms.<a class="headerlink" href="#conveying-non-source-forms" title="Permalink to this headline">#</a></h2>
+<h3>6. Conveying Non-Source Forms.<a class="headerlink" href="#conveying-non-source-forms" title="Permalink to this headline">#</a></h3>
 <p>You may convey a covered work in object code form under the terms of
 sections 4 and 5, provided that you also convey the machine-readable
 Corresponding Source under the terms of this License, in one of these
@@ -1049,7 +1070,7 @@ source code form), and must require no special password or key for
 unpacking, reading or copying.</p>
 </section>
 <section id="additional-terms">
-<h2>7. Additional Terms.<a class="headerlink" href="#additional-terms" title="Permalink to this headline">#</a></h2>
+<h3>7. Additional Terms.<a class="headerlink" href="#additional-terms" title="Permalink to this headline">#</a></h3>
 <p>“Additional permissions” are terms that supplement the terms of this
 License by making exceptions from one or more of its conditions.
 Additional permissions that are applicable to the entire Program shall
@@ -1104,7 +1125,7 @@ form of a separately written license, or stated as exceptions; the
 above requirements apply either way.</p>
 </section>
 <section id="termination">
-<h2>8. Termination.<a class="headerlink" href="#termination" title="Permalink to this headline">#</a></h2>
+<h3>8. Termination.<a class="headerlink" href="#termination" title="Permalink to this headline">#</a></h3>
 <p>You may not propagate or modify a covered work except as expressly
 provided under this License. Any attempt otherwise to propagate or
 modify it is void, and will automatically terminate your rights under
@@ -1129,7 +1150,7 @@ reinstated, you do not qualify to receive new licenses for the same
 material under section 10.</p>
 </section>
 <section id="acceptance-not-required-for-having-copies">
-<h2>9. Acceptance Not Required for Having Copies.<a class="headerlink" href="#acceptance-not-required-for-having-copies" title="Permalink to this headline">#</a></h2>
+<h3>9. Acceptance Not Required for Having Copies.<a class="headerlink" href="#acceptance-not-required-for-having-copies" title="Permalink to this headline">#</a></h3>
 <p>You are not required to accept this License in order to receive or run
 a copy of the Program. Ancillary propagation of a covered work
 occurring solely as a consequence of using peer-to-peer transmission
@@ -1140,7 +1161,7 @@ not accept this License. Therefore, by modifying or propagating a
 covered work, you indicate your acceptance of this License to do so.</p>
 </section>
 <section id="automatic-licensing-of-downstream-recipients">
-<h2>10. Automatic Licensing of Downstream Recipients.<a class="headerlink" href="#automatic-licensing-of-downstream-recipients" title="Permalink to this headline">#</a></h2>
+<h3>10. Automatic Licensing of Downstream Recipients.<a class="headerlink" href="#automatic-licensing-of-downstream-recipients" title="Permalink to this headline">#</a></h3>
 <p>Each time you convey a covered work, the recipient automatically
 receives a license from the original licensors, to run, modify and
 propagate that work, subject to this License. You are not responsible
@@ -1163,7 +1184,7 @@ any patent claim is infringed by making, using, selling, offering for
 sale, or importing the Program or any portion of it.</p>
 </section>
 <section id="patents">
-<h2>11. Patents.<a class="headerlink" href="#patents" title="Permalink to this headline">#</a></h2>
+<h3>11. Patents.<a class="headerlink" href="#patents" title="Permalink to this headline">#</a></h3>
 <p>A “contributor” is a copyright holder who authorizes use under this
 License of the Program or a work on which the Program is based. The
 work thus licensed is called the contributor’s “contributor version”.</p>
@@ -1225,7 +1246,7 @@ any implied license or other defenses to infringement that may
 otherwise be available to you under applicable patent law.</p>
 </section>
 <section id="no-surrender-of-others-freedom">
-<h2>12. No Surrender of Others’ Freedom.<a class="headerlink" href="#no-surrender-of-others-freedom" title="Permalink to this headline">#</a></h2>
+<h3>12. No Surrender of Others’ Freedom.<a class="headerlink" href="#no-surrender-of-others-freedom" title="Permalink to this headline">#</a></h3>
 <p>If conditions are imposed on you (whether by court order, agreement or
 otherwise) that contradict the conditions of this License, they do not
 excuse you from the conditions of this License. If you cannot convey a
@@ -1238,7 +1259,7 @@ satisfy both those terms and this License would be to refrain entirely
 from conveying the Program.</p>
 </section>
 <section id="use-with-the-gnu-affero-general-public-license">
-<h2>13. Use with the GNU Affero General Public License.<a class="headerlink" href="#use-with-the-gnu-affero-general-public-license" title="Permalink to this headline">#</a></h2>
+<h3>13. Use with the GNU Affero General Public License.<a class="headerlink" href="#use-with-the-gnu-affero-general-public-license" title="Permalink to this headline">#</a></h3>
 <p>Notwithstanding any other provision of this License, you have
 permission to link or combine any covered work with a work licensed
 under version 3 of the GNU Affero General Public License into a single
@@ -1249,7 +1270,7 @@ section 13, concerning interaction through a network will apply to the
 combination as such.</p>
 </section>
 <section id="revised-versions-of-this-license">
-<h2>14. Revised Versions of this License.<a class="headerlink" href="#revised-versions-of-this-license" title="Permalink to this headline">#</a></h2>
+<h3>14. Revised Versions of this License.<a class="headerlink" href="#revised-versions-of-this-license" title="Permalink to this headline">#</a></h3>
 <p>The Free Software Foundation may publish revised and/or new versions
 of the GNU General Public License from time to time. Such new versions
 will be similar in spirit to the present version, but may differ in
@@ -1272,7 +1293,7 @@ author or copyright holder as a result of your choosing to follow a
 later version.</p>
 </section>
 <section id="disclaimer-of-warranty">
-<h2>15. Disclaimer of Warranty.<a class="headerlink" href="#disclaimer-of-warranty" title="Permalink to this headline">#</a></h2>
+<h3>15. Disclaimer of Warranty.<a class="headerlink" href="#disclaimer-of-warranty" title="Permalink to this headline">#</a></h3>
 <p>THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
 APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
 HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT
@@ -1284,7 +1305,7 @@ DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR
 CORRECTION.</p>
 </section>
 <section id="limitation-of-liability">
-<h2>16. Limitation of Liability.<a class="headerlink" href="#limitation-of-liability" title="Permalink to this headline">#</a></h2>
+<h3>16. Limitation of Liability.<a class="headerlink" href="#limitation-of-liability" title="Permalink to this headline">#</a></h3>
 <p>IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
 WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR
 CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
@@ -1296,7 +1317,7 @@ TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER
 PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
 </section>
 <section id="interpretation-of-sections-15-and-16">
-<h2>17. Interpretation of Sections 15 and 16.<a class="headerlink" href="#interpretation-of-sections-15-and-16" title="Permalink to this headline">#</a></h2>
+<h3>17. Interpretation of Sections 15 and 16.<a class="headerlink" href="#interpretation-of-sections-15-and-16" title="Permalink to this headline">#</a></h3>
 <p>If the disclaimer of warranty and limitation of liability provided
 above cannot be given local legal effect according to their terms,
 reviewing courts shall apply local law that most closely approximates
@@ -1307,7 +1328,7 @@ copy of the Program in return for a fee.</p>
 </section>
 </section>
 <section id="how-to-apply-these-terms-to-your-new-programs">
-<h1>How to Apply These Terms to Your New Programs<a class="headerlink" href="#how-to-apply-these-terms-to-your-new-programs" title="Permalink to this headline">#</a></h1>
+<h2>How to Apply These Terms to Your New Programs<a class="headerlink" href="#how-to-apply-these-terms-to-your-new-programs" title="Permalink to this headline">#</a></h2>
 <p>If you develop a new program, and you want it to be of the greatest
 possible use to the public, the best way to achieve this is to make it
 free software which everyone can redistribute and change under these
@@ -1357,6 +1378,7 @@ library, you may consider it more useful to permit linking proprietary
 applications with the library. If this is what you want to do, use the
 GNU Lesser General Public License instead of this License. But first,
 please read <a class="reference external" href="https://www.gnu.org/licenses/why-not-lgpl.html">https://www.gnu.org/licenses/why-not-lgpl.html</a>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

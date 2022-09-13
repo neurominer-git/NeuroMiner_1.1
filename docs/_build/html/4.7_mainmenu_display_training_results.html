@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="license.html">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -218,27 +218,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -372,7 +387,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +404,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2F4.7_mainmenu_display_training_results.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.7_mainmenu_display_training_results.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -694,9 +709,9 @@ title="Print to PDF"
 </section>
 <section id="ensemble-diversity">
 <h2>Ensemble diversity<a class="headerlink" href="#ensemble-diversity" title="Permalink to this headline">#</a></h2>
-<p>See <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:Display_EnsembleDiversity</span></code>: This is a measure of Shannon entropy across CV1 models for each CV2 partition. A higher entropy means higher disagreement between the CV1 models. This measure is useful because increased entropy will often result in a better fitting model at the CV2 level. It is useful to note that entropy can be maximized as a performance criterion in addition to accuracy.</p>
+<p>See <a class="reference internal" href="#fig-display-ensemblediv"><span class="std std-numref">Fig. 16</span></a>: This is a measure of Shannon entropy across CV1 models for each CV2 partition. A higher entropy means higher disagreement between the CV1 models. This measure is useful because increased entropy will often result in a better fitting model at the CV2 level. It is useful to note that entropy can be maximized as a performance criterion in addition to accuracy.</p>
 <figure class="align-default" id="fig-display-ensemblediv">
-<img alt="Neurominer result viewer, ensemble diversity" src="Images/Display_EnsembleDiv.png" />
+<img alt="Neurominer result viewer, ensemble diversity" src="_images/Display_EnsembleDiv.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 16 </span><span class="caption-text">Result viewer: Ensemble diversity</span><a class="headerlink" href="#fig-display-ensemblediv" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -742,10 +757,10 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 21 </span><span class="caption-text">Histogram of the p-values derived from permutation testing.</span><a class="headerlink" href="#fig-display-vispermpvals" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="fig-display-visimaging">
+<figure class="align-default" id="fig-nm-display-visimaging">
 <img alt="Neurominer result viewer, visualization results" src="_images/NM_Display_visImaging.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Mean results with imaging data. Example of the depiction of the mean feature weights with standard errors for imaging data. A similar image is displayed for all other visualization parameters (i.e., CV-ratio, probability of feature reliability, sign-based consistency).</span><a class="headerlink" href="#fig-display-visimaging" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Mean results with imaging data. Example of the depiction of the mean feature weights with standard errors for imaging data. A similar image is displayed for all other visualization parameters (i.e., CV-ratio, probability of feature reliability, sign-based consistency).</span><a class="headerlink" href="#fig-nm-display-visimaging" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -756,7 +771,7 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>This functionality is only available in MATLAB R2021b or above.</p>
 </div>
-<p>The ROI mapper can be accessed from the Visualization results window in the NeuroMiner Result Viewer by clicking on the blue button <strong>ROI mapping</strong> (see <a class="reference internal" href="#fig-nm-display-visimaging"><span class="std std-numref">Fig. 24</span></a>). This will open a separate window, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:NM_roi_mapper</span></code>. The window has two sub-menus in which you can set up the parameters for a two-step procedure: first analyzing and then plotting the ROI percentages occupied by the selected results map, thresholded accordingly.</p>
+<p>The ROI mapper can be accessed from the Visualization results window in the NeuroMiner Result Viewer by clicking on the blue button <strong>ROI mapping</strong> (see <a class="reference internal" href="#fig-nm-display-visimaging"><span class="std std-numref">Fig. 22</span></a>). This will open a separate window, as shown in <a class="reference internal" href="#fig-nm-roi-mapper"><span class="std std-numref">Fig. 23</span></a>. The window has two sub-menus in which you can set up the parameters for a two-step procedure: first analyzing and then plotting the ROI percentages occupied by the selected results map, thresholded accordingly.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <em>plotting menu</em> and <em>active button</em> will only appear once you run the analysis part (the mapping itself).</p>
@@ -770,15 +785,15 @@ title="Print to PDF"
 </section>
 <section id="ml-interpreter-mli-results">
 <h2>ML Interpreter (MLI) results<a class="headerlink" href="#ml-interpreter-mli-results" title="Permalink to this headline">#</a></h2>
-<p>See <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:NM_MLI_viewer_matrix</span></code> and <a class="reference internal" href="#fig-nm-mli-viewer-imaging"><span class="std std-numref">Fig. 25</span></a>: If the interpretation of predictions was run, the results can be viewed either by selecting ML Interpreter results from the plot drop down menu in the Results Viewer or by clicking on the blue button labeled <strong>I</strong> next to the classification plot (see <a class="reference internal" href="#fig-display-classplot"><span class="std std-numref">Fig. 10</span></a>). Both of these options will open the MLI Viewer.</p>
+<p>See <a class="reference internal" href="#fig-nm-mli-viewer-matrix"><span class="std std-numref">Fig. 24</span></a> and <a class="reference internal" href="#fig-nm-mli-viewer-imaging"><span class="std std-numref">Fig. 25</span></a>: If the interpretation of predictions was run, the results can be viewed either by selecting ML Interpreter results from the plot drop down menu in the Results Viewer or by clicking on the blue button labeled <strong>I</strong> next to the classification plot (see <a class="reference internal" href="#fig-display-classplot"><span class="std std-numref">Fig. 10</span></a>). Both of these options will open the MLI Viewer.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can also select a specific subject by clicking on its point in the classification plot before clicking the blue <strong>I</strong> button.‚</p>
 </div>
-<figure class="align-default" id="fig-nm-display-visimaging">
+<figure class="align-default" id="fig-nm-mli-viewer-matrix">
 <img alt="Neurominer result viewer, visualization results" src="_images/NM_MLI_viewer_matrix.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">ML Interpreter result viewer for matrix data</span><a class="headerlink" href="#fig-nm-display-visimaging" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">ML Interpreter result viewer for matrix data</span><a class="headerlink" href="#fig-nm-mli-viewer-matrix" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="fig-nm-mli-viewer-imaging">

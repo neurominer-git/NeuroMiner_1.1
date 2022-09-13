@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="license.html">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -218,27 +218,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -372,7 +387,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +404,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2F4.8_mainmenu_OOCV_analysis.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.8_mainmenu_OOCV_analysis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -672,7 +687,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="out-of-sample-cross-validation">
-<span id="mainmenu-oocv-analysis"></span><h1>Out of Sample Cross-Validation<a class="headerlink" href="#out-of-sample-cross-validation" title="Permalink to this headline">#</a></h1>
+<span id="oocv-analysis"></span><h1>Out of Sample Cross-Validation<a class="headerlink" href="#out-of-sample-cross-validation" title="Permalink to this headline">#</a></h1>
 <p>External, out-of-sample cross-validation (OOCV) is a cornerstone of machine learning and is required for strong generalizability claims. This usually involves the application of the trained models used to predict targets in the CV2 data folds to a separate dataset that has been independently collected.</p>
 <p>External validation relies on the trained models being completely separate from the OOCV data. For this reason, after completing the analysis the user must first lock analyses and start the NM application mode using the following procedure. As mentioned in the section on cross-validation, a form of external validation can be done within a machine learning analysis by selecting the leave-group-out option if the group comes from an external source (i.e., it is not from the same study or sample). However, mostly external validation is done when models from one analysis are applied to a completely different site and study. It is important to note that within a machine learning framework external validation never means that new models are created within a different sample and then the results are compared (e.g., comparison of the beta coefficients or the p-value for significance). This is usually referred to as replication and is basically never the point of machine learning because it is a field that grew around translation and practical application of models. The aim of machine learning is to create models that can be applied without modification to external samples to facilitate predictions at another site. The ultimate aim is to be able to integrate models into clinical care globally.</p>
 <p>For this critical function, the best performing models, that were applied to the test sets at the outer CV2 level, need to be applied to another, unseen (external) sample. Keep in-mind that when we refer to models in NeuroMiner then we are referring to the entire pipeline of operations that are applied to the data: from preprocessing to training. In NeuroMiner, as described in the section on <a class="reference internal" href="4.2.01_paramtemp_cv_settings.html#paramtemp-cv-settings"><span class="std std-ref">cross-validation</span></a>, the optimal models are ultimately retrained in each of the CV1 folds before being applied to the outer test folds. Thus, these are also the models which will be applied to the external validation data. For example, if there are 5 folds on the outer cycle and 5 folds on the inner cycle then 5 x 5 = 25 model pipelines will be applied to the external validation data (assuming that the single best model is chosen for each training fold).</p>
@@ -690,7 +705,7 @@ title="Print to PDF"
 </ul>
 <p>This distinction ensures that the <em>discovered</em> models are not retrained on the validation sets.</p>
 </div>
-<p>To enter application mode and apply your model to an external sample, the first step is locking your analyses. In order to do that, you must make sure all of your analyses have been computed. If there are analyses you don’t want to compute, please <span class="xref myst">remove them</span> before continuing.</p>
+<p>To enter application mode and apply your model to an external sample, the first step is locking your analyses. In order to do that, you must make sure all of your analyses have been computed. If there are analyses you don’t want to compute, please <a class="reference internal" href="4.3_mainmenu_initialize_delete_analyses.html#initialize-delete-analyses"><span class="std std-ref">remove them</span></a> before continuing.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This option will only show if all initialized analyses have been completed. Please make sure to train or otherwise <a class="reference internal" href="4.3_mainmenu_initialize_delete_analyses.html#initialize-delete-analyses"><span class="std std-ref">delete any untrained analysis</span></a> before entering application mode.</p>
@@ -748,12 +763,12 @@ title="Print to PDF"
 </section>
 <section id="enter-the-data">
 <h4>4. Enter the data<a class="headerlink" href="#enter-the-data" title="Permalink to this headline">#</a></h4>
-<p>Select <strong>1 | Add/Modify OOCV data</strong>. You might recognize the now appearing menu since it contains some of the options you encountered during the <a class="reference internal" href="4.1_mainmenu_input_data.html#mainmenu-input-data"><span class="std std-ref">initial data entry</span></a>:</p>
+<p>Select <strong>1 | Add/Modify OOCV data</strong>. You might recognize the now appearing menu since it contains some of the options you encountered during the <a class="reference internal" href="4.1_mainmenu_input_data.html#input-data"><span class="std std-ref">initial data entry</span></a>:</p>
 <figure class="align-default" id="fig-nm-oocv-data-input">
 <img alt="neurominer oocv modality screenshot" src="_images/NM_oocv_data_input.png" />
 </figure>
 <p>A point to note is that the <strong>type of input data has to be the same as that of
-the discovery data type used</strong>. NeuroMiner automatically detects the previous input data type (data provenance) and asks accordingly (in the case shown above, from a spreadsheet file). <a class="reference internal" href="4.1_mainmenu_input_data.html#mainmenu-input-data"><span class="std std-ref">Specify the data</span></a> you want to use as the validation set and IMPORT it.</p>
+the discovery data type used</strong>. NeuroMiner automatically detects the previous input data type (data provenance) and asks accordingly (in the case shown above, from a spreadsheet file). <a class="reference internal" href="4.1_mainmenu_input_data.html#input-data"><span class="std std-ref">Specify the data</span></a> you want to use as the validation set and IMPORT it.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Don’t move any of the discovery data files from the location on your computer once you have specified their directories to NeuroMiner (including any masks used in the processing). Otherwise, NeuroMiner will fail at this step.</p>
@@ -763,7 +778,7 @@ the discovery data type used</strong>. NeuroMiner automatically detects the prev
 <h4>5. Covariates and additional modalities<a class="headerlink" href="#covariates-and-additional-modalities" title="Permalink to this headline">#</a></h4>
 <p>After you imported the data modality, you are redirected to the menu shown in step 3. If you entered covariates or more modalities during the discovery phase,
 NeuroMiner will at this point ask for a covariates variable and additional modalities of the validation sample. Remember that covariates always need to
-be loaded into the matlab workspace (see <a class="reference internal" href="4.1_mainmenu_input_data.html#mainmenu-input-data"><span class="std std-ref">data entry for the discovery sample</span></a>).</p>
+be loaded into the matlab workspace (see <a class="reference internal" href="4.1_mainmenu_input_data.html#input-data"><span class="std std-ref">data entry for the discovery sample</span></a>).</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If you entered several modalities during the discovery phase, you have to add the same modalities for the validation sample in the same order.</p>
@@ -829,7 +844,7 @@ to ‘Use all available CV data (CV1+CV2)’.</p>
 <p>Using the winning parameters from your discovery analyses, the models will now be retrained in the discovery data before being applied to the external validation data. You can see this happening in the matlab command window.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>In order to apply <a class="reference internal" href="4.2.15_paramtemp_stacking.html#paramtemp-stacking"><span class="std std-ref">stacker models</span></a> to independent data, you must first make sure that the same independent data has already been applied to all the base learner models of the stacker model. Otherwise, the stacker model cannot be applied to the independent data.</p>
+<p>In order to apply <a class="reference internal" href="4.2.14_paramtemp_stacking.html#stacking"><span class="std std-ref">stacker models</span></a> to independent data, you must first make sure that the same independent data has already been applied to all the base learner models of the stacker model. Otherwise, the stacker model cannot be applied to the independent data.</p>
 </div>
 </section>
 <section id="open-nm-results-viewer">

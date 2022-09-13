@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="license.html">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -218,27 +218,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -372,7 +387,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +404,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2F4.1_mainmenu_input_data.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.1_mainmenu_input_data.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1028,7 +1043,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="data-entry-in-neurominer">
-<span id="mainmenu-input-data"></span><h1>Data entry in NeuroMiner<a class="headerlink" href="#data-entry-in-neurominer" title="Permalink to this headline">#</a></h1>
+<span id="input-data"></span><h1>Data entry in NeuroMiner<a class="headerlink" href="#data-entry-in-neurominer" title="Permalink to this headline">#</a></h1>
 <p>NeuroMiner works with 3D neuroimaging (i.e., NIFTI, SPM, or FreeSurfer)
 and/or numerical data stored in matrices (e.g., Excel, csv, or MATLAB
 formats). For example, these are some of the data you can enter:</p>
@@ -1042,7 +1057,7 @@ contrasts)</p></li>
 <li><p>functional connectivity matrices (e.g., in the MATLAB workspace)</p></li>
 <li><p>DTI streamline matrices (e.g., in the MATLAB workspace)</p></li>
 </ul>
-<p>In NeuroMiner, each dataset is called a ’modality’ and multiple modalities can be entered at the same time to allow <span class="xref myst">data fusion</span>. For example, you can choose to perform machine learning on structural neuroimaging data alone or in combination with cognitive data. If data has not been entered and NeuroMiner does not detect a “NM” structure in the MATLAB workspace, then the user will be given the
+<p>In NeuroMiner, each dataset is called a ’modality’ and multiple modalities can be entered at the same time to allow <a class="reference internal" href="4.2.00_paramtemp_data_fusion.html#paramtemp-data-fusion"><span class="std std-ref">data fusion</span></a>. For example, you can choose to perform machine learning on structural neuroimaging data alone or in combination with cognitive data. If data has not been entered and NeuroMiner does not detect a “NM” structure in the MATLAB workspace, then the user will be given the
 option to <strong>1 | load data for model discovery and cross-validation</strong>.
 Selecting this option will transfer the user to the “NM data workspace
 manager”, which is an adaptive menu that changes based on selections,
@@ -1086,7 +1101,7 @@ menu that is configured for classification using NIFTI (neuroimaging) :</p>
 </section>
 <section id="read-in-additional-image-s-for-weighting">
 <h4>Read in additional image(s) for weighting<a class="headerlink" href="#read-in-additional-image-s-for-weighting" title="Permalink to this headline">#</a></h4>
-<p>This option gives you the opportunity to enter an image that will be used during preprocessing to weight the brain image features. It is specifically designed for when parcellated brain regions have been entered or when the WFU PickAtlas has been used to select brain parcels. In these cases, the image will consist of independent brain regions (e.g., the hippocampus, frontal lobe, cingulate cortex etc.). You can therefore enter a map of the same brain regions that have weights associated with each parcel based on the degree of importance of each region; e.g., 1 for the hippocampus, 2 for the frontal lobe, 3 for the cingulate. This weight map can then be used during preprocessing to up- or down-weight the features in the analysis (see <span class="xref myst">Rank / Weight features</span>).</p>
+<p>This option gives you the opportunity to enter an image that will be used during preprocessing to weight the brain image features. It is specifically designed for when parcellated brain regions have been entered or when the WFU PickAtlas has been used to select brain parcels. In these cases, the image will consist of independent brain regions (e.g., the hippocampus, frontal lobe, cingulate cortex etc.). You can therefore enter a map of the same brain regions that have weights associated with each parcel based on the degree of importance of each region; e.g., 1 for the hippocampus, 2 for the frontal lobe, 3 for the cingulate. This weight map can then be used during preprocessing to up- or down-weight the features in the analysis (see <a class="reference internal" href="4.2.02_paramtemp_preprocessing_pipeline.html#preproc-rank-weight"><span class="std std-ref">Rank / Weight features</span></a>).</p>
 </section>
 <section id="describe-data">
 <h4>Describe data<a class="headerlink" href="#describe-data" title="Permalink to this headline">#</a></h4>
@@ -1132,7 +1147,7 @@ Inspect image information and check registration This option will allow the user
 </section>
 <section id="id1">
 <h4>Read in additional image(s) for weighting<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
-<p>This option gives you the opportunity to enter an image that will be used during preprocessing to weight the brain image features. For example, when parcellated brain regions have been entered or when the WFU PickAtlas has been used to select brain parcels the image will consist of independent brain regions (e.g., the hippocampus, frontal lobe, cingulate cortex etc.). You can therefore enter a map of the same brain regions that have weights associated with each parcel based on the degree of importance of each region; e.g., 1 for the hippocampus, 2 for the frontal lobe, 3 for the cingulate. This weight map can then be used during preprocessing to up- or down-weight the features in the analysis (see <span class="xref myst">Rank / Weight features</span>). Alternatively, reliability coefficient images that are calculated during multi-site studies (e.g., with traveling subjects) can be entered here.</p>
+<p>This option gives you the opportunity to enter an image that will be used during preprocessing to weight the brain image features. For example, when parcellated brain regions have been entered or when the WFU PickAtlas has been used to select brain parcels the image will consist of independent brain regions (e.g., the hippocampus, frontal lobe, cingulate cortex etc.). You can therefore enter a map of the same brain regions that have weights associated with each parcel based on the degree of importance of each region; e.g., 1 for the hippocampus, 2 for the frontal lobe, 3 for the cingulate. This weight map can then be used during preprocessing to up- or down-weight the features in the analysis (see <a class="reference internal" href="4.2.02_paramtemp_preprocessing_pipeline.html#preproc-rank-weight"><span class="std std-ref">Rank / Weight features</span></a>). Alternatively, reliability coefficient images that are calculated during multi-site studies (e.g., with traveling subjects) can be entered here.</p>
 </section>
 <section id="id2">
 <h4>Describe data<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
@@ -1335,7 +1350,7 @@ A common situation is when you have a vector containing numbers representing gro
 <p>Once covariates have been added, this option will pop up in the menu. Select “6” if you want to delete the covariates from the workspace.</p>
 <section id="finish-data-import-for-discovery-cross-validation">
 <h4>6/7 | Finish data import for discovery &amp; cross-validation<a class="headerlink" href="#finish-data-import-for-discovery-cross-validation" title="Permalink to this headline">#</a></h4>
-<p>This option will finish the data import section. It is important to note that once this is selected <strong>you will no longer be able to modify any part of the data</strong>, including the addition of other modalities, covariates, or anything else. If there are changes, then you will need to enter the data again. Once the data has been processed, the user can however test models by entering <span class="xref myst">out-of-sample data</span> (e.g., external data from another center or group).</p>
+<p>This option will finish the data import section. It is important to note that once this is selected <strong>you will no longer be able to modify any part of the data</strong>, including the addition of other modalities, covariates, or anything else. If there are changes, then you will need to enter the data again. Once the data has been processed, the user can however test models by entering <a class="reference internal" href="4.8_mainmenu_OOCV_analysis.html#oocv-analysis"><span class="std std-ref">out-of-sample data</span></a> (e.g., external data from another center or group).</p>
 </section>
 </section>
 </section>
