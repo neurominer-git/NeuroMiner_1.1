@@ -31,4 +31,3 @@ For more details on “copyleft”, see https://www.gnu.org/copyleft/
 
 NeuroMiner is supplied as is:
 No formal support or maintenance is provided or implied.
-
