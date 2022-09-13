@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="license.html">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -218,27 +218,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -372,7 +387,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +404,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2F4.0_mainmenu.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.0_mainmenu.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -677,7 +692,7 @@ following example.</p>
 <li><p>Type ”Q” or “6” or <em>Enter</em> to go back to the previous menu, or if they are in the MAIN INTERFACE this will quit the program.</p></li>
 </ol>
 <p>For example, a user could press <strong>2</strong> if they wanted to <strong>load a NeuroMiner structure</strong>. The NeuroMiner MATLAB structure (”NM”) is the primary variable that NeuroMiner uses to store data, settings, analyses, and results. For example, when a user inputs data into NeuroMiner it is stored in the NM structure as a data matrix. Then when the user chooses settings or performs an analysis, all of these inputs and outputs are stored in the structure as well. This means that the NM structure forms the core of any analysis within NeuroMiner.</p>
-<p>Alternatively, to set up a new NM structure, starting with the data input, press <strong>1</strong> to select <strong>Load data for model discovery and cross-validation</strong>. We will cover that in a <a class="reference internal" href="4.1_mainmenu_input_data.html#mainmenu-input-data"><span class="std std-ref">later chapter</span></a> in more detail.</p>
+<p>Alternatively, to set up a new NM structure, starting with the data input, press <strong>1</strong> to select <strong>Load data for model discovery and cross-validation</strong>. We will cover that in a <a class="reference internal" href="4.1_mainmenu_input_data.html#input-data"><span class="std std-ref">later chapter</span></a> in more detail.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>It is important to note that the NeuroMiner structure is not automatically saved during analyses in order to give the user more control. This means that the user must save the structure periodically during the analysis using the menu item <strong>Save NeuroMiner structure</strong>.</p>
@@ -691,7 +706,7 @@ two main criteria:</p>
 <p>For example, if a NM structure is loaded prior to the start of a NeuroMiner session then the program will automatically detect this and the <strong>MAIN INTERFACE</strong> will specifically relate to the loaded structure. Similarly, if specific options are chosen during the establishment of the analysis, the menus will adapt to the chosen settings and options that do not apply to the analysis will be removed.</p>
 <section id="the-main-interface-after-data-has-been-loaded-and-processed">
 <h2>The main interface after data has been loaded and processed<a class="headerlink" href="#the-main-interface-after-data-has-been-loaded-and-processed" title="Permalink to this headline">#</a></h2>
-<p>Once the user has <a class="reference internal" href="4.1_mainmenu_input_data.html#mainmenu-input-data"><span class="std std-ref">entered and processed data</span></a>, the <strong>MAIN INTERFACE</strong> will
+<p>Once the user has <a class="reference internal" href="4.1_mainmenu_input_data.html#input-data"><span class="std std-ref">entered and processed data</span></a>, the <strong>MAIN INTERFACE</strong> will
 change to the following:</p>
 <figure class="align-default" id="fig-3-0-nm-mainmenu-after-dataentry">
 <img alt="neurominer main menu after data entry" src="_images/NM_mainmenu_after_dataentry.png" />
@@ -709,12 +724,12 @@ change to the following:</p>
 <section id="input-data-into-nm">
 <h3>1. Input data into NM<a class="headerlink" href="#input-data-into-nm" title="Permalink to this headline">#</a></h3>
 <p>The entry of data is the most important aspect of any analysis. When data is entered into NeuroMiner, it is stored within a MATLAB structure called ”NM” (i.e., ”NeuroMiner”) in the workspace. All other analyses and results are then added to this NM structure as the user progresses. The contents of the structure can also be viewed from the MATLAB command line.</p>
-<p>See <a class="reference internal" href="4.1_mainmenu_input_data.html#mainmenu-input-data"><span class="std std-ref">data entry</span></a> for more details.</p>
+<p>See <a class="reference internal" href="4.1_mainmenu_input_data.html#input-data"><span class="std std-ref">data entry</span></a> for more details.</p>
 </section>
 <section id="define-parameter-template">
 <h3>2. Define parameter template<a class="headerlink" href="#define-parameter-template" title="Permalink to this headline">#</a></h3>
 <p>Once the data have been entered, the first step of any analysis is to define the machine learning options. Within this menu, the user can establish the cross-validation framework (e.g., nested cross-validation), perform essential preprocessing operations on the data (e.g., scaling), choose the machine learning algorithm (e.g., SVM), define the machine learning algorithm settings (e.g., C values), and perform other operations on the data.</p>
-<p>See <span class="xref myst">define parameters</span> for more details.</p>
+<p>See <a class="reference internal" href="4.2_mainmenu_define_parameter_template.html#define-parameter-template"><span class="std std-ref">define parameters</span></a> for more details.</p>
 </section>
 <section id="initialize-delete-analyses">
 <h3>3. Initialize/Delete analyses<a class="headerlink" href="#initialize-delete-analyses" title="Permalink to this headline">#</a></h3>
@@ -755,7 +770,7 @@ change to the following:</p>
 <section id="estimate-sample-size">
 <h3>13. Estimate sample size<a class="headerlink" href="#estimate-sample-size" title="Permalink to this headline">#</a></h3>
 <p>Starting in NM1.1, two simulation tools are available that (1) measure algorithmic prediction performance across different parameters critical to machine learning algorithms, such as sample size, feature dimensionality, event rate, ratio and predictive power of features associated with a given label, or (2) use an existing NM data structure and analysis design to simulate the effects of varying sample size on prediction performance. The former tool is a “<strong>pre</strong>”-data entry method that can be used to generate and learn from purely synthetic data following specific user-defined settings. In NM1.1 it produces only binary classification and, thus, cannot be used to simulate regression frameworks. The second, “<strong>post</strong>”-data entry tool works with already set-up NM structures that contain initialized analyses. Here, the purpose is to evaluate the performance of the given analysis pipeline as a function of sample size. Both tools are still under development and can be considered alpha. Your feedback is welcome.</p>
-<p>See <a class="reference internal" href="4.12_mainmenu_estimate_sample_size.html#mainmenu-estimate-sample-size"><span class="std std-ref">estimate sample size</span></a> for more details.</p>
+<p>See <a class="reference internal" href="4.12_mainmenu_estimate_sample_size.html#estimate-sample-size"><span class="std std-ref">estimate sample size</span></a> for more details.</p>
 </section>
 <section id="utilities">
 <h3>14. Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">#</a></h3>

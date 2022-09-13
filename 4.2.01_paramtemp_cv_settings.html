@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="license.html">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -218,27 +218,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -372,7 +387,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +404,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2F4.2.01_paramtemp_cv_settings.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.2.01_paramtemp_cv_settings.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -624,7 +639,7 @@ following options:</p>
 <p>NeuroMiner has been built around the gold standard of repeated, nested cross-validation <a class="reference external" href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)">(Filzmoser et al.,
 2009)</a> and therefore the default options are reflective of this. For a description of cross-validation, you could check-out the supplementary material of this publication: <a class="reference external" href="http://thelancet.com/journals/lanpsy/article/PIIS2215-0366(16)30171-7/fulltext">Koutsouleris et al.,
 2016</a>.
-In brief, leave-one-out cross-validation and k-fold cross-validation risk overfitting (i.e., your models not generalizing past your sample) in the context of (hyper)parameter optimisation (e.g., optimizing C parameters) or the optimization of feature selection based on the predictive accuracy on the held-out dataset (e.g., using filters or wrappers discussed in <a class="reference internal" href="4.2.05_paramtemp_ensemble_generation_strategies.html#paramtemp-ensemble-generation-strategies"><span class="std std-ref">Ensemble generation strategies</span></a>). Nested cross-validation mitigates against overfitting and provides models that are more likely to generalize – which is the central aim of machine learning and science generally.</p>
+In brief, leave-one-out cross-validation and k-fold cross-validation risk overfitting (i.e., your models not generalizing past your sample) in the context of (hyper)parameter optimisation (e.g., optimizing C parameters) or the optimization of feature selection based on the predictive accuracy on the held-out dataset (e.g., using filters or wrappers discussed in <a class="reference internal" href="4.2.05_paramtemp_ensemble_generation_strategies.html#ensemble-generation-strategies"><span class="std std-ref">Ensemble generation strategies</span></a>). Nested cross-validation mitigates against overfitting and provides models that are more likely to generalize – which is the central aim of machine learning and science generally.</p>
 <section id="nested-cross-validation-in-neurominer">
 <h3>Nested cross-validation in NeuroMiner<a class="headerlink" href="#nested-cross-validation-in-neurominer" title="Permalink to this headline">#</a></h3>
 <figure class="align-default" id="fig-3-2-01-nested-cv">
@@ -635,7 +650,7 @@ In brief, leave-one-out cross-validation and k-fold cross-validation risk overfi
 </figure>
 <p>A depiction of nested cross-validation is represented in <a class="reference internal" href="#fig-3-2-01-nested-cv"><span class="std std-numref">Fig. 8</span></a>. In NeuroMiner the outer cross-validation cycle of a nested cross-validation scheme is designated as <strong>CV2</strong> and the inner cross-validation folds are designated as <strong>CV1</strong>. Models are trained in the CV1 cycle and then the best performing models are applied to the CV2 data. This separation of CV2 and CV1 data avoids overfitting.</p>
 <p>First the data is split into <em>k_outer</em> folds in the outer CV2 set. One of these CV2 folds is held out and serves as the test set in this round. The rest of the data goes into the ’nest’ where it is again subdivided into <em>k_inner</em> folds (note: <em>k_inner</em> does not have to be = to <em>k_outer</em>). In the ‘nest’, an inner test-fold is held out, and the rest of the data is used for training. Models associated with each parameter combination are created in the CV1 (inner) training data and applied to the CV1 test data (as shown in <a class="reference internal" href="#fig-3-2-01-nested-cv"><span class="std std-numref">Fig. 8</span></a>, <strong>A</strong>). The accuracy is assessed across all parameter combinations for all CV1 models. The optimal parameter combination is chosen based on a criteria set by the user. For each CV1 fold, a model is retrained on the processed training and test data with the winning parameter or parameter combination. The models are then applied to the held-out CV2 test data (as shown in <a class="reference internal" href="#fig-3-2-01-nested-cv"><span class="std std-numref">Fig. 8</span></a>, <strong>B</strong>).</p>
-<p>In cases where there are many (hyper)parameter combinations or when a variable selection procedure is employed, then the user can choose to keep a percentage of top performing models for each fold, instead of only the single optimum model. This is further discussed in <a class="reference internal" href="4.2.04_paramtemp_learning_algorithm_parameters.html#paramtemp-learning-algorithm-parameters"><span class="std std-ref">Learning algorithm parameters</span></a>.</p>
+<p>In cases where there are many (hyper)parameter combinations or when a variable selection procedure is employed, then the user can choose to keep a percentage of top performing models for each fold, instead of only the single optimum model. This is further discussed in <a class="reference internal" href="4.2.04_paramtemp_learning_algorithm_parameters.html#learning-algorithm-parameters"><span class="std std-ref">Learning algorithm parameters</span></a>.</p>
 <p>Let’s look at the other cross-validation frameworks included in NeuroMiner:</p>
 <div class="admonition-cross-validation-frameworks-in-neurominer admonition">
 <p class="admonition-title">Cross-validation frameworks in NeuroMiner</p>
@@ -670,7 +685,7 @@ The models in the inner CV1 cycle will only be trained in one group prior to bei
 <section id="choosing-the-number-of-folds">
 <h3>Choosing the number of folds<a class="headerlink" href="#choosing-the-number-of-folds" title="Permalink to this headline">#</a></h3>
 <p>The number of folds is usually based on the number of subjects you have and what kind of analyses you want to compute.</p>
-<p>For an analytic example of when the number of CV1 folds is crucial for the outcome see the section on <a class="reference internal" href="4.2.05_paramtemp_ensemble_generation_strategies.html#paramtemp-ensemble-generation-strategies"><span class="std std-ref">Ensemble generation strategies</span></a> – e.g., when using wrappers that are optimizing features based on the subjects in the CV1 test folds.</p>
+<p>For an analytic example of when the number of CV1 folds is crucial for the outcome see the section on <a class="reference internal" href="4.2.05_paramtemp_ensemble_generation_strategies.html#ensemble-generation-strategies"><span class="std std-ref">Ensemble generation strategies</span></a> – e.g., when using wrappers that are optimizing features based on the subjects in the CV1 test folds.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you enter “-1” as the number of CV1 or CV2 folds, then NeuroMiner implements a <strong>leave-one-out cross-validation</strong> and the permutations option is not possible (because it doesn’t matter if you shuffle the data if every single subject is left out). The number of CV folds is usually based on the number of subjects that you have.</p>

@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="license.html">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -218,27 +218,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -372,7 +387,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +404,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2F4.2.00_paramtemp_data_fusion.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.2.00_paramtemp_data_fusion.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -550,7 +565,7 @@ title="Print to PDF"
 <p>Data fusion is the process of integrating different datasets or classifiers together (see <a class="reference external" href="https://en.wikipedia.org/wiki/Data_fusion">wiki</a>), ultimately with the hope that it will make your prediction better. For example, neuroimaging and clinical data could be fused together and a classifier could be trained on these data. Alternatively, the researcher could conduct multiple analyses with different classifiers and then fuse the decision scores together. For theory of decision-based data fusion see the extensive work of Robi Polikar (e.g., <a class="reference external" href="http://users.rowan.edu/~polikar/RESEARCH/PUBLICATIONS/csm06.pdf">Polikar,
 2006</a>) and for a practical example see <a class="reference external" href="http://schizophreniabulletin.oxfordjournals.org/content/42/suppl_1/S110.short">Cabral et al.,
 2016</a>.</p>
-<p>For data fusion to work in NeuroMiner, the user must enter different datasets that will be processed (called ’modalities’, see <a class="reference internal" href="4.1_mainmenu_input_data.html#mainmenu-input-data"><span class="std std-ref">data entry</span></a>).
+<p>For data fusion to work in NeuroMiner, the user must enter different datasets that will be processed (called ’modalities’, see <a class="reference internal" href="4.1_mainmenu_input_data.html#input-data"><span class="std std-ref">data entry</span></a>).
 When different data modalities are entered, the first option in the parameter template will be: <strong>1 | Define data fusion options</strong>. Selecting this option will lead to the following menu:</p>
 <figure class="align-left" id="fig-3-2-00-datafusion-options">
 <img alt="_images/NM_paramtemp_datafusion_options.png" src="_images/NM_paramtemp_datafusion_options.png" />

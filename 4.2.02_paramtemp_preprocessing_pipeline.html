@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="license.html">
-     GNU GENERAL PUBLIC LICENSE
+     License
     </a>
    </li>
   </ul>
@@ -220,27 +220,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">
+     Prediction interpretation options
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">
      Model saving options
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.11_paramtemp_inspect_workspace.html">
+    <a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">
+     Define verbosity level
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">
      Inspect workspace
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.12_paramtemp_save_parameter_template.html">
+    <a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">
      Save parameter template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.13_paramtemp_load_training_template.html">
+    <a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">
      Load training template
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4.2.15_paramtemp_stacking.html">
+    <a class="reference internal" href="4.2.13_paramtemp_multigroup.html">
+     Multi-group analyses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.2.14_paramtemp_stacking.html">
      Stacking
     </a>
    </li>
@@ -374,7 +389,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1/"
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -391,7 +406,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://neurominer-git.github.io/NeuroMiner_1.1//issues/new?title=Issue%20on%20page%20%2F4.2.02_paramtemp_preprocessing_pipeline.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.2.02_paramtemp_preprocessing_pipeline.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -706,7 +721,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="preprocessing-pipeline">
-<span id="paramtemp-preprocessing-pipeline"></span><h1>Preprocessing pipeline<a class="headerlink" href="#preprocessing-pipeline" title="Permalink to this headline">#</a></h1>
+<span id="id1"></span><h1>Preprocessing pipeline<a class="headerlink" href="#preprocessing-pipeline" title="Permalink to this headline">#</a></h1>
 <p>An important part of any machine learning analysis is how the data is prepared or ’preprocessed’ prior to its analysis with a classification algorithm. This is also known as ’feature extraction’ because the features are extracted from the existing data before analysis. NeuroMiner has a number of options to prepare data and can be tailored to a user’s specific data problem.</p>
 <p>It’s important to note that NeuroMiner performs preprocessing steps within the cross-validation framework. This means that when the option to preprocess the data is selected, it preprocesses the training data and applies the ’learned’ preprocessing parameters to the CV1 and CV2 test data partitions.</p>
 <p>When the preprocessing module is loaded the user will see the following:</p>
@@ -721,7 +736,7 @@ title="Print to PDF"
 <p>Importantly, the preprocessing steps that are selected will be outlined <strong>in order of processing</strong> under the heading <strong>CV-Preprocessing Sequence</strong>. The user can add steps using the add preprocessing step and can modify steps using the other straightforward options within this menu–e.g., the user can modify the settings of a preprocessing step or can change the order of the steps.</p>
 </div>
 <section id="add-preprocessing-step">
-<span id="id1"></span><h2>Add preprocessing step<a class="headerlink" href="#add-preprocessing-step" title="Permalink to this headline">#</a></h2>
+<span id="preprocessing-pipeline-add"></span><h2>Add preprocessing step<a class="headerlink" href="#add-preprocessing-step" title="Permalink to this headline">#</a></h2>
 <p>This option is to add a preprocessing step to the ”Preprocessing sequence generator”. Once this is selected, the user can select the option that they would like from the following list:</p>
 <figure class="align-default" id="fig-3-2-02-nm-preproc-add">
 <img alt="neurominer preprocessing options" src="_images/NM_preproc_add.png" />
@@ -730,7 +745,7 @@ title="Print to PDF"
 <figure class="align-default" id="fig-3-2-02-nm-preproc-pipe">
 <img alt="neurominer preprocessing pipeline" src="_images/NM_preproc_pipe.png" />
 </figure>
-<p>You can see that now there is a line stating CV-PREPROCESSING SEQUENCE containing ”Step 3: Dimensionality reduction”. The ”Preprocessing sequence generator” indicates that the step is selected for further operations as indicated 3/3 (one out of a total of three) steps and this selection is also highlighted by the arrow symbols (&gt;&gt;). If an option requires a suboption (e.g., <span class="xref myst">dimensionality reduction</span>) then the suboption will be listed underneath the parent option and this can be selected using the arrows as well.</p>
+<p>You can see that now there is a line stating CV-PREPROCESSING SEQUENCE containing ”Step 3: Dimensionality reduction”. The ”Preprocessing sequence generator” indicates that the step is selected for further operations as indicated 3/3 (one out of a total of three) steps and this selection is also highlighted by the arrow symbols (&gt;&gt;). If an option requires a suboption (e.g., <a class="reference internal" href="#preproc-dim-red"><span class="std std-ref">dimensionality reduction</span></a>) then the suboption will be listed underneath the parent option and this can be selected using the arrows as well.</p>
 <p>As such, you can now perform other operations within this menu, including removing the selected preprocessing step, inserting another preprocessing step at the same location, replacing the current preprocessing step with another one, or modifying the current preprocessing step. If you have added a spatial preprocessing step, then this will appear above this menu because it is conducted prior to the preprocessing sequence across the entire dataset.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -763,7 +778,10 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="regress-out-nuisance-covariates">
 <h2>Regress out nuisance covariates<a class="headerlink" href="#regress-out-nuisance-covariates" title="Permalink to this headline">#</a></h2>
-<p>If covariates have been entered alongside the <a class="reference internal" href="4.1_mainmenu_input_data.html#mainmenu-input-data"><span class="std std-ref">data</span></a>, you can apply covariate correction using this step. This option is designed to remove the variance associated with a nuisance variable (e.g., age, sex, study center) from the data within each CV fold. When chosen it will reveal the following options:</p>
+<p>If covariates have been entered alongside the <a class="reference internal" href="4.1_mainmenu_input_data.html#input-data"><span class="std std-ref">data</span></a>, you can apply covariate correction using this step. This option is designed to remove the variance associated with a nuisance variable (e.g., age, sex, study center) from the data within each CV fold. When chosen it will reveal the following options:</p>
+<figure class="align-default" id="fig-nm-preproc-residualization">
+<img alt="neurominer residualization Options" src="_images/NM_preproc_residualization.png" />
+</figure>
 <p><strong>1 | Select method</strong></p>
 <p>The first option gives you two possible methods to regress out the covariates: Partial Correlations and ComBat. Partial correlations method computes the coefficients that generate the chosen covariate effects in the data with a general linear model. In addition to the partial correlations method, ComBat also scales the variance estimators. It allows to separate the label (e.g., disease) effects and the covariate effects in the data to some degree. For more detailed information about the ComBat method please check <a class="reference external" href="https://academic.oup.com/biostatistics/article/8/1/118/252073">Johnson et al.,
 2007</a>. Currently, Combat can only be used to correct for batch effects (e.g. site, sex). It requires a numeric vector encoding batch effects to be modeled out. In contrast, partial correlations should be used with a dummy-coded matrix if the user wants to correct for batch effects using this method.</p>
@@ -793,10 +811,10 @@ changed during previous preprocessing steps.</p>
 2015</a> and <a class="reference external" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0022193">Dukart et al.,
 2016</a>). This function is useful when the user does not want to remove variance that may interact with the target of interest. For example, brain volume in schizophrenia interacts with age, therefore, the relationship between age and brain volume can be modeled in the control participants only and then these beta coefficients can be used in the schizophrenia sample to remove the effects of age without removing the effects of illness.</p>
 <p>When this option is selected, you will see that another option <strong>7 | Provide index to training cases for computing betas</strong> is added to the menu. Select it to define a logical vector consisting of TRUE and FALSE corresponding to the participants in the study; e.g., [0 0 0 0 1 1 1 1]. A FALSE value (i.e., a zero) indicates that they will not be used in the calculation of the betas. A TRUE value (i.e., a 1) indicates that they will be used in the calculation of the betas. Logical vectors can be created from normal double vectors by simply typing ”logical(yourvector)” on the command line (“0”s and “1”s will automatically treated as logical values as well).</p>
-</section>
 <hr class="docutils" />
+</section>
 <section id="apply-dimensionality-reduction-method-to-data">
-<h2>Apply dimensionality reduction method to data<a class="headerlink" href="#apply-dimensionality-reduction-method-to-data" title="Permalink to this headline">#</a></h2>
+<span id="preproc-dim-red"></span><h2>Apply dimensionality reduction method to data<a class="headerlink" href="#apply-dimensionality-reduction-method-to-data" title="Permalink to this headline">#</a></h2>
 <p>A common need in machine learning analysis is to reduce the dimensionality of the data within the cross-validation framework (e.g., with structural neuroimages containing about 50,000 voxels). NeuroMiner allows the user to do this using a number of different methods.
 When the option to reduce dimensionality is selected, the user will be shown the following menu:</p>
 <figure class="align-default" id="fig-3-2-02-nm-preproc-dimred">
@@ -1046,10 +1064,10 @@ specified.</p>
 </section>
 <section id="select-features-for-imputation">
 <h3>2 | Select features for imputation<a class="headerlink" href="#select-features-for-imputation" title="Permalink to this headline">#</a></h3>
-<p>The imputation procedures can be applied to the entire dataset or to subsets of the data. This is useful when there are different data domains (e.g., clinical and cognitive data) or even single questionnaires (e.g., the PANSS) that you want to restrict the imputation to. A MATLAB logical vector (i.e., consisting of TRUE and FALSE fields that are depicted as [0 0 0 1 1 0 0 etc.]; you can convert a binary vector to a logical simply by typing logical(yourvector) on the command line) must be provided to select a subset. If you want to impute multiple subsets then you must add separate imputation routines. Please note: If previous preprocessing operations change the dimensionality of the feature space (e.g. <a class="reference internal" href="#preproc-prune"><span class="std std-ref">pruning</span></a>) these changes are propagated to the user-provided logical feature indices used by the imputation module.</p>
+<p>The imputation procedures can be applied to the entire dataset or to subsets of the data. This is useful when there are different data domains (e.g., clinical and cognitive data) or even single questionnaires (e.g., the PANSS) that you want to restrict the imputation to. A MATLAB logical vector (i.e., consisting of TRUE and FALSE fields that are depicted as [0 0 0 1 1 0 0 etc.]; you can convert a binary vector to a logical simply by typing logical(yourvector) on the command line) must be provided to select a subset. If you want to impute multiple subsets then you must add separate imputation routines. Please note: If previous preprocessing operations change the dimensionality of the feature space (e.g. <a class="reference internal" href="#preproc-pruning"><span class="std std-ref">pruning</span></a>) these changes are propagated to the user-provided logical feature indices used by the imputation module.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If previous preprocessing operations change the dimensionality of the feature space (e.g. pruning, see 4.2.3.11) these changes are propagated to the user-provided logical feature indices used by the imputation module.</p>
+<p>If previous preprocessing operations change the dimensionality of the feature space (e.g. <a class="reference internal" href="#preproc-pruning"><span class="std std-ref">pruning</span></a>) these changes are propagated to the user-provided logical feature indices used by the imputation module.</p>
 </div>
 </section>
 <section id="define-number-of-nearest-neighbors">
@@ -1065,7 +1083,7 @@ the calculation of the median value. The default is 7.</p>
 </section>
 </section>
 <section id="prune-non-informative-columns-from-data-matrix">
-<span id="preproc-prune"></span><h2>Prune non-informative columns from data matrix<a class="headerlink" href="#prune-non-informative-columns-from-data-matrix" title="Permalink to this headline">#</a></h2>
+<span id="preproc-pruning"></span><h2>Prune non-informative columns from data matrix<a class="headerlink" href="#prune-non-informative-columns-from-data-matrix" title="Permalink to this headline">#</a></h2>
 <p>Data pruning is the removal of examples or features that will not work with machine learning algorithms or are redundant. In NeuroMiner, the machine learning algorithms that are used cannot work with missing values (i.e., ”Not a Number” (NaN) entries in MATLAB) or with infinite values (i.e., ”Inf” in MATLAB), which can occur due to previous processing steps. If the values of a feature do not change between participants (i.e., there is zero variance), then it is redundant to include the feature in the analysis as well. To correct for these problems, NeuroMiner offers the following options:</p>
 <figure class="align-default" id="fig-3-2-02-nm-preproc-prune">
 <img alt="neurominer preprocessing pruning" src="_images/NM_preproc_prune.png" />
@@ -1098,14 +1116,14 @@ the calculation of the median value. The default is 7.</p>
 <hr class="docutils" />
 </section>
 <section id="rank-weight-features">
-<span id="preproc-rank"></span><h2>Rank / Weight features<a class="headerlink" href="#rank-weight-features" title="Permalink to this headline">#</a></h2>
+<span id="preproc-rank-weight"></span><h2>Rank / Weight features<a class="headerlink" href="#rank-weight-features" title="Permalink to this headline">#</a></h2>
 <p>Selecting or ranking features is an important part of machine learning and can be achieved with filters and wrappers. For a discussion of why these methods are important and for all definitions see <a class="reference external" href="http://www.jmlr.org/papers/volume3/guyon03a/guyon03a.pdf">Guyon et
 al., 2003</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Wrappers and will further be discussed in <span class="xref myst">ensemble generation straqtegies</span>.</p>
+<p>Wrappers and will further be discussed in <a class="reference internal" href="4.2.05_paramtemp_ensemble_generation_strategies.html#ensemble-generation-strategies"><span class="std std-ref">ensemble generation straqtegies</span></a>.</p>
 </div>
-<p>Filter methods broadly involve the weighting and ranking of variables, and optionally the selection of top performing variables. This can be conducted either prior to the evaluation of the model during pre-processing or as part of model optimisation (discussed in section <span class="xref myst">ensemble generation straqtegies</span>). This option allows the user to weight variables in the training folds based on some criteria (e.g., Pearson’s correlation coefficient with the target variable) and then rank them in a specified order (e.g., descending order from most to least correlated). When this option is selected, the following will be displayed:</p>
+<p>Filter methods broadly involve the weighting and ranking of variables, and optionally the selection of top performing variables. This can be conducted either prior to the evaluation of the model during pre-processing or as part of model optimisation (discussed in section <a class="reference internal" href="4.2.05_paramtemp_ensemble_generation_strategies.html#ensemble-generation-strategies"><span class="std std-ref">ensemble generation straqtegies</span></a>). This option allows the user to weight variables in the training folds based on some criteria (e.g., Pearson’s correlation coefficient with the target variable) and then rank them in a specified order (e.g., descending order from most to least correlated). When this option is selected, the following will be displayed:</p>
 <figure class="align-default" id="fig-3-2-02-nm-preproc-rank">
 <img alt="neurominer preprocessing ranking" src="_images/NM_preproc_rank.png" />
 </figure>
@@ -1162,7 +1180,7 @@ Standard implementation of ANOVA.</p></li>
 Performs a Partial Least Squares analysis to rank the features.</p></li>
 <li><p>External ranking:
 This option uses a user-defined weighting template that was entered
-during [data input] (mainmenu_3.1_input_data), to use an external weighting map
+during [data input] (input_data), to use an external weighting map
 from a file, or to read-in a weighting vector using the MATLAB
 workspace.</p></li>
 </ol>
