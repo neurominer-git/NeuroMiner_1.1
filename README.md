@@ -8,13 +8,21 @@ The current release 1.1 of NeuroMiner has been tested in the [Section for Precis
 
 # Quick start
 
-To use NeuroMiner, download this repository and add the 'Code' directory to your Matlab path (including subdirectories). 
+To use NeuroMiner, download this repository and add the 'NeuroMiner1.1_code' directory to your Matlab path (including subdirectories). 
 For further information on installation and configuration see the [installation guide](https://neurominer-git.github.io/NeuroMiner_1.1/docs/1.2_gettingstarted.html). 
 
 ## NeuroMiner Manual
 To get a detailed overview of the functionalities and how to use it, see [NeuroMiner's GitHub Pages](https://neurominer-git.github.io/NeuroMiner_1.1/intro.html).  
 
 ## How to cite
+> Koutsouleris, Vetter & Wiegand (2022). Neurominer [Computer software]. Retrieved from 
+>        https://github.com/neurominer-git/NeuroMiner_1.1
+
+or 
+
+> NeuroMiner [Computer software] (2022). Retrieved from 
+>         https://github.com/neurominer-git/NeuroMiner_1.1
+
 
 ## License
 NeuroMiner is copyright, distributed under the GNU General Public License.
