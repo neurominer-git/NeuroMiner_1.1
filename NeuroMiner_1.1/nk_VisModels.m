@@ -257,9 +257,6 @@ for f=1:ix % Loop through CV2 permutations
                 if isfield(inp,'CV1') && inp.CV1 == 1, inp.smoothonly = true; end
                 
                 % find range of feature in current CV1 partition 
-                % Range = findRange(inp)
-                %for z=1:numel(Range)
-                
                 [ inp, contfl, analysis, mapY, GD, MD, Param, paramfl ] = nk_ApplyTrainedPreproc(analysis, inp, paramfl);
                 inp.loadGD = false;
                 
