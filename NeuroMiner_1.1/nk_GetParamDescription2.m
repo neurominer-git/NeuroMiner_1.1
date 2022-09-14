@@ -235,7 +235,7 @@ switch action
                                 if params.ACTPARAM{i}.SCALE.AcMatFl
                                     preprocact{i} = sprintf('%s across matrix', preprocact{i});
                                 else
-                                    preprocact{i} = sprintf('%s featurewise', preprocact{i});
+                                    preprocact{i} = sprintf('%s feature wise', preprocact{i});
                                 end
                             end
                             if isfield(params.ACTPARAM{i}.SCALE,'ZeroOne')
