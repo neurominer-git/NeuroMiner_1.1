@@ -1,4 +1,4 @@
-# Neurominer
+# NeuroMiner
 
 ```{figure} Images/nm_hero_right.png
 ---
