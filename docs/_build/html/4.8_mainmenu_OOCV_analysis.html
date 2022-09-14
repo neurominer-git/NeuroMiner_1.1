@@ -150,10 +150,22 @@ const thebe_selector_output = ".output, .cell_output"
    Suggested Prerequisites
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="3.0_gettingstarted.html">
    Installation &amp; Configuration
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.0.00_macos_users.html">
+     Setting up NeuroMiner on macOS
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -176,8 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="4.2_mainmenu_define_parameter_template.html">
    Define parameter template
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -726,7 +738,7 @@ title="Print to PDF"
 <figure class="align-default" id="fig-nm-oocv-mainmenu">
 <img alt="neurominer application mode main menu" src="_images/NM_oocv_mainmenu.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">NeuroMiner’s main menu in application mode</span><a class="headerlink" href="#fig-nm-oocv-mainmenu" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">NeuroMiner’s main menu in application mode</span><a class="headerlink" href="#fig-nm-oocv-mainmenu" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <hr class="docutils" />
@@ -787,7 +799,7 @@ be loaded into the matlab workspace (see <a class="reference internal" href="4.1
 <p class="admonition-title">Important</p>
 <p>The covariates table of the validation sample needs to contain the same covariates in the same order as for the discovery data. NeuroMiner will assume that this is the case and will <strong>not</strong> ask you to define the covariate names anymore.</p>
 </div>
-<p>Once you are finished with data entry, return to the main menu of the application mode (<a class="reference internal" href="#fig-nm-oocv-mainmenu"><span class="std std-numref">Fig. 27</span></a>).</p>
+<p>Once you are finished with data entry, return to the main menu of the application mode (<a class="reference internal" href="#fig-nm-oocv-mainmenu"><span class="std std-numref">Fig. 28</span></a>).</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -835,7 +847,7 @@ to ‘Use all available CV data (CV1+CV2)’.</p>
 <p class="admonition-title">Note</p>
 <p>The gold standard though would be to save the models and use the exact models calculated in the discovery cohort for the external validation cohort, which can be done during <a class="reference internal" href="4.6_mainmenu_visualize_classifiers.html#mainmenu-visualize-classifiers"><span class="std std-ref">Visualization</span></a> in NeuroMiner. The reason for this is that there can be minor changes to the models when they use non-deterministic procedures (e.g., gradient descent).</p>
 </div>
-<p>After setting up the parameters, you can return to the main menu of the application mode (<a class="reference internal" href="#fig-nm-oocv-mainmenu"><span class="std std-numref">Fig. 27</span></a>). Now the menu options include <strong>4 | Apply classifiers to independent data</strong>.</p>
+<p>After setting up the parameters, you can return to the main menu of the application mode (<a class="reference internal" href="#fig-nm-oocv-mainmenu"><span class="std std-numref">Fig. 28</span></a>). Now the menu options include <strong>4 | Apply classifiers to independent data</strong>.</p>
 </section>
 </section>
 <section id="apply-classifiers-to-independent-data">

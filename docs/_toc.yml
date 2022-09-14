@@ -11,6 +11,8 @@ parts:
           - file: license
       - file: 2.0_prerequisites
       - file: 3.0_gettingstarted
+        sections:
+          - file: 3.0.00_macos_users
   - caption: NeuroMiner interface
     chapters:
       - file: 4.0_mainmenu

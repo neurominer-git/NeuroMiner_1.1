@@ -150,10 +150,22 @@ const thebe_selector_output = ".output, .cell_output"
    Suggested Prerequisites
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="3.0_gettingstarted.html">
    Installation &amp; Configuration
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.0.00_macos_users.html">
+     Setting up NeuroMiner on macOS
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -176,8 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="4.2_mainmenu_define_parameter_template.html">
    Define parameter template
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -679,7 +691,7 @@ The data is simulated based on the original, ‘real’ data associated with the
 <figure class="align-default" id="fig-nm-simulation-post-setup">
 <img alt="NeuroMiner simulation post app" src="_images/NM_simulation_post_setup.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">NeuroMiner post-simulation setup window</span><a class="headerlink" href="#fig-nm-simulation-post-setup" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">NeuroMiner post-simulation setup window</span><a class="headerlink" href="#fig-nm-simulation-post-setup" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here, you can specify how the data should be simulated. You can change the following settings:</p>
@@ -703,7 +715,7 @@ The data is simulated based on the original, ‘real’ data associated with the
 <p class="admonition-title">Caution</p>
 <p>Currently, NeuroMiner does <em>not</em> preselect those covariates that are categorical but simply shows all of them. Therefore, the user has to make sure to <strong>only select a categorical variable</strong> here. This is a known issue and we hope to fix it in future releases.</p>
 </div>
-<p>If you make use of the group-specific simulation option, you will see that a row for each group will appear in the panel on the right (as in <a class="reference internal" href="#fig-nm-simulation-post-setup"><span class="std std-numref">Fig. 28</span></a>).</p>
+<p>If you make use of the group-specific simulation option, you will see that a row for each group will appear in the panel on the right (as in <a class="reference internal" href="#fig-nm-simulation-post-setup"><span class="std std-numref">Fig. 29</span></a>).</p>
 </section>
 <section id="amount-of-data-to-simulate">
 <h4>Amount of data to simulate<a class="headerlink" href="#amount-of-data-to-simulate" title="Permalink to this headline">#</a></h4>

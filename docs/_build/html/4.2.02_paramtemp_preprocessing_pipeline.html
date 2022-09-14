@@ -152,10 +152,22 @@ const thebe_selector_output = ".output, .cell_output"
    Suggested Prerequisites
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="3.0_gettingstarted.html">
    Installation &amp; Configuration
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.0.00_macos_users.html">
+     Setting up NeuroMiner on macOS
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -178,8 +190,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="4.2_mainmenu_define_parameter_template.html">
    Define parameter template
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -728,7 +740,7 @@ title="Print to PDF"
 <figure class="align-default" id="fig-3-2-02-nm-preproc-menu">
 <img alt="neurominer preprocessing pipeline menu" src="_images/NM_preproc_menu.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">NeuroMiner preprocessing pipeline setup</span><a class="headerlink" href="#fig-3-2-02-nm-preproc-menu" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">NeuroMiner preprocessing pipeline setup</span><a class="headerlink" href="#fig-3-2-02-nm-preproc-menu" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -754,7 +766,7 @@ title="Print to PDF"
 </section>
 <section id="enable-spatial-operations-using-spatial-op-wizard">
 <span id="spatial-op"></span><h2>Enable spatial operations using Spatial OP Wizard<a class="headerlink" href="#enable-spatial-operations-using-spatial-op-wizard" title="Permalink to this headline">#</a></h2>
-<p>If your active data modality is neuroimaging data, you should see the following option (see also <a class="reference internal" href="#fig-3-2-02-nm-preproc-menu"><span class="std std-numref">Fig. 9</span></a>):</p>
+<p>If your active data modality is neuroimaging data, you should see the following option (see also <a class="reference internal" href="#fig-3-2-02-nm-preproc-menu"><span class="std std-numref">Fig. 10</span></a>):</p>
 <p><strong>1 | Select spatial operation [ No filtering ]</strong></p>
 <p>After enabling this mode, you will see the following menu:</p>
 <figure class="align-default" id="fig-3-2-02-nm-preproc-filter-options">
@@ -1102,7 +1114,7 @@ the calculation of the median value. The default is 7.</p>
 </div></blockquote>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Be careful with pruning!</strong> Even if there is one subject with one NaN or Inf within the fold NeuroMiner will remove the feature. The amount of removed features will be difficult to quantify. For matrix data, check the NaNs and potentially filter them prior to the entry into NeuroMiner (see <a class="reference internal" href="4.1_mainmenu_input_data.html#fig-3-1-nm-feature-selector"><span class="std std-numref">Fig. 3</span></a>).</p>
+<p><strong>Be careful with pruning!</strong> Even if there is one subject with one NaN or Inf within the fold NeuroMiner will remove the feature. The amount of removed features will be difficult to quantify. For matrix data, check the NaNs and potentially filter them prior to the entry into NeuroMiner (see <a class="reference internal" href="4.1_mainmenu_input_data.html#fig-3-1-nm-feature-selector"><span class="std std-numref">Fig. 4</span></a>).</p>
 </div>
 <p><strong>4 | Prune features with single-value percentage over cutoff [ yes, 5 ]</strong></p>
 <blockquote>

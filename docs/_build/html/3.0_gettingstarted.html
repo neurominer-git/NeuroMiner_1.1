@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://neurominer-git.github.io/NeuroMiner_1.1/3.0_gettingstarted.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Main interface overview" href="4.0_mainmenu.html" />
+    <link rel="next" title="Setting up NeuroMiner on macOS" href="3.0.00_macos_users.html" />
     <link rel="prev" title="Suggested Prerequisites" href="2.0_prerequisites.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -150,10 +150,22 @@ const thebe_selector_output = ".output, .cell_output"
    Suggested Prerequisites
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Installation &amp; Configuration
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.0.00_macos_users.html">
+     Setting up NeuroMiner on macOS
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -176,8 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="4.2_mainmenu_define_parameter_template.html">
    Define parameter template
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -565,6 +577,25 @@ title="Print to PDF"
 </section>
 <section id="downloading-and-initializing-neurominer">
 <span id="start-initializing"></span><h2>Downloading and Initializing NeuroMiner<a class="headerlink" href="#downloading-and-initializing-neurominer" title="Permalink to this headline">#</a></h2>
+<p>You can download NeuroMiner from the <a class="reference external" href="https://github.com/neurominer-git/NeuroMiner_1.1">GitHub repository</a> by clicking on the green <strong>Code</strong> button on the right-hand side and then choosing the <strong>Download ZIP</strong> option (see <a class="reference internal" href="#fig-downloadzip-git"><span class="std std-numref">Fig. 1</span></a>).</p>
+<figure class="align-left" id="fig-downloadzip-git">
+<img alt="_images/DownloadZIP_Git.png" src="_images/DownloadZIP_Git.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Installation by downloading the NeuroMiner_1.1 ZIP-Folder from GitHub</span><a class="headerlink" href="#fig-downloadzip-git" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Alternatively, you can download NeuroMiner from the command line:</p>
+<ol>
+<li><p>Go to the directory on your disk where you want to save it by typing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PATH_TO_DIRECTORY_OF_CHOICE</span>
+</pre></div>
+</div>
+</li>
+<li><p>Then, to download the software, type</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">neurominer</span><span class="o">-</span><span class="n">git</span><span class="o">/</span><span class="n">NeuroMiner_1</span><span class="mf">.1</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
 <p>NeuroMiner works in two main modes: matrix and neuroimaging (i.e., NIFTI or FreeSurfer files). For neuroimaging using NIFTI data format, it is necessary to have a working copy of the <a class="reference external" href="http://www.fil.ion.ucl.ac.uk/spm/software/download/">Statistical Parametric Mapping (SPM) toolbox</a> installed. We
 also recommend downloading the <a class="reference external" href="https://www.nitrc.org/projects/wfu_pickatlas/">WFU Pickatlas toolbox</a> to take advantage of this selection tool when inputting data. For surface-based analyses, it
 is necessary to have a <a class="reference external" href="https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall">FreeSurfer</a> distribution installed.</p>
@@ -573,7 +604,7 @@ is necessary to have a <a class="reference external" href="https://surfer.nmr.mg
 <figure class="align-left" id="fig-1-1-initialization">
 <img alt="_images/initialisation_imaging-nonimaging.png" src="_images/initialisation_imaging-nonimaging.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Display screen of NeuroMiner in different modes. NeuroMiner will be loaded in non-imaging mode (upper) when the SPM or FreeSurfer directories are not provided during start-up (upper). If the directories have been provided, it will be started in standard imaging and matrix data mode (lower).</span><a class="headerlink" href="#fig-1-1-initialization" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Display screen of NeuroMiner in different modes. NeuroMiner will be loaded in non-imaging mode (upper) when the SPM or FreeSurfer directories are not provided during start-up (upper). If the directories have been provided, it will be started in standard imaging and matrix data mode (lower).</span><a class="headerlink" href="#fig-1-1-initialization" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition caution">
@@ -582,6 +613,8 @@ is necessary to have a <a class="reference external" href="https://surfer.nmr.mg
 <strong>ttest2</strong>. In these cases, NeuroMiner needs to be removed from the path in order to use the original function.</p>
 </div>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -618,10 +651,10 @@ is necessary to have a <a class="reference external" href="https://surfer.nmr.mg
             <p class="prev-next-title">Suggested Prerequisites</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="4.0_mainmenu.html" title="next page">
+    <a class='right-next' id="next-link" href="3.0.00_macos_users.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Main interface overview</p>
+        <p class="prev-next-title">Setting up NeuroMiner on macOS</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

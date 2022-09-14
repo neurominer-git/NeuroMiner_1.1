@@ -150,10 +150,22 @@ const thebe_selector_output = ".output, .cell_output"
    Suggested Prerequisites
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="3.0_gettingstarted.html">
    Installation &amp; Configuration
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.0.00_macos_users.html">
+     Setting up NeuroMiner on macOS
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -176,8 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="4.2_mainmenu_define_parameter_template.html">
    Define parameter template
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -728,7 +740,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ensemble-generation-strategies">
 <span id="id1"></span><h1>Ensemble generation strategies<a class="headerlink" href="#ensemble-generation-strategies" title="Permalink to this headline">#</a></h1>
-<p>NeuroMiner automatically works with ensemble learning at the CV2 level across the CV1 folds of a nested, repeated cross-validation design (see <a class="reference internal" href="4.2.01_paramtemp_cv_settings.html#fig-3-2-01-nested-cv"><span class="std std-numref">Fig. 8</span></a>), but it also includes the ability to apply filters and wrappers that optimize predictions by selecting features within these folds (for more information, see <a class="reference external" href="https://en.wikipedia.org/wiki/Ensemble_learning">wiki</a> and <span class="xref myst">Kolhavi &amp; John</span>.</p>
+<p>NeuroMiner automatically works with ensemble learning at the CV2 level across the CV1 folds of a nested, repeated cross-validation design (see <a class="reference internal" href="4.2.01_paramtemp_cv_settings.html#fig-3-2-01-nested-cv"><span class="std std-numref">Fig. 9</span></a>), but it also includes the ability to apply filters and wrappers that optimize predictions by selecting features within these folds (for more information, see <a class="reference external" href="https://en.wikipedia.org/wiki/Ensemble_learning">wiki</a> and <span class="xref myst">Kolhavi &amp; John</span>.</p>
 <section id="filter-based-ensemble-generalization">
 <h2>Filter-based ensemble generalization<a class="headerlink" href="#filter-based-ensemble-generalization" title="Permalink to this headline">#</a></h2>
 <p>NeuroMiner has two methods of applying filters:</p>
