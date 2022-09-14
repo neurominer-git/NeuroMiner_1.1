@@ -12,7 +12,7 @@ global CV NM xNM simFlag JSMEM %xNM for simulation
 JSMEM = [];
 
 na_str = '?';
-if ~exist('inp','var') || isempty(inp),
+if ~exist('inp','var') || isempty(inp)
     inp = struct('analind',1, ...
         'lfl',1, ...
         'preprocmat',[], ...
@@ -40,13 +40,13 @@ if ~exist('inp','var') || isempty(inp),
 end
 
 %% Configure menu
-if isfield(inp,'analind'),
-    if numel(inp.analind)<2,
+if isfield(inp,'analind')
+    if numel(inp.analind)<2
         AnalSelStr = sprintf('Analysis %g', inp.analind);
     else
         AnalSelStr = sprintf('%g Analyses: %s',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '));
     end
-else,
+else
     AnalSelStr = na_str;
 end
 
@@ -79,11 +79,11 @@ if ~exist('inp','var') || isempty(inp)
         if ~procflag, return; end
         analysis = rmfield(analysis,'GDdims');
         fprintf('\n');cprintf('*red','Training and CV results deleted!');
-        if isfield(analysis,'visdata'),
+        if isfield(analysis,'visdata')
             analysis = rmfield(analysis,'visdata');
             fprintf('\n');cprintf('*red','Visualization results deleted!');
         end
-        if isfield(analysis,'OOCV'),
+        if isfield(analysis,'OOCV')
             analysis = rmfield(analysis,'OOCV');
             fprintf('\n');cprintf('*red','Independent test data results deleted!');
         end
@@ -100,18 +100,12 @@ if ~isempty(analysis)
     inp.sfieldnames = {'','preprocmat','gdmat','gdanalmat'};
 
     if ~isfield(inp,'simFlag') || ~inp.simFlag
-        if isempty(CV)
-            nk_SetupGlobVars2(NM.analysis{inp.analind(1)}.params, 'setup_main', 0);
-        end
+        nk_SetupGlobVars2(NM.analysis{inp.analind(1)}.params, 'setup_main', 0);
         [ix, jx] = size(CV(1).TrainInd);
     else
-        if isempty(xNM.cv)
-            nk_SetupGlobVars2(xNM.analysis{inp.analind(1)}.params, 'setup_main', 0);
-        end
+        nk_SetupGlobVars2(xNM.analysis{inp.analind(1)}.params, 'setup_main', 0);
         [ix, jx] = size(xNM.cv(1).TrainInd);
-
     end
-
 
     if isempty(inp.preprocmat),   inp.preprocmat = cell(inp.nF,1); end
     if isempty(inp.gdanalmat),    inp.gdanalmat = cell(inp.nF,1); end
@@ -229,14 +223,14 @@ if ~isempty(analysis)
             return
         case 1
             if isfield(inp,'analind'), analind = inp.analind; end
-            brief = 1;t_act = 1; while t_act>0, [t_act, analind, ~, ~, brief] = nk_SelectAnalysis(NM, 0, 'MAIN INTERFACE >> TRAIN ML MODELS', analind, [], 0, 0, brief); end;
+            brief = 1;t_act = 1; while t_act>0, [t_act, analind, ~, ~, brief] = nk_SelectAnalysis(NM, 0, 'MAIN INTERFACE >> TRAIN ML MODELS', analind, [], 0, 0, brief); end
             if ~isempty(analind)
                 inp.analind             = analind;
                 inp.preprocmat          = cell(inp.nF,1);
                 inp.gdmat               = [];
                 inp.gdanalmat           = [];
                 inp = nk_GetAnalModalInfo_config(NM, inp);
-                [ ix, jx ] = size(CV(1).TrainInd);
+                [ ix, jx ] = size(NM.analysis{inp.analind}.params.cv.TrainInd);
                 inp.GridAct = false(ix,jx);
             end
         case 2

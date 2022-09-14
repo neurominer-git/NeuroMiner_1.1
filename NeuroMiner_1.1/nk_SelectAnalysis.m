@@ -26,7 +26,7 @@ function [act, analdim, dat, showmodalvec, brief, indanal] = nk_SelectAnalysis(d
 % dat               : (modified) NM structure
 % showmodalvec      : (modified) list of modality to show to user  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% (c) Nikolaos Koutsouleris, 07/2017
+% (c) Nikolaos Koutsouleris, 09/2022
 
 if ~exist('newflag','var')  || isempty(newflag),     newflag = false; end
 if ~exist('modflag','var')  || isempty(modflag),     modflag = false; end
@@ -128,14 +128,14 @@ if isfield(dat,'analysis')
                 fprintf('\n\tPrediction extraction for stacking from %s ', predstr{params.TrainParam.STACKING.mode});
             else
                 nF = numel(FUSION.M);
-                if nF>1,
+                if nF>1
                     strmod = sprintf('%g MODALITIES',nF);
                 else
                     strmod = 'MODALITY';
                 end
                 cprintf('*black', 'ANALYSIS OPERATES ON %s ', strmod); 
-                for j=1:nF, 
-                    if j > showmodalmax, fprintf(' ...'); break; end;
+                for j=1:nF
+                    if j > showmodalmax, fprintf(' ...'); break; end
                     cprintf('*black','#%g ', FUSION.M(j)); 
                 end
             end

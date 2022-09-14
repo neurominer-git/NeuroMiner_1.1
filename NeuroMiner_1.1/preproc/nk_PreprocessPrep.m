@@ -12,7 +12,7 @@ global PREPROC MODEFL CV DR SAV RAND USEPARAMEXIST FUSION TEMPL CALIB MULTI STAC
 clc
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%% SETUP PARAMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-if ~exist('p','var') || isempty(p), 
+if ~exist('p','var') || isempty(p)
     p = struct('saveproc',      true, ...
                 'ovrwrtfl',     2, ...
                 'writefl',      2, ...
@@ -68,7 +68,7 @@ switch act
         if ~isempty(tanaldim) 
             analdim = tanaldim;
             analysis = NM.analysis{analdim}; nk_SetupGlobVars2(analysis.params, 'setup_main', 0); 
-            [operms,ofolds] = size(CV.TrainInd);
+            [operms,ofolds] = size(NM.analysis{analdim}.params.cv.TrainInd);
             if (~exist('GridAct','var') || isempty(GridAct)) || ~isequal(size(GridAct), [operms ofolds]), 
                 GridAct = false(operms,ofolds);
             end
