@@ -38,12 +38,23 @@ OverWriteAct = []; GridSelectAct = []; LoadModelsAct = []; LoadParamsAct = []; L
 %% Configure menu
 if numel(NM.analysis)>1
     if numel(inp.analind)<2
+        AnalSelStr = sprintf('Analysis %g', inp.analind);   
+    else
+        AnalSelStr = sprintf('%g Analyses: %s',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '));
+    end
+    AnalSelectStr = sprintf('Choose analysis to work on [ %s ]|', AnalSelStr);                                             AnalSelectAct = 1;         
+else
+    AnalSelectStr = ''; AnalSelectAct = [];
+end
+
+if numel(NM.analysis)>1
+    if numel(inp.analind)<2
         AnalSelStr = sprintf('Analysis %g', inp.analind);
     else
         if ~inp.HideGridAct, cvequalstr = 'identical CV structures'; else, cvequalstr = 'different CV structures'; end
         AnalSelStr = sprintf('%g Analyses: %s [ %s ]',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '), cvequalstr);
     end 
-    AnalSelectStr = sprintf('Choose analysis to work on [ %s ]|', AnalSelStr);  AnalSelectAct = 1;
+    AnalSelectStr = sprintf('Choose analysis to work on [ %s ]|', AnalSelStr);        
 else
     AnalSelectStr = ''; AnalSelectAct = [];
 end
@@ -78,12 +89,9 @@ if ~isempty(analysis)
     end
     
     % Retrieve CV2 partitions to operate on
-    if ~isfield(inp,'GridAct'), inp.GridAct = analysis.GDdims{1}.GridAct; end
-    if ~inp.HideGridAct
-        GridSelectStr = sprintf('Select CV2 partitions to operate on [ %g selected ]|',  sum(inp.GridAct(:)));                  GridSelectAct = 4;
-    else
-        GridSelectStr =''; GridSelectAct=[];
-    end
+    if ~isfield(inp,'GridAct'), inp.GridAct = analysis.GDdims{1}.GridAct; end;                                              
+    GridSelectStr = sprintf('Select CV2 partitions to operate on [ %g selected ]|',  sum(inp.GridAct(:)));                  GridSelectAct = 4;
+
     % Configure extra label dialogue
     if inp.permfl
         if ~isempty(inp.extraL)

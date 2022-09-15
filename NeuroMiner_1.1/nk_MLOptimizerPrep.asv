@@ -45,11 +45,10 @@ if isfield(inp,'analind')
     if numel(inp.analind)<2
         AnalSelStr = sprintf('Analysis %g', inp.analind);
     else
-        if ~inp.HideGridAct, cvequalstr = 'identical CV structures'; else, cvequalstr = 'different CV structures'; end
-        AnalSelStr = sprintf('%g Analyses: %s [ %s ]',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '), cvequalstr);
+        AnalSelStr = sprintf('%g Analyses: %s',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '));
     end
 else
-    AnalSelStr = 'none selected';
+    AnalSelStr = na_str;
 end
 
 if ~isfield(inp,'simFlag') || ~inp.simFlag
@@ -188,7 +187,7 @@ if ~isempty(analysis)
     disallow = false;
 
     %% Check whether all parameters are available
-    if (~sum(inp.GridAct(:)) && ~inp.HideGridAct) || isempty(inp.analind), disallow = true; end
+    if (~sum(inp.GridAct(:)) && ||  isempty(inp.analind)), disallow = true; end
     if inp.lfl>1, if ~isfield(inp, inp.sfieldnames{inp.lfl}) || isempty(inp.(inp.sfieldnames{inp.lfl})), disallow = true; end; end
 
     if ~disallow, menustr = [menustr 'PROCEED >>>']; menuact = [menuact 6]; end
@@ -236,16 +235,14 @@ if ~isempty(analysis)
                 inp.gdanalmat           = [];
                 nA = numel(inp.analind);
                 if nA>1
-                    AS = nk_GetAnalysisStatus(NM, inp.analind);
+                    AS = nk_GetAnalysisStatus(NM);
                     if ~AS.betweenequal_cv
                         inp.HideGridAct = true; 
                     else
                         [ ix, jx ] = size(NM.analysis{inp.analind(1)}.params.cv.TrainInd);
                         inp.GridAct = false(ix,jx);
-                        inp.HideGridAct = false;
                     end
                 else
-                    inp.HideGridAct = false;
                     inp = nk_GetAnalModalInfo_config(NM, inp);
                     [ ix, jx ] = size(NM.analysis{inp.analind}.params.cv.TrainInd);
                     inp.GridAct = false(ix,jx);

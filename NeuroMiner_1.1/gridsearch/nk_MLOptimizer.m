@@ -59,7 +59,7 @@ detrendfl = false;
 
 switch MODEFL
     case 'classification'
-        if RAND.Decompose == 9, binmode = 0; else binmode = 1; end    
+        if RAND.Decompose == 9, binmode = 0; else, binmode = 1; end    
         ngroups = numel(unique(label(~isnan(label))));
          GDanalysis.predictions = cell(lx,nclass,nl);
         if ix>1
