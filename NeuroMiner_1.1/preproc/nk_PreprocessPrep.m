@@ -119,12 +119,15 @@ switch act
             fprintf('**  PREPROCESSING OPTIMIZATION  **\n')
             fprintf('**********************************\n')
             fprintf('\nWorking on analysis #%g: %s', analdim(i), analysis.id);
+
+            nk_SetupGlobVars2(analysis.params, 'setup_main', 0); 
             if p.HideGridAct
                 [ operms, ofolds] = size(NM.analysis{analdim(i)}.params.cv.TrainInd);
+                GridAct = true(operms,ofolds);
+            else
+                [operms,ofolds] = size(CV.TrainInd);
             end
-            GridAct = true(operms,ofolds);
-        
-            nk_SetupGlobVars2(analysis.params, 'setup_main', 0); 
+
             NM.runtime.curanal = analdim(i);
             tdir = pwd; if isfield(analysis,'rootdir') && exist(analysis.rootdir,'dir'), tdir = analysis.rootdir; end
             % Define modality-independent parameters of current analysis as global variables
