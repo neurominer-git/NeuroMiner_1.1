@@ -106,7 +106,11 @@ if isfield(NM,'analysis')
             Status.analyses_interpreted(i) = true;
         end
     end
-    Status.betweenequal_cv = isequaln(cvs{:});   
+    if numel(cvs)>1
+        Status.betweenequal_cv = isequaln(cvs{:});   
+    else
+        Status.betweenequal_cv = 1;
+    end
 end
 
 if ~isempty(Status.completed_analyses)    
