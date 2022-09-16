@@ -81,6 +81,14 @@ end
 nan_in_label=false;         if sum(isnan(NM.label(:)))>0, nan_in_label=true; end
 nY = numel(NM.Y);
 
+
+if ~isfield(NM.TrainParam,'MLI')
+    NM.TrainParam.MLI=[];
+    for i=1:nY
+        NM.TrainParam.MLI = nk_MLI_config(NM.TrainParam.MLI, i, 1);
+    end
+end
+
 %% Create further default configurations
 if ~isfield(NM.TrainParam,'PREPROC')
     % Create PREPROC structure
@@ -88,12 +96,6 @@ if ~isfield(NM.TrainParam,'PREPROC')
         nan_in_pred = false;        if sum(isnan(NM.Y{i}(:)))>0, nan_in_pred=true; end
         NM.TrainParam.PREPROC{i}    = DefPREPROC(NM.modeflag,nan_in_pred,nan_in_label);
         NM.TrainParam.VIS{i}        = nk_Vis_config([], NM.TrainParam.PREPROC, i, 1);
-        if isfield(NM.TrainParam,'MLI')
-            MLI = NM.TrainParam.MLI;
-        else
-            MLI = [];
-        end
-        NM.TrainParam.MLI           = nk_MLI_config(MLI, i, 1);
     end
 else
     switch NM.TrainParam.FUSION.flag
