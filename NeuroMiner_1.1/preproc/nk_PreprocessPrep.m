@@ -6,7 +6,7 @@ function [act, analdim, p, GridAct, mapY, strout] = nk_PreprocessPrep( act, anal
 % This function allows the interactive and batch use of the preprocessing
 % module of NM.
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% (c) Nikolaos Koutsouleris 12/2021
+% (c) Nikolaos Koutsouleris 09/2022
 
 global PREPROC MODEFL CV DR SAV RAND USEPARAMEXIST FUSION TEMPL CALIB MULTI STACKING NM OCTAVE JSMEM
 clc
@@ -29,7 +29,7 @@ if ~isempty(analdim)
     if numel(analdim)<2
         AnalSelStr = sprintf('Analysis %g', analdim);
     else
-        if ~p.HideGridAct, cvequalstr = 'identical CV structures'; else, cvequalstr = 'different CV structures'; end
+        if ~p.HideGridAct, cvequalstr = 'same-size CV structures'; else, cvequalstr = 'different CV structures'; end
         AnalSelStr = sprintf('%g Analyses: %s [ %s ]',numel(analdim), strjoin(cellstr(num2str(analdim'))',', '), cvequalstr);
     end
 else
@@ -84,7 +84,7 @@ switch act
             nA = numel(analdim);
             if nA>1
                 AS = nk_GetAnalysisStatus(NM, analdim);
-                if ~AS.betweenequal_cv
+                if ~AS.betweenfoldpermequal_cv
                     p.HideGridAct = true; 
                 else
                     [ operms, ofolds ] = size(NM.analysis{analdim(1)}.params.cv.TrainInd);

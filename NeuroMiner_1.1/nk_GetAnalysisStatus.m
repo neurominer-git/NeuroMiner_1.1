@@ -3,6 +3,7 @@ function Status = nk_GetAnalysisStatus(NM, analdim)
 Status.completed_analyses       = [];  
 Status.isequal_cv               = []; 
 Status.betweenequal_cv          = []; 
+Status.betweenfoldpermequal_cv  = [];
 Status.nmodal_analyses          = [];
 Status.analexistflag            = false; 
 Status.analreadyflag            = false; 
@@ -107,9 +108,17 @@ if isfield(NM,'analysis')
         end
     end
     if numel(cvs)>1
-        Status.betweenequal_cv = isequaln(cvs{:});   
+        Status.betweenequal_cv = isequaln(cvs{:});
+        a_folds = zeros(1,n_anal); a_perms = zeros(1,n_anal); 
+        for i_anal = 1:n_anal, [a_perms(i_anal), a_folds(i_anal)] = size(cvs{i_anal}.TrainInd); end
+        if numel(unique(a_perms)) == 1 && numel(unique(a_folds)) == 1
+            Status.betweenfoldpermequal_cv = 1;
+        else
+            Status.betweenfoldpermequal_cv = 0;
+        end
     else
         Status.betweenequal_cv = 1;
+        Status.betweenfoldpermequal_cv = 1;
     end
 end
 

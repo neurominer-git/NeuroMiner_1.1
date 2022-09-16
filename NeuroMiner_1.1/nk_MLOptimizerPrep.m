@@ -5,7 +5,7 @@ function [act, inp, NMo] = nk_MLOptimizerPrep(act, inp, parentstr)
 % This function allows the interactive and batch use of the ML training and
 % cross-validation module of NM
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% (c) Nikolaos Koutsouleris 10/2018
+% (c) Nikolaos Koutsouleris 09/2022
 
 global CV NM xNM simFlag JSMEM %xNM for simulation 
 
@@ -36,7 +36,6 @@ if ~exist('inp','var') || isempty(inp)
         [ ix, jx ] = size(CV(1).TrainInd);
         simFlag = 0; 
     end
-    
     inp.GridAct = false(ix,jx);
 end
 
@@ -45,7 +44,7 @@ if isfield(inp,'analind')
     if numel(inp.analind)<2
         AnalSelStr = sprintf('Analysis %g', inp.analind);
     else
-        if ~inp.HideGridAct, cvequalstr = 'identical CV structures'; else, cvequalstr = 'different CV structures'; end
+        if ~inp.HideGridAct, cvequalstr = 'same-size CV structures'; else, cvequalstr = 'different CV structures'; end
         AnalSelStr = sprintf('%g Analyses: %s [ %s ]',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '), cvequalstr);
     end
 else
@@ -237,7 +236,7 @@ if ~isempty(analysis)
                 nA = numel(inp.analind);
                 if nA>1
                     AS = nk_GetAnalysisStatus(NM, inp.analind);
-                    if ~AS.betweenequal_cv
+                    if ~AS.betweenfoldpermequal_cv
                         inp.HideGridAct = true; 
                     else
                         [ ix, jx ] = size(NM.analysis{inp.analind(1)}.params.cv.TrainInd);

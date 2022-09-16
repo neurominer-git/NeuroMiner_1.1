@@ -42,7 +42,7 @@ if numel(NM.analysis)>1
     if numel(inp.analind)<2
         AnalSelStr = sprintf('Analysis %g', inp.analind);
     else
-        if ~inp.HideGridAct, cvequalstr = 'identical CV structures'; else, cvequalstr = 'different CV structures'; end
+        if ~inp.HideGridAct, cvequalstr = 'same-size CV structures'; else, cvequalstr = 'different CV structures'; end
         AnalSelStr = sprintf('%g Analyses: %s [ %s ]',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '), cvequalstr);
     end 
     AnalSelectStr = sprintf('Choose analysis to work on [ %s ]|', AnalSelStr);                                              AnalSelectAct = 1;
@@ -176,7 +176,7 @@ switch act
             nA = numel(inp.analind);
             if nA>1
                 AS = nk_GetAnalysisStatus(NM, inp.analind);
-                if ~AS.betweenequal_cv
+                if ~AS.betweenfoldpermequal_cv
                     inp.HideGridAct = true; 
                 else
                     inp.GridAct = NM.analysis{inp.analind(1)}.GDdims{1}.GridAct;
