@@ -116,7 +116,7 @@ if ~isempty(mess)
     for i=1:numel(mess)
         if isempty(mess(i).text), continue; end
         fprintf('\n');mess(i).text = regexprep(mess(i).text,'\','/');
-        cprintf(mess(i).format,mess(i).text); 
+        fprintf(mess(i).text); 
     end
     fprintf('\n')
     mess = [];
@@ -128,15 +128,15 @@ act = char(nk_input(mestr,0,'mq', mn_str, mn_act));
 
 switch act
     case 1
-        if STACKING.flag == 1,  
+        if STACKING.flag == 1
             STACKING.flag = 2;
-        elseif STACKING.flag == 2,
+        elseif STACKING.flag == 2
             STACKING.flag = 1;
         end
         
     case 2
         fprintf('\n')
-        cprintf('black*','Select analyses')
+        fprintf('Select analyses')
         fprintf('\n=================')
         for i=1:numel(f_ind)
             if isfield(NM.analysis{f_ind(i)},'id')
@@ -144,7 +144,7 @@ switch act
             else
                 idstr = '';
             end
-            fprintf('\n'); cprintf('black*','[ Analysis %g ] ID: %s', f_ind(i), idstr);  
+            fprintf('\n'); fprintf('[ Analysis %g ] ID: %s', f_ind(i), idstr);  
         end
         STACKING.sel_anal = nk_input('Select analyses to provide input features to stacker',0,'i',sel_anal);
     case 3

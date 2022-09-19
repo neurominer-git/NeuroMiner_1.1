@@ -383,7 +383,7 @@ for i = 1:inp1.nF
 	        load(Resultsfile)
         else
 	        if MULTILABEL.flag && MULTILABEL.dim>1
-		        fprintf('\n\n');cprintf('*black','====== Working on label #%g ====== ',j);
+		        fprintf('\n\n');fprintf('====== Working on label #%g ====== ',j);
 		        inp.curlabel = j;
 	        else
 		        inp.curlabel = 1;

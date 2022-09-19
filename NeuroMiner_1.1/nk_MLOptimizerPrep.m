@@ -71,22 +71,22 @@ end
 if ~exist('inp','var') || isempty(inp)
     if isfield(analysis,'GDdims')
         fprintf('\n')
-        cprintf('*red','******************************************************* \n')
-        cprintf('*red','ATTENTION: \n')
-        cprintf('*red','Previous analysis detected \n')
-        cprintf('*red','If you proceed this analysis will be deleted. \n')
-        cprintf('*red','******************************************************* \n')
+        fprintf('******************************************************* \n')
+        fprintf('ATTENTION: \n')
+        fprintf('Previous analysis detected \n')
+        fprintf('If you proceed this analysis will be deleted. \n')
+        fprintf('******************************************************* \n')
         procflag = nk_input('Proceed anyway',0,'yes|no',[1,0], 2);
         if ~procflag, return; end
         analysis = rmfield(analysis,'GDdims');
-        fprintf('\n');cprintf('*red','Training and CV results deleted!');
+        fprintf('\n');fprintf('Training and CV results deleted!');
         if isfield(analysis,'visdata')
             analysis = rmfield(analysis,'visdata');
-            fprintf('\n');cprintf('*red','Visualization results deleted!');
+            fprintf('\n');fprintf('Visualization results deleted!');
         end
         if isfield(analysis,'OOCV')
             analysis = rmfield(analysis,'OOCV');
-            fprintf('\n');cprintf('*red','Independent test data results deleted!');
+            fprintf('\n');fprintf('Independent test data results deleted!');
         end
         analysis.status = 0;
     end

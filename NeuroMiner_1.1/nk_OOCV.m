@@ -158,7 +158,7 @@ for f=1:ix % Loop through CV2 permutations
                         load(oOOCVpath)
                         loadfl = true;
                     catch
-                        cprintf('red','\nCould not open file. May be corrupt. Recompute CV2 partition [%g,%g].',f,d);
+                        fprintf('\nCould not open file. May be corrupt. Recompute CV2 partition [%g,%g].',f,d);
                         loadfl = false;
                     end
                     

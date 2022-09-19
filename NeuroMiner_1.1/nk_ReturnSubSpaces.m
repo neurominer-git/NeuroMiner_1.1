@@ -95,7 +95,7 @@ for sl=1:Vm.dim(3)
                         error('\nFile problem: %s,',V{j}(i).fname)
                     end
                     if any(isnan(d))
-                        cprintf('red','\nNan in image %s', V{j}(i).fname);
+                        fprintf('\nNan in image %s', V{j}(i).fname);
                     end
                     y(i,:) = d(ind0);
                 end
