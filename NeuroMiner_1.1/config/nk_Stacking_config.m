@@ -25,10 +25,10 @@ f_ind           = find(source_anal & isequalcv_anal);
 % Use Stacking?
 if isfield(STACKING,'flag'),            stk_flag = STACKING.flag; else, STACKING.flag = stk_flag; end
 % Lower-level prediction layer already defined?
-if isfield(STACKING,'source_anal'),     
+if isfield(STACKING,'source_anal')
     source_anal = STACKING.source_anal;
     if numel(source_anal)~= numel(isequalcv_anal), source_anal = NMS.completed_analyses; STACKING.source_anal = source_anal; end
-else, 
+else
     STACKING.source_anal = source_anal; 
 end
 % Input analyses already selected?
@@ -48,9 +48,9 @@ switch featname_mode
         end
          
     case 2
-        if isfield(STACKING,'featname_edit'),   
+        if isfield(STACKING,'featname_edit')  
             featname_edit = STACKING.featname_edit; 
-        else, 
+        else
             STACKING.featname_edit = na_str; 
             STACKING.featnames = {[]};
         end
@@ -84,7 +84,7 @@ if stk_flag == 1
         nF_str ='';
         mn_str = [ mn_str sprintf('|Extraction of feature names for the stacker [ %s ]', featnamemodestr{featname_mode}) ]; mn_act = [ mn_act 3 ];
         if featname_mode == 2
-            if ~strcmp(featname_edit,na_str),
+            if ~strcmp(featname_edit,na_str)
                 try 
                     featnames = evalin('base',featname_edit);
                     if ~iscell(featnames)
