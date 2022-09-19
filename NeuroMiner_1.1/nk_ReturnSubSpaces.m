@@ -51,7 +51,7 @@ if iscell(V)
 else
     indV=1;
 end
-if ~indV, error('\nNo images found to read in!'); end
+if ~indV, fprintf('\n'); error('No images found to read in!'); end
 
 % work in Z direction through the image space
 for sl=1:Vm.dim(3)
