@@ -85,7 +85,7 @@ if isfield(dat,'analysis')
 %                 analdim = analsel;
 %                 return
 %             else
-                analdim = analsel;
+                analdim = indanal(analsel);
                 return
 %            end
         else
