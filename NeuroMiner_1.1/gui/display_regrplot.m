@@ -207,5 +207,5 @@ handles.curRegr = regr;
 if binarizeflag
     % Binarize at median
     m = nm_nanmedian(label); set(handles.txtBinarize,'String',m);
-    binarize_regr(handles, label, pred);
+    binarize_regr(handles);
 end
