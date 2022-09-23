@@ -253,10 +253,10 @@ if GDfl == -1
             for qx = 1:numel(Ix)
                 if isfield(PREPROC.ACTPARAM{Ix(qx)}.RANK,'EXTERN')
                     inp.Yw = nk_PerfSpatFilt2( PREPROC.ACTPARAM{Ix(qx)}.RANK.EXTERN, PREPROC, inp.P.X ); 
-                    %here, we assume that there is only one
-                    %weighting map to be smoothed alongside the
-                    %data. This will obviously not work for
-                    %multiple weighting maps...
+                    % here, we assume that there is only one
+                    % weighting map to be smoothed alongside the
+                    % data. This will obviously not work for
+                    % multiple weighting maps...
                     break
                 end
             end
