@@ -13,6 +13,7 @@ parts:
       - file: 3.0_gettingstarted
         sections:
           - file: 3.0.00_macos_users
+          - file: 3.0.01_python_matlab
   - caption: NeuroMiner interface
     chapters:
       - file: 4.0_mainmenu
