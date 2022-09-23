@@ -14,12 +14,13 @@ if ~exist('act','var'), act = []; end
 menustr = []; menuact = []; 
 
 %% Select variate to work on
-if ~exist('varind','var') || isempty(varind), 
+if ~exist('varind','var') || isempty(varind)
     varind = 1; 
     if isfield(NM,'TrainParam') && ...
             isfield(NM.TrainParam,'FUSION') && isfield(NM.TrainParam.FUSION,'M')
         varind = NM.TrainParam.FUSION.M(1);
     end
+    NM.TrainParam.ActiveModality = varind;
 end
 
 %% Check whether TrainParams already exist
@@ -76,6 +77,7 @@ if NM.TrainParam.STACKING.flag == 1
     if isfield(NM.TrainParam.PREPROC{varind},'SPATIAL')
         NM.TrainParam.PREPROC{varind} = rmfield(NM.TrainParam.PREPROC{varind},'SPATIAL');
     end
+    NM.TrainParam.ActiveModality = varind;
 end
 
 nan_in_label=false;         if sum(isnan(NM.label(:)))>0, nan_in_label=true; end
@@ -344,6 +346,7 @@ switch act
             NM.TrainParam.FUSION.M = nk_SelectVariateIndex(NM, 1, 1, 1 );
             varind = NM.TrainParam.FUSION.M;
         end
+        NM.TrainParam.ActiveModality = varind;
         
     case 2
         if isfield(NM.TrainParam,'FUSION') && NM.TrainParam.FUSION.flag ;
@@ -352,6 +355,7 @@ switch act
             M = [];
         end
         varind = nk_SelectVariateIndex(NM, 1, 1, 1, M);
+        NM.TrainParam.ActiveModality = varind;
     
     case 3
         act = 1; while act>0, act = nk_CVpartition_config; end

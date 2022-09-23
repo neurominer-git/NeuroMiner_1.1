@@ -16,6 +16,7 @@ if ~isempty(act) || ~defaultsfl
     
     RFE = TrainParam.RFE;
     RFE.dispres = 1;
+    [~,RFE.PreML] = nk_GenPreML(TrainParam.PREPROC{TrainParam.ActiveModality});
     nk_PrintLogo
     
     immretstr = ''; menuvec = 1:3;

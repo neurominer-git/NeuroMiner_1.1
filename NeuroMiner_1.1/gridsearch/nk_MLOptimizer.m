@@ -241,7 +241,27 @@ if GDfl == -1
     label = nk_LabelTransform(PREPROC,MODEFL,label);
     % Filter the data (imaging only)
     Y = nk_PerfSpatFilt2( inp.Y, PREPROC, inp.P.X );
-    if isfield(inp,'Yw'),  inp.Yw = nk_PerfSpatFilt2( inp.Yw, PREPROC, inp.P.X ); end
+    if isfield(inp,'Yw')
+        % Check for weighting masks which have been read-in during data
+        % import
+        inp.Yw = nk_PerfSpatFilt2( inp.Yw, PREPROC, inp.P.X ); 
+    else
+        % Check for ranking modules which uses external weighting masks
+        I = arrayfun( @(j) isfield(PREPROC.ACTPARAM{j},'RANK'), 1:numel( PREPROC.ACTPARAM ));
+        if any(I)
+            Ix = find(I);
+            for qx = 1:numel(Ix)
+                if isfield(PREPROC.ACTPARAM{Ix(qx)}.RANK,'EXTERN')
+                    inp.Yw = nk_PerfSpatFilt2( PREPROC.ACTPARAM{Ix(qx)}.RANK.EXTERN, PREPROC, inp.P.X ); 
+                    %here, we assume that there is only one
+                    %weighting map to be smoothed alongside the
+                    %data. This will obviously not work for
+                    %multiple weighting maps...
+                    break
+                end
+            end
+        end
+    end
     % Create template parameters and data
     TEMPL = nk_CreatePreprocTemplate(inp.Y, label);
 end
