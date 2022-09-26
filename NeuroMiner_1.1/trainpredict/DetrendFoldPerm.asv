@@ -17,9 +17,8 @@ if OUT.detrend.flag
     PermNum = numel(PermVec);
     FoldNum = numel(FoldVec);
     ClassNum = numel(ClassVec);
-    thresh = zeros(PermNum * FoldNum, ClassNum); 
-    aucs=thresh;
-    beta = zeros(PermNum * FoldNum, 2); p=beta;
+    thresh = zeros(PermNum * FoldNum,ClassNum); aucs=thresh;
+    beta = thresh; p=thresh;
     ll=1;
     for ii=1:PermNum % Loop through CV1 permutations
 
