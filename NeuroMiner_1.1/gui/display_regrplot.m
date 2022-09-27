@@ -29,6 +29,7 @@ if ~oocvflag
     ind     = handles.Regr.index_predictions;
     regr    = handles.Regr;
     label   = handles.Regr.labels;
+    subjects = handles.subjects;
     regrplotcl = 'b';
     cla
     hold on
@@ -37,6 +38,7 @@ else
     hold on
     regrplotstr = '_oocv';
     lgsufstr = 'OOCV';
+    subjects = handles.OOCV(oocvind).data.tbl.rownames;
     pred    = handles.OOCV(oocvind).data.RegrResults{handles.curlabel}.MeanCV2PredictedValues;
     errbar  = handles.OOCV(oocvind).data.RegrResults{handles.curlabel}.StdCV2PredictedValues;
     errbarCI1  = handles.OOCV(oocvind).data.RegrResults{handles.curlabel}.CICV2PredictedValues(:,1);
@@ -86,7 +88,7 @@ pss = cell(1,numel(findnan)); psslen=0;
 for i=1:numel(findnan)
       pss{i} = sprintf(['Subject ID [%g]: %s' ...
             '\nObserved Target: %g' ...
-            '\nPredicted Target: %g\n'], i, handles.subjects{findnan(i)}, label(i), pred(i));
+            '\nPredicted Target: %g\n'], i, subjects{findnan(i)}, label(i), pred(i));
      if size(pss{i},2)> psslen, psslen=size(pss{i},2); pssi = i; end
 end
 try

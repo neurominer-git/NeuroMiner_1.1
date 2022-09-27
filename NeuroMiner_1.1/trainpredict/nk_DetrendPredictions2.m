@@ -11,7 +11,7 @@ function [Ycorr, beta, p, X] = nk_DetrendPredictions2(beta, p, Y, X)
 % Ycorr = adjusted Y
 % =========================================================================
 % (c) Nikolaos Koutsouleris, 09/2022
-if exist('X','var') && ~isempty(X)
+if isempty(beta) || isempty(p)
     
     E = Y - X; 
     % Compute mapping from prediction to its original label
@@ -34,7 +34,7 @@ if exist('X','var') && ~isempty(X)
 else
     % if original label does not exist, compute it using linear regression
     % (polynomial coefficient p and predicted label are entered into equation)
-    X = (Y - p(2)) / p(1); 
+    if ~exist("X","var") || isempty(X); X = (Y - p(2)) / p(1); end
     E = Y - X;
     IN.beta = beta;
     IN.TsCovars = X;
