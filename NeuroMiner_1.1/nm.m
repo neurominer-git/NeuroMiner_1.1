@@ -402,8 +402,6 @@ try
                 % use information from your sample TO DO
                 %simulationRes = simulate_sampleSize(NM);
             else
-                
-                
                 simulationRes = simSample_App2(NM);
                 %simulationRes = simulate_sampleSize();
             end

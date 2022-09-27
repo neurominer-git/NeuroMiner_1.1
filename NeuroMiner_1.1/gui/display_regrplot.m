@@ -89,7 +89,11 @@ for i=1:numel(findnan)
             '\nPredicted Target: %g\n'], i, handles.subjects{findnan(i)}, label(i), pred(i));
      if size(pss{i},2)> psslen, psslen=size(pss{i},2); pssi = i; end
 end
+try
 hText = uicontrol('Style','text','String', pss{pssi},'FontSize',11, 'Units','normalized', 'Parent', gcf,'Visible','off'); 
+catch
+    disp(pssi)
+end
 figdata.x = lxL;
 figdata.y = pred;
 figdata.patterntext = pss;
