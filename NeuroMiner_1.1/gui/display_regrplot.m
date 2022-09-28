@@ -122,12 +122,12 @@ switch GraphType
         lgstr{1} = ['$\mathbf{Median^{' lgsufstr '} \pm 95\%CI}$'];
         % Mean predictions with [95%] confidence interval
         L = pred - errbarCI1; U = errbarCI2 - pred;
-        handles.(['he' regplotstr]) = errorbar(lxL(ind),pred(ind), L(ind), U(ind),'ko','LineWidth',0.5,'MarkerSize',9);
+        handles.(['he' regrplotstr]) = errorbar(lxL(ind),pred(ind), L(ind), U(ind),'ko','LineWidth',0.5,'MarkerSize',9);
     
     case 3
         lgstr{1} = ['$\mathbf{Median^{' lgsufstr '} \pm SD}$'];
         % Mean predictions with standard deviation
-        handles.(['he' regplotstr]) = errorbar(lxL(ind),pred(ind),errbar(ind),'ko','LineWidth',0.5,'MarkerSize',9);
+        handles.(['he' regrplotstr]) = errorbar(lxL(ind),pred(ind),errbar(ind),'ko','LineWidth',0.5,'MarkerSize',9);
 end
 
 handles.(['regrplot' regrplotstr]) = scatter(lxL(ind),pred(ind),'Marker','o','MarkerFaceColor',regrplotcl,'MarkerEdgeColor',rgb('LightBlue'),'MarkerFaceAlpha', alphax, 'MarkerEdgeAlpha',0.2,'SizeData',80);
