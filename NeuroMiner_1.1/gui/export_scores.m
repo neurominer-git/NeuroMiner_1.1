@@ -35,15 +35,15 @@ filename = sprintf('%s%s%s_Predictions', handles.params.TrainParam.SAV.matname, 
 
 for i=1:handles.nclass
     sheetname = sprintf('%s%g',sheetstr,i);
-    switch handles.modeflag
-        case 'classification'
-            if ~handles.oocvview
+    if handles.oocvview
+        TBL = handles.OOCV(handles.oocvind).data.tbl(i);
+    else
+        switch handles.modeflag
+            case 'classification'
                 TBL = handles.BinClass{i}.tbl;
-            else
-                TBL = handles.OOCV(handles.oocvind).data.tbl(i);
-            end
-        case 'regression'
-            TBL = handles.Regr.tbl;
+            otherwise
+                TBL = handles.Regr.tbl;
+        end
     end
     [ERR, STATUS, fil, typ] = tbl2file(TBL, filename, sheetname);
     if ~isempty(ERR), break, end
