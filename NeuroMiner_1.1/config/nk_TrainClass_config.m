@@ -15,12 +15,11 @@ menustr = []; menuact = [];
 
 %% Select variate to work on
 if ~exist('varind','var') || isempty(varind)
-    varind = 1; 
-    if isfield(NM,'TrainParam') && ...
-            isfield(NM.TrainParam,'FUSION') && isfield(NM.TrainParam.FUSION,'M')
+    if isfield(NM,'TrainParam')
         varind = NM.TrainParam.FUSION.M(1);
+    else
+        varind = 1;
     end
-    NM.TrainParam.ActiveModality = varind;
 end
 
 %% Check whether TrainParams already exist
@@ -53,8 +52,7 @@ end
 % structures from one NM workspace to the other and in cases where a data
 % fusion was implemented in on NM workspace but was not possible in another
 % workspace NM crashed.
-if isfield(NM,'TrainParam') && ...
-            isfield(NM.TrainParam,'FUSION') && isfield(NM.TrainParam.FUSION,'M')
+if isfield(NM.TrainParam,'FUSION') && isfield(NM.TrainParam.FUSION,'M')
     nM1 = numel(NM.Y);
     nM2 = numel(NM.TrainParam.FUSION.M);
     if nM1 < nM2 || nM1 < max(NM.TrainParam.FUSION.M) 
@@ -62,6 +60,7 @@ if isfield(NM,'TrainParam') && ...
         NM.TrainParam.FUSION.flag = 0;
     end
 end
+NM.TrainParam.ActiveModality = varind;
 
 % for compatibility reasons
 if ~isfield(NM.TrainParam,'STACKING') || ~NM.TrainParam.STACKING.flag
