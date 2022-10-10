@@ -8,9 +8,9 @@ end
 
 switch handles.modeflag
     case 'classification'
-        sheetstr = 'Classifier'; 
+        sheetstr = 'Class'; 
     case 'regression'
-        sheetstr = 'Regressor';  
+        sheetstr = 'Regr';  
 end
 
 % Do we print the results of the bagged classifier?
@@ -34,7 +34,12 @@ end
 filename = sprintf('%s%s%s_Predictions', handles.params.TrainParam.SAV.matname, prefstr, typestr);
 
 for i=1:handles.nclass
-    sheetname = sprintf('%s%g',sheetstr,i);
+    switch handles.modeflag
+        case 'classification'
+            sheetname = sprintf('%s%g%s',sheetstr,i,strjoin(handles.BinClass{i}.groupnames,'_vs_'));
+        case 'regression'
+            sheetname = sheetstr;
+    end
     if handles.oocvview
         TBL = handles.OOCV(handles.oocvind).data.tbl(i);
     else
