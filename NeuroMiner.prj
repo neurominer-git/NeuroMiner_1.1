@@ -1,0 +1,370 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="3809957242" file="/Users/claravetter/Documents/Documents_Clara_MacBookAir/LMU/NM_2022/NeuroMiner_1.1/NeuroMiner.prj" location="/Users/claravetter/Documents/Documents_Clara_MacBookAir/LMU/NM_2022/NeuroMiner_1.1" name="NeuroMiner" preferred-package-location="/Users/claravetter/Documents/Documents_Clara_MacBookAir/LMU/NM_2022/NeuroMiner_1.1/NeuroMiner/for_redistribution" preferred-package-type="package.type.app" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>NeuroMiner</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.0</param.version>
+    <param.authnamewatermark>Nikolaos Koutsouleris</param.authnamewatermark>
+    <param.email />
+    <param.company />
+    <param.summary />
+    <param.description />
+    <param.screenshot>${PROJECT_ROOT}/docs/Images/nm_hero_right.png</param.screenshot>
+    <param.guid />
+    <param.installpath.string>/NeuroMiner/</param.installpath.string>
+    <param.installpath.combo>option.installpath.systemwideapp</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes>In the following directions, replace MR/v912 by the directory on the target machine where MATLAB is installed, or MR by the directory where the MATLAB Runtime is installed.
+
+If the environment variable DYLD_LIBRARY_PATH is undefined, set it to the following string:
+
+MR/v912/runtime/maci64:MR/v912/sys/os/maci64:MR/v912/bin/maci64
+
+If it is defined, set it to the following:
+
+${DYLD_LIBRARY_PATH}:MR/v912/runtime/maci64:MR/v912/sys/os/maci64:MR/v912/bin/maci64</param.target.install.notes>
+    <param.intermediate>${PROJECT_ROOT}/NeuroMiner/for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}/NeuroMiner/for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}/NeuroMiner/for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}/NeuroMiner</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>false</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text>Syntax 
+	 NeuroMinerMCCMain -? 
+	 NeuroMinerMCCMain action paramfile 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 action paramfile  input arguments</param.help.text>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.version />
+      <param.email />
+      <param.company />
+      <param.summary />
+      <param.description />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.logdir />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}/NeuroMiner_1.1/NeuroMinerMCCMain.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}/NeuroMiner_1.1</file>
+      <file>/Users/claravetter/Documents/Documents_Clara_MacBookAir/LMU/NM_2022/spm_functions</file>
+    </fileset.resources>
+    <fileset.package />
+    <fileset.depfun>
+      <file>${MATLAB_ROOT}/toolbox/local/userpath.m</file>
+      <file>${MATLAB_ROOT}/toolbox/matlab/demos/mri.mat</file>
+      <file>/Applications/spm12/@file_array/Contents.m</file>
+      <file>/Applications/spm12/@file_array/cat.m</file>
+      <file>/Applications/spm12/@file_array/ctranspose.m</file>
+      <file>/Applications/spm12/@file_array/disp.m</file>
+      <file>/Applications/spm12/@file_array/display.m</file>
+      <file>/Applications/spm12/@file_array/double.m</file>
+      <file>/Applications/spm12/@file_array/end.m</file>
+      <file>/Applications/spm12/@file_array/fieldnames.m</file>
+      <file>/Applications/spm12/@file_array/file_array.m</file>
+      <file>/Applications/spm12/@file_array/full.m</file>
+      <file>/Applications/spm12/@file_array/horzcat.m</file>
+      <file>/Applications/spm12/@file_array/initialise.m</file>
+      <file>/Applications/spm12/@file_array/isnan.m</file>
+      <file>/Applications/spm12/@file_array/length.m</file>
+      <file>/Applications/spm12/@file_array/loadobj.m</file>
+      <file>/Applications/spm12/@file_array/ndims.m</file>
+      <file>/Applications/spm12/@file_array/numel.m</file>
+      <file>/Applications/spm12/@file_array/numeric.m</file>
+      <file>/Applications/spm12/@file_array/permute.m</file>
+      <file>/Applications/spm12/@file_array/private/datatypes.m</file>
+      <file>/Applications/spm12/@file_array/private/dim.m</file>
+      <file>/Applications/spm12/@file_array/private/dtype.m</file>
+      <file>/Applications/spm12/@file_array/private/file2mat.m</file>
+      <file>/Applications/spm12/@file_array/private/file2mat.mexmaci64</file>
+      <file>/Applications/spm12/@file_array/private/fname.m</file>
+      <file>/Applications/spm12/@file_array/private/init.m</file>
+      <file>/Applications/spm12/@file_array/private/init.mexmaci64</file>
+      <file>/Applications/spm12/@file_array/private/mat2file.m</file>
+      <file>/Applications/spm12/@file_array/private/mat2file.mexmaci64</file>
+      <file>/Applications/spm12/@file_array/private/mystruct.m</file>
+      <file>/Applications/spm12/@file_array/private/offset.m</file>
+      <file>/Applications/spm12/@file_array/private/permission.m</file>
+      <file>/Applications/spm12/@file_array/private/resize_scales.m</file>
+      <file>/Applications/spm12/@file_array/private/scl_inter.m</file>
+      <file>/Applications/spm12/@file_array/private/scl_slope.m</file>
+      <file>/Applications/spm12/@file_array/reshape.m</file>
+      <file>/Applications/spm12/@file_array/size.m</file>
+      <file>/Applications/spm12/@file_array/subsasgn.m</file>
+      <file>/Applications/spm12/@file_array/subsref.m</file>
+      <file>/Applications/spm12/@file_array/transpose.m</file>
+      <file>/Applications/spm12/@file_array/vertcat.m</file>
+      <file>/Applications/spm12/@gifti/Contents.m</file>
+      <file>/Applications/spm12/@gifti/display.m</file>
+      <file>/Applications/spm12/@gifti/export.m</file>
+      <file>/Applications/spm12/@gifti/fieldnames.m</file>
+      <file>/Applications/spm12/@gifti/gifti.m</file>
+      <file>/Applications/spm12/@gifti/isfield.m</file>
+      <file>/Applications/spm12/@gifti/plot.m</file>
+      <file>/Applications/spm12/@gifti/private/base64decode.m</file>
+      <file>/Applications/spm12/@gifti/private/base64encode.m</file>
+      <file>/Applications/spm12/@gifti/private/getdict.m</file>
+      <file>/Applications/spm12/@gifti/private/isintent.m</file>
+      <file>/Applications/spm12/@gifti/private/mvtk_read.m</file>
+      <file>/Applications/spm12/@gifti/private/mvtk_write.m</file>
+      <file>/Applications/spm12/@gifti/private/mz3_read.m</file>
+      <file>/Applications/spm12/@gifti/private/mz3_write.m</file>
+      <file>/Applications/spm12/@gifti/private/obj_read.m</file>
+      <file>/Applications/spm12/@gifti/private/off_read.m</file>
+      <file>/Applications/spm12/@gifti/private/ply_read.m</file>
+      <file>/Applications/spm12/@gifti/private/read_freesurfer_file.m</file>
+      <file>/Applications/spm12/@gifti/private/read_gifti_file.m</file>
+      <file>/Applications/spm12/@gifti/private/stl_read.m</file>
+      <file>/Applications/spm12/@gifti/private/zstream.m</file>
+      <file>/Applications/spm12/@gifti/private/zstream.mexmaci64</file>
+      <file>/Applications/spm12/@gifti/save.m</file>
+      <file>/Applications/spm12/@gifti/saveas.m</file>
+      <file>/Applications/spm12/@gifti/struct.m</file>
+      <file>/Applications/spm12/@gifti/subsasgn.m</file>
+      <file>/Applications/spm12/@gifti/subsref.m</file>
+      <file>/Applications/spm12/@meeg/Contents.m</file>
+      <file>/Applications/spm12/@meeg/badchannels.m</file>
+      <file>/Applications/spm12/@meeg/badsamples.m</file>
+      <file>/Applications/spm12/@meeg/badtrials.m</file>
+      <file>/Applications/spm12/@meeg/blank.m</file>
+      <file>/Applications/spm12/@meeg/chanlabels.m</file>
+      <file>/Applications/spm12/@meeg/chantype.m</file>
+      <file>/Applications/spm12/@meeg/check.m</file>
+      <file>/Applications/spm12/@meeg/clone.m</file>
+      <file>/Applications/spm12/@meeg/conditions.m</file>
+      <file>/Applications/spm12/@meeg/condlist.m</file>
+      <file>/Applications/spm12/@meeg/coor2D.m</file>
+      <file>/Applications/spm12/@meeg/copy.m</file>
+      <file>/Applications/spm12/@meeg/delete.m</file>
+      <file>/Applications/spm12/@meeg/display.m</file>
+      <file>/Applications/spm12/@meeg/events.m</file>
+      <file>/Applications/spm12/@meeg/fiducials.m</file>
+      <file>/Applications/spm12/@meeg/fieldnames.m</file>
+      <file>/Applications/spm12/@meeg/fname.m</file>
+      <file>/Applications/spm12/@meeg/fnamedat.m</file>
+      <file>/Applications/spm12/@meeg/frequencies.m</file>
+      <file>/Applications/spm12/@meeg/fsample.m</file>
+      <file>/Applications/spm12/@meeg/ftraw.m</file>
+      <file>/Applications/spm12/@meeg/fttimelock.m</file>
+      <file>/Applications/spm12/@meeg/fullfile.m</file>
+      <file>/Applications/spm12/@meeg/getfield.m</file>
+      <file>/Applications/spm12/@meeg/history.m</file>
+      <file>/Applications/spm12/@meeg/indchannel.m</file>
+      <file>/Applications/spm12/@meeg/indchantype.m</file>
+      <file>/Applications/spm12/@meeg/indfrequency.m</file>
+      <file>/Applications/spm12/@meeg/indsample.m</file>
+      <file>/Applications/spm12/@meeg/indtrial.m</file>
+      <file>/Applications/spm12/@meeg/isempty.m</file>
+      <file>/Applications/spm12/@meeg/isequal.m</file>
+      <file>/Applications/spm12/@meeg/isfield.m</file>
+      <file>/Applications/spm12/@meeg/islinked.m</file>
+      <file>/Applications/spm12/@meeg/link.m</file>
+      <file>/Applications/spm12/@meeg/meeg.m</file>
+      <file>/Applications/spm12/@meeg/modality.m</file>
+      <file>/Applications/spm12/@meeg/montage.m</file>
+      <file>/Applications/spm12/@meeg/move.m</file>
+      <file>/Applications/spm12/@meeg/nchannels.m</file>
+      <file>/Applications/spm12/@meeg/nconditions.m</file>
+      <file>/Applications/spm12/@meeg/nfrequencies.m</file>
+      <file>/Applications/spm12/@meeg/nsamples.m</file>
+      <file>/Applications/spm12/@meeg/ntrials.m</file>
+      <file>/Applications/spm12/@meeg/path.m</file>
+      <file>/Applications/spm12/@meeg/private/checkmeeg.m</file>
+      <file>/Applications/spm12/@meeg/private/fixpnt.m</file>
+      <file>/Applications/spm12/@meeg/private/getset.m</file>
+      <file>/Applications/spm12/@meeg/private/match_str.m</file>
+      <file>/Applications/spm12/@meeg/private/warning_flexible.m</file>
+      <file>/Applications/spm12/@meeg/reload.m</file>
+      <file>/Applications/spm12/@meeg/repl.m</file>
+      <file>/Applications/spm12/@meeg/rmdata.m</file>
+      <file>/Applications/spm12/@meeg/rmfield.m</file>
+      <file>/Applications/spm12/@meeg/save.m</file>
+      <file>/Applications/spm12/@meeg/sconfounds.m</file>
+      <file>/Applications/spm12/@meeg/selectchannels.m</file>
+      <file>/Applications/spm12/@meeg/selectdata.m</file>
+      <file>/Applications/spm12/@meeg/sensors.m</file>
+      <file>/Applications/spm12/@meeg/size.m</file>
+      <file>/Applications/spm12/@meeg/subsasgn.m</file>
+      <file>/Applications/spm12/@meeg/subsref.m</file>
+      <file>/Applications/spm12/@meeg/time.m</file>
+      <file>/Applications/spm12/@meeg/timeonset.m</file>
+      <file>/Applications/spm12/@meeg/transformtype.m</file>
+      <file>/Applications/spm12/@meeg/trialonset.m</file>
+      <file>/Applications/spm12/@meeg/trialtag.m</file>
+      <file>/Applications/spm12/@meeg/type.m</file>
+      <file>/Applications/spm12/@meeg/units.m</file>
+      <file>/Applications/spm12/@meeg/unlink.m</file>
+      <file>/Applications/spm12/@nifti/Contents.m</file>
+      <file>/Applications/spm12/@nifti/cifti.m</file>
+      <file>/Applications/spm12/@nifti/create.m</file>
+      <file>/Applications/spm12/@nifti/disp.m</file>
+      <file>/Applications/spm12/@nifti/display.m</file>
+      <file>/Applications/spm12/@nifti/fieldnames.m</file>
+      <file>/Applications/spm12/@nifti/nifti.m</file>
+      <file>/Applications/spm12/@nifti/private/M2Q.m</file>
+      <file>/Applications/spm12/@nifti/private/Q2M.m</file>
+      <file>/Applications/spm12/@nifti/private/decode_qform0.m</file>
+      <file>/Applications/spm12/@nifti/private/empty_hdr.m</file>
+      <file>/Applications/spm12/@nifti/private/encode_qform0.m</file>
+      <file>/Applications/spm12/@nifti/private/findindict.m</file>
+      <file>/Applications/spm12/@nifti/private/getdict.m</file>
+      <file>/Applications/spm12/@nifti/private/mayo2nifti1.m</file>
+      <file>/Applications/spm12/@nifti/private/mayostruc.m</file>
+      <file>/Applications/spm12/@nifti/private/nifti1struc.m</file>
+      <file>/Applications/spm12/@nifti/private/nifti2struc.m</file>
+      <file>/Applications/spm12/@nifti/private/nifti_stats.m</file>
+      <file>/Applications/spm12/@nifti/private/niftistruc.m</file>
+      <file>/Applications/spm12/@nifti/private/read_extras.m</file>
+      <file>/Applications/spm12/@nifti/private/read_hdr.m</file>
+      <file>/Applications/spm12/@nifti/private/read_hdr_raw.m</file>
+      <file>/Applications/spm12/@nifti/private/write_extras.m</file>
+      <file>/Applications/spm12/@nifti/private/write_hdr_raw.m</file>
+      <file>/Applications/spm12/@nifti/structn.m</file>
+      <file>/Applications/spm12/@nifti/subsasgn.m</file>
+      <file>/Applications/spm12/@nifti/subsref.m</file>
+      <file>/Applications/spm12/@slover/add_blobs.m</file>
+      <file>/Applications/spm12/@slover/add_matrix.m</file>
+      <file>/Applications/spm12/@slover/add_spm.m</file>
+      <file>/Applications/spm12/@slover/display.m</file>
+      <file>/Applications/spm12/@slover/fill_defaults.m</file>
+      <file>/Applications/spm12/@slover/get_pos.m</file>
+      <file>/Applications/spm12/@slover/paint.m</file>
+      <file>/Applications/spm12/@slover/point_vals.m</file>
+      <file>/Applications/spm12/@slover/print_fig.m</file>
+      <file>/Applications/spm12/@slover/private/mars_struct.m</file>
+      <file>/Applications/spm12/@slover/private/pr_basic_ui.m</file>
+      <file>/Applications/spm12/@slover/private/pr_blobs2vol.m</file>
+      <file>/Applications/spm12/@slover/private/pr_get_spm_results.m</file>
+      <file>/Applications/spm12/@slover/private/pr_getcmap.m</file>
+      <file>/Applications/spm12/@slover/private/pr_matrix2vol.m</file>
+      <file>/Applications/spm12/@slover/private/pr_scaletocmap.m</file>
+      <file>/Applications/spm12/@slover/private/pr_volmaxmin.m</file>
+      <file>/Applications/spm12/@slover/slover.m</file>
+      <file>/Applications/spm12/@slover/subsasgn.m</file>
+      <file>/Applications/spm12/@slover/subsref.m</file>
+      <file>/Applications/spm12/@xmltree/Contents.m</file>
+      <file>/Applications/spm12/@xmltree/add.m</file>
+      <file>/Applications/spm12/@xmltree/attributes.m</file>
+      <file>/Applications/spm12/@xmltree/branch.m</file>
+      <file>/Applications/spm12/@xmltree/char.m</file>
+      <file>/Applications/spm12/@xmltree/children.m</file>
+      <file>/Applications/spm12/@xmltree/convert.m</file>
+      <file>/Applications/spm12/@xmltree/copy.m</file>
+      <file>/Applications/spm12/@xmltree/delete.m</file>
+      <file>/Applications/spm12/@xmltree/display.m</file>
+      <file>/Applications/spm12/@xmltree/editor.m</file>
+      <file>/Applications/spm12/@xmltree/find.m</file>
+      <file>/Applications/spm12/@xmltree/flush.m</file>
+      <file>/Applications/spm12/@xmltree/get.m</file>
+      <file>/Applications/spm12/@xmltree/getfilename.m</file>
+      <file>/Applications/spm12/@xmltree/isfield.m</file>
+      <file>/Applications/spm12/@xmltree/length.m</file>
+      <file>/Applications/spm12/@xmltree/move.m</file>
+      <file>/Applications/spm12/@xmltree/parent.m</file>
+      <file>/Applications/spm12/@xmltree/private/xml_findstr.m</file>
+      <file>/Applications/spm12/@xmltree/private/xml_findstr.mexmaci64</file>
+      <file>/Applications/spm12/@xmltree/private/xml_parser.m</file>
+      <file>/Applications/spm12/@xmltree/root.m</file>
+      <file>/Applications/spm12/@xmltree/save.m</file>
+      <file>/Applications/spm12/@xmltree/set.m</file>
+      <file>/Applications/spm12/@xmltree/setfilename.m</file>
+      <file>/Applications/spm12/@xmltree/view.m</file>
+      <file>/Applications/spm12/@xmltree/xmltree.m</file>
+      <file>/Applications/spm12/spm.m</file>
+      <file>/Applications/spm12/spm_Menu.fig</file>
+      <file>/Applications/spm12/spm_Menu.m</file>
+      <file>/Applications/spm12/spm_dcm_display.m</file>
+      <file>/Applications/spm12/spm_dcm_evidence.m</file>
+      <file>/Applications/spm12/spm_dcm_fmri_graph_gen.m</file>
+      <file>/Applications/spm12/spm_dcm_fmri_image.m</file>
+      <file>/Applications/spm12/spm_dcm_fmri_mode_gen.m</file>
+      <file>/Applications/spm12/spm_dcm_fmri_priors.m</file>
+      <file>/Applications/spm12/spm_dcm_graph.m</file>
+      <file>/Applications/spm12/spm_dcm_mtf.m</file>
+      <file>/Applications/spm12/spm_dcm_post_hoc.m</file>
+      <file>/Applications/spm12/spm_dicom_dict.mat</file>
+      <file>/Applications/spm12/spm_dilate_erode.mexmaci64</file>
+      <file>/Applications/spm12/spm_eeg_displayECD.m</file>
+      <file>/Applications/spm12/spm_eeg_inv_vbecd_disp.m</file>
+      <file>/Applications/spm12/spm_eeg_load.m</file>
+      <file>/Applications/spm12/spm_eeg_locate_channels.m</file>
+      <file>/Applications/spm12/spm_eeg_modality_ui.m</file>
+      <file>/Applications/spm12/spm_eeg_render.m</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}/NeuroMiner/for_testing" name="NeuroMiner.app" optional="false">/Users/claravetter/Documents/Documents_Clara_MacBookAir/LMU/NM_2022/NeuroMiner_1.1/NeuroMiner/for_testing/NeuroMiner.app</file>
+      <file location="${PROJECT_ROOT}/NeuroMiner/for_testing" name="run_NeuroMiner.sh" optional="false">/Users/claravetter/Documents/Documents_Clara_MacBookAir/LMU/NM_2022/NeuroMiner_1.1/NeuroMiner/for_testing/run_NeuroMiner.sh</file>
+      <file location="${PROJECT_ROOT}/NeuroMiner/for_testing" name="splash.png" optional="false">/Users/claravetter/Documents/Documents_Clara_MacBookAir/LMU/NM_2022/NeuroMiner_1.1/NeuroMiner/for_testing/splash.png</file>
+      <file location="${PROJECT_ROOT}/NeuroMiner/for_testing" name="readme.txt" optional="true">/Users/claravetter/Documents/Documents_Clara_MacBookAir/LMU/NM_2022/NeuroMiner_1.1/NeuroMiner/for_testing/readme.txt</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/Applications/MATLAB_R2022a.app</root>
+      <toolboxes>
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>true</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>12.6</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>maci64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

@@ -318,6 +318,7 @@ if ~isempty(analysis)
             for i=1:nA
                 nk_SetupGlobVars2(tNM.analysis{inp.analind(i)}.params, 'setup_main', 0);
                 tNM.runtime.curanal = inp.analind(i);
+                NM.runtime.curanal = inp.analind(i);
                 if nA>1
                     inp = nk_GetAnalModalInfo_config(tNM, inp); 
                     if inp.HideGridAct
