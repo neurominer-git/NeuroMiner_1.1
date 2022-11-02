@@ -363,6 +363,7 @@ switch act
                                 SVM.GLMNET.family = 'gaussian';
                         end
                 end
+                SVM = nk_Kernel_config(SVM);
 
             case 'ROBSVM'
                 if ~isfield(SVM,SVM.prog), SVM.(SVM.prog) = []; end

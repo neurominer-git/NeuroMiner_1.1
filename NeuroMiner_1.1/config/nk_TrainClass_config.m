@@ -455,7 +455,11 @@ switch act
     % ML INTEPRETATION STRATEGIES =======================================================================================================================================   
     case 11
         if isfield(NM.TrainParam,'FUSION') && NM.TrainParam.FUSION.flag == 3
-            if ~isfield(NM.TrainParam,'MLI'), NM.TrainParam.STRAT{varind}.MLI = nk_MLI_config(NM.TrainParam.STRAT{varind}.MLI, 1, 1, navistr); end
+            try
+                if ~isfield(NM.TrainParam.STRAT{varind},'MLI'), NM.TrainParam.STRAT{varind}.MLI = nk_MLI_config(NM.TrainParam.MLI, 1, 1, navistr); end
+            catch 
+                if ~isfield(NM.TrainParam.STRAT{varind},'MLI'), NM.TrainParam.STRAT{varind}.MLI = nk_MLI_config([], 1, 1, navistr); end
+            end
             act = 1; while act>0, [ NM.TrainParam.STRAT{varind}.MLI, act] = nk_MLI_config(NM.TrainParam.STRAT{varind}.MLI, 1, [], navistr); end
         else
             if ~isfield(NM.TrainParam,'MLI'), NM.TrainParam.MLI = nk_MLI_config([], varind, 1, navistr); end
