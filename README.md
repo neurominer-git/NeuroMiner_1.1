@@ -1,6 +1,6 @@
 # NeuroMiner 1.1 Beorn
 
-NeuroMiner has been continuously developed by [Nikolaos Koutsouleris](https://www.imprs-tp.mpg.de/person/43420/2484) since 2009 to provide clinical researchers with cutting-edge machine learning methods for the analysis of heterogeneous data, such as clinical and neurocognitive read-outs, structural and functional neuroimaging data, and genetic information. 
+NeuroMiner has been continuously developed since 2009 to provide clinical researchers with cutting-edge machine learning methods for the analysis of heterogeneous data, such as clinical and neurocognitive read-outs, structural and functional neuroimaging data, and genetic information. 
 
 The program is an interface to a large variety of unsupervised and supervised pattern recognition algorithms that have been developed in  the machine learning field over the last decades. Furthermore, the application implements different strategies for preprocessing, filtering and fusion of heterogeneous data, training ensembles of predictors, and for the visualization and testing of the significance of the computed predictive patterns. 
 
