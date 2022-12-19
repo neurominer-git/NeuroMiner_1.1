@@ -281,7 +281,7 @@ if ~exist('act','var') || isempty(act)
 
     flx = flSVM && flGRD && flPREPROC;
 
-    menustr = [ menustr 'Use alternative label [ ' STATUS.LABEL ' ]|']; menuact = [menuact 99] ;
+    %menustr = [ menustr 'Use alternative label [ ' STATUS.LABEL ' ]|']; menuact = [menuact 99] ;
     menustr = [ menustr 'Preprocessing pipeline [ ' STATUS.PREPROC ' ]|' classtr ]; menuact = [ menuact 5:6 ];
 
     if flx
