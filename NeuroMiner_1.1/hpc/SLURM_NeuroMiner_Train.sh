@@ -1,26 +1,37 @@
 #!/bin/bash 
-
+  
 echo
-echo '*************************************'
-echo '***        NeuroMiner 1.1         ***'
-echo '***     SGE joblist manager:      ***'
-echo '***     Preprocess features       ***'
-echo '***  (c) 2022 N. Koutsouleris     ***'
-echo '*************************************'
-echo '          VERSION 1.1 Beorn	       '
-echo '*************************************'
-echo  
+echo '****************************************'
+echo '***        NeuroMiner 1.1            ***'
+echo '***     SGE joblist manager:         ***'
+echo '***  Train and crossvalidate models  ***'
+echo '***    (c) 2022 N. Koutsouleris      ***'
+echo '****************************************'
+echo '          VERSION 1.1 Beorn	          '
+echo '****************************************'
+echo   
 
 # compiled with matlab R2022a so MCR main is v912. Needs to change if different MCR is used.
 export LD_LIBRARY_PATH=/net/PE1/raid1/apps/MATLAB/R2022a/runtime/glnxa64:/net/PE1/raid1/apps/MATLAB/R2022a/bin/glnxa64:/net/PE1/raid1/apps/MATLAB/R2022a/sys/os/glnxa64:/net/PE1/raid1/apps/MATLAB/R2022a/sys/opengl/lib/glnxa64
 
 export JOB_DIR=$PWD
 export NEUROMINER=/ndl/NM/NeuroMinerMCCMain_1.1_v912/for_testing
-export ACTION=preproc
+export ACTION=train
 read -e -p 'Path to NM structure: ' datpath
 if [ ! -f $datpath ]; then
  	echo $datpath' not found.'
  	exit 
+fi
+
+export masterpath=''  
+read -p 'Define processing mode [ 1 = from scratch, 2 = using PreprocData Master file ] ' procmode
+if [ "$procmode" = '2' ] ; then	
+	read -e -p 'Path to PreprocData Master file: ' masterpath
+	if [ ! -f $masterpath ]; then
+		echo $masterpath' not found.' exit
+	fi
+else
+	masterpath=NaN
 fi
 
 read -e -p 'Path to job directory ['$JOB_DIR']: ' tJOB_DIR
@@ -68,26 +79,27 @@ else
 	PMODE=''
 	pnum=1
 fi
-read -p 'Overwrite existing PreprocData files [yes = 1 | no = 2] ' ovrwrt
-read -p 'Submit jobs immediately [y/n]: ' todo
+read -p 'Overwrite existing CVdatamats [yes = 1 | no = 2]: ' ovrwrt
+read -p 'Submit jobs immediately (y): ' todo
 for curCPU in $(seq $((numCPU)))
 do
 SD='_CPU'$curCPU
-ParamFile=$JOB_DIR/Param_NM_$ACTION$SD
+ParamFile=$JOB_DIR/Param_NM$ACTION$SD
 SLURMFile=$JOB_DIR/NM_$ACTION$SD
-echo 'Generate parameter file: NM_'$ACTION$SD' => '$ParamFile
+echo 'Generate parameter file: svm'$SD' => '$ParamFile
 # Generate parameter file
 cat > $ParamFile <<EOF
 $NEUROMINER
 $datpath
+$masterpath
 $analind
+$ovrwrt
 $curCPU
 $numCPU
 $CV2x1
 $CV2x2
 $CV2y1
 $CV2y2
-$ovrwrt
 EOF
 cat > $SLURMFile <<EOF
 #!/bin/bash
@@ -99,12 +111,12 @@ cat > $SLURMFile <<EOF
 $PMODE
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export OMP_NUM_THREADS=$pnum
-cd $NEUROMINER
+cd $NEUROMINER 
 ./NeuroMinerMCCMain $ACTION $ParamFile
 EOF
 chmod u+x $SLURMFile
 datum=`date +"%Y%m%d"`
 if [ "$todo" = 'y' -o "$todo" = 'Y' ] ; then
-sbatch $SLURMFile >> NeuroMiner_Preproc_$datum.log
+sbatch $SLURMFile >> NeuroMiner_Train_$datum.log
 fi
 done
