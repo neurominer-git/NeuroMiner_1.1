@@ -218,7 +218,9 @@ if ~isempty(analysis)
     end
 
     %% Display menu and act on user selections
-    nk_PrintLogo
+    if ~isdeployed
+        nk_PrintLogo
+    end
     mestr = 'ML Training module run-time configuration'; navistr = [parentstr ' >>> ' mestr]; fprintf('\nYou are here: %s >>>',parentstr);
     if ~inp.batchflag, act = nk_input(mestr, 0, 'mq', menustr, menuact); end
     algostr = getAlgoStr(analysis);
