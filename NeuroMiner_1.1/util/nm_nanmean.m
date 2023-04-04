@@ -37,7 +37,30 @@ end
 
 % Replace NaNs with zeros.
 nans = isnan(x);
-x(isnan(x)) = 0; 
+if anynan(x)
+    try
+        x(isnan(x)) = 0;
+    catch ERROR
+        switch ERROR.identifier
+            case 'MATLAB:nomem'
+                %for-loop to avoid out of memory error if x is 3-dimensional
+                if length(size(x)) == 3
+                    for i=1:size(x,length(size(x)))
+                        temp = x(:,:,i);
+                        temp(isnan(temp)) = 0;
+                        try
+                            x(:,:,i) = temp;
+                        catch
+                        end
+                    end
+                else
+                    rethrow(ERROR)
+                end
+            otherwise
+                rethrow(ERROR)
+        end
+    end
+end
 
 % denominator
 count = size(x,dim) - sum(nans,dim);
