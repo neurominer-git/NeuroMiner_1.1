@@ -129,7 +129,7 @@ switch act
         
         PARMODE = 0;
         
-        if exist('dispflag','var') && ~isempty(dispflag)
+        if exist('dispflag','var') && ~isempty(dispflag) && ~isdeployed
             if ~isempty(paramstr), msgbox(paramstr,'Missing parameters detected!','error'); end
         end
 
@@ -192,7 +192,7 @@ switch act
             
         end
         
-        if exist('dispflag','var') && ~isempty(dispflag)
+        if exist('dispflag','var') && ~isempty(dispflag) && ~isdeployed
             if ~isempty(paramstr), msgbox(paramstr,'Missing parameters detected!','error'); end
         end
         
@@ -263,7 +263,7 @@ switch act
         if ~isfield(dat,'cv') 
             paramstr = char(paramstr,'Cross-validation structure undefined');  status = 1;  
         end 
-        if exist('dispflag','var') && ~isempty(dispflag)
+        if exist('dispflag','var') && ~isempty(dispflag) && ~isdeployed
             if ~isempty(paramstr) && status
                 msgbox(paramstr,'INCOMPLETE SETUP!','error');
             end

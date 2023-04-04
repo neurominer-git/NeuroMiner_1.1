@@ -557,7 +557,7 @@ switch act
                     end
                     NM.cv = NM.analysis{analind}.params.cv;
             end
-            if ~isempty(mess)>0, h = msgbox(mess,'Loaded parameters:','none'); end
+            if ~isempty(mess)>0 && ~isdeployed, h = msgbox(mess,'Loaded parameters:','none'); end
         end
 
         % DEFINE VERBOSITY LEVEL ============================================================================================================================================

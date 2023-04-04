@@ -142,6 +142,6 @@ EOF
 chmod u+x $SLURMFile
 datum=`date +"%Y%m%d"`
 if [ "$todo" = 'y' -o "$todo" = 'Y' ] ; then
-sbatch $SLURMFile >> NeuroMiner_OOCV_$datum.log
+sbatch $SLURMFile >> NeuroMiner_MLI_$datum.log
 fi
 done

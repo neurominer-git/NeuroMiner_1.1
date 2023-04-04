@@ -34,7 +34,7 @@ clc
 fprintf('>>> Initializing NeuroMiner\n')
 matpaths = path;
 
-%if ~isdeployed
+if ~isdeployed
     if isunix, sep = ':'; else sep = ';'; end
     try
       matpaths = nk_strsplit(sep,matpaths);
@@ -46,9 +46,9 @@ matpaths = path;
     else
         neurominerpath = fileparts(which('nm.p'));
     end
-%else
-    %neurominerpath = ctfroot;
-%end
+else
+    neurominerpath = ctfroot;
+end
 
 if nargin < 2
 	action.all=1;
@@ -56,8 +56,11 @@ end
 
 % Add root path
 fprintf('\nRoot path is %s.\n',neurominerpath)
-defs.path = neurominerpath; 
-if action.addrootpath || action.all, addpath(defs.path); end
+defs.path = neurominerpath;
+if ~isdeployed % for CORE compilation
+     
+    if action.addrootpath || action.all, addpath(defs.path); end
+end
 
 % Initialise SPM directory
 SPMAVAIL = false; FSAVAIL=false;
@@ -92,15 +95,17 @@ else
     if which('spm'), SPMAVAIL=true; spm('Defaults','pet'); FSAVAIL = true; JUAVAIL=true; end
 end
 
-% Initialize MEX file repository
-if ~checkpaths(matpaths,fullfile(defs.path,'cfiles'))
-    addpath(fullfile(defs.path,'cfiles'));
-    fprintf('.');
+if ~isdeployed % for CORE compilation 
+    % Initialize MEX file repository
+    if ~checkpaths(matpaths,fullfile(defs.path,'cfiles'))
+        addpath(fullfile(defs.path,'cfiles'));
+        fprintf('.');
+    end
 end
 
 if action.all
     
-    %if ~isdeployed
+    if ~isdeployed
         
         % Configuration subdirectory
         if ~checkpaths(matpaths,fullfile(defs.path,'config'))
@@ -191,12 +196,12 @@ if action.all
             addpath(fullfile(defs.path,'util')); fprintf('.');
             addpath(fullfile(defs.path,'util/freesurfer')); fprintf('.');
         end
-    %end
+    end
 end
 
 if action.addDRpath || action.all
     
-    %if ~isdeployed
+    if ~isdeployed
         % Preprocessing subdirectory
         
         % Path of dimensionality reduction toolbox
@@ -218,53 +223,53 @@ if action.addDRpath || action.all
             addpath(fullfile(defs.path,'preproc/nmfv1_4')); fprintf('.');
         end
     
-    %end
+    end
 	
 end
         
 if action.addMIpath
-    %if ~isdeployed
+    if ~isdeployed
         if ~checkpaths(matpaths,fullfile(defs.path,'preproc/mi'))
             addpath(fullfile(defs.path,'preproc/mi')); fprintf('.');
         end
-    %end
+    end
 end
 
 if action.addLIBSVMpath
     
-    %if ~isdeployed
+    if ~isdeployed
         if ~checkpaths(matpaths,fullfile(defs.path,'trainpredict/libsvm-weights-3.12/matlab'))
             addpath(fullfile(defs.path,'trainpredict/libsvm-weights-3.12/matlab')); fprintf('.');
         end
-    %end
+    end
     
-    %if ~isdeployed
+    if ~isdeployed
         if ~checkpaths(matpaths,fullfile(defs.path,'trainpredict/libsvm-mat-2.9-1'))
             addpath(fullfile(defs.path,'trainpredict/libsvm-mat-2.9-1'));fprintf('.');
         end
-    %end
+    end
 
-    %if ~isdeployed
+    if ~isdeployed
         if ~checkpaths(matpaths,fullfile(defs.path,'trainpredict/LIBSVM-Plus-2.89'))
             addpath(fullfile(defs.path,'trainpredict/LIBSVM-Plus-2.89'));fprintf('.');
         end
-    %end
+    end
 
 end
 if action.addLIBLINpath 
-    %if ~isdeployed 
+    if ~isdeployed 
         if ~checkpaths(matpaths,fullfile(defs.path,'trainpredict/liblinear-2.1/matlab'))
            addpath(fullfile(defs.path,'trainpredict/liblinear-2.1/matlab')); fprintf('.');
         end
-    %end
+    end
 end
 
 if action.addMikeRVMpath 
-    %if ~isdeployed 
+    if ~isdeployed 
         if ~checkpaths(matpaths,fullfile(defs.path,'trainpredict/SB2_Release_200'))
             addpath(fullfile(defs.path,'trainpredict/SB2_Release_200'));fprintf('.');
         end
-    %end
+    end
 end
 
 if ~isempty(NM) && ~isstruct(NM) 

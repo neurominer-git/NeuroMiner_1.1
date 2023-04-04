@@ -961,11 +961,13 @@ if GDfl || ~batchflag
     end                                
                                         
     % This has to be changed to work in multi-label mode
-    for h=1:nclass
-        GDanalysis.best_CVperf{h} = mean(GDanalysis.bestTR{h}(GridUsed));
-        GDanalysis.best_TSperf{h} = mean(GDanalysis.bestTS{h}(GridUsed));
-        GDanalysis.best_Complexity{h} = mean(GDanalysis.bestComplexity{h}(GridUsed));
-        GDanalysis.best_Error{h} = mean(GDanalysis.bestError{h}(GridUsed));
+    if ~isdeployed % changed for CORE compiled version 
+        for h=1:nclass
+            GDanalysis.best_CVperf{h} = mean(GDanalysis.bestTR{h}(GridUsed)); 
+            GDanalysis.best_TSperf{h} = mean(GDanalysis.bestTS{h}(GridUsed));
+            GDanalysis.best_Complexity{h} = mean(GDanalysis.bestComplexity{h}(GridUsed));
+            GDanalysis.best_Error{h} = mean(GDanalysis.bestError{h}(GridUsed));
+        end
     end
     
     % ********************** ANALYSIS ACROSS PERMS ************************

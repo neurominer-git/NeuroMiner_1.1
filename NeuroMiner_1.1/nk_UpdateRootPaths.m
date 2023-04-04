@@ -59,5 +59,7 @@ if ~isempty(failed)
     failedstr = sprintf('%s',strjoin(failed,'\n'));
     failedstr = sprintf('\n\nThe following analyses could not be adjusted to the new root directory:%s', failedstr);
 end
-msgbox(sprintf('%s%s',succeededstr,failedstr));
+if ~isdeployed
+    msgbox(sprintf('%s%s',succeededstr,failedstr));
+end
 
