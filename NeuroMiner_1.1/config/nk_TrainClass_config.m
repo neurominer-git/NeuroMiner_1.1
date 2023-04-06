@@ -22,11 +22,11 @@ if ~exist('varind','var') || isempty(varind)
     end
 end
 
-% if isfield(NM, 'TrainParam') && isfield(NM.TrainParam, 'LABEL') && NM.TrainParam.LABEL.flag
-%     modeflag = NM.TrainParam.LABEL.newmode;
-% else
-%     modeflag = NM.modeflag;
-% end
+if isfield(NM, 'TrainParam') && isfield(NM.TrainParam, 'LABEL') && NM.TrainParam.LABEL.flag
+    modeflag = NM.TrainParam.LABEL.newmode;
+else
+    modeflag = NM.modeflag;
+end
 
 %% Check whether TrainParams already exist
 if ~isfield(NM,'TrainParam')
@@ -141,10 +141,10 @@ end
 
 %% Check data entry status
 if isfield(NM.TrainParam,'FUSION') && NM.TrainParam.FUSION.flag == 3
-    STATUS = nk_CheckFieldStatus(NM,{'TrainParam','cv'},{'RAND', 'SAV', 'OOCV', 'META', 'STACKING'});
+    STATUS = nk_CheckFieldStatus(NM,{'TrainParam','cv'},{'RAND', 'SAV', 'OOCV', 'META', 'STACKING', 'LABEL'});
     STATUS = nk_CheckFieldStatus(NM.TrainParam.STRAT{varind},{'PREPROC','SVM','GRD','RFE','MULTI','VIS','MLI'}, [], [], STATUS);
 else
-    STATUS = nk_CheckFieldStatus(NM,{'TrainParam','cv'},{'STACKING','RAND','PREPROC','SVM','GRD','RFE','MULTI','VIS','SAV','OOCV','MLI'});
+    STATUS = nk_CheckFieldStatus(NM,{'TrainParam','cv'},{'STACKING','RAND','PREPROC','SVM','GRD','RFE','MULTI','VIS','SAV','OOCV','MLI', 'LABEL'});
 end
 switch STATUS.PREPROC
     case '...'
@@ -219,14 +219,14 @@ if ~exist('act','var') || isempty(act)
 
     % Check for regression / classification experiment and number of groups
     multistr = ''; multiflag = false;
-%     if isfield(NM.TrainParam, 'LABEL') && NM.TrainParam.LABEL.flag
-%         modeflag = NM.TrainParam.LABEL.newmode;
-%     else
-%         modeflag = NM.modeflag;
-%         if isfield(NM.TrainParam, 'LABEL')
-%             NM.TrainParam = rmfield(NM.TrainParam, 'LABEL');
-%         end
-%     end
+    if isfield(NM.TrainParam, 'LABEL') && NM.TrainParam.LABEL.flag
+        modeflag = NM.TrainParam.LABEL.newmode;
+    else
+        modeflag = NM.modeflag;
+        if isfield(NM.TrainParam, 'LABEL')
+            NM.TrainParam = rmfield(NM.TrainParam, 'LABEL');
+        end
+    end
     if strcmp(modeflag,'classification')
 
         classtr = ['Classification algorithm [ ' STATUS.SVM ' ]|'];
@@ -598,60 +598,60 @@ switch act
                 nk_CVpartition_config(0,6);
             end
         end
-%     case 99
-%         nk_PrintLogo
-%         fprintf('\n*************************************')
-%         fprintf('\n****  DEFINE ALTERNATIVE LABEL  *****')
-%         fprintf('\n*************************************')
-%         fprintf('\n')
-%         if isfield(NM.TrainParam, 'LABEL')
-%             LABEL = NM.TrainParam.LABEL;
-%         else
-%             LABEL = [];
-%         end
-%         while act>0  
-%             [LABEL, act] = nk_Label_config(LABEL);
-%         end
-%         if LABEL.flag && ~strcmp(LABEL.newmode, modeflag)
-%             origmodefl                  = NM.modeflag;
-%             NM.modeflag                 = LABEL.newmode;
-% 
-%             % Create default NM parameters space
-%             nk_CVpartition_config(true);
-%             NM.TrainParam.STACKING.flag = 2;
-%             NM.TrainParam.FUSION.flag   = 0;
-%             NM.TrainParam.FUSION.M      = 1;
-%             NM.TrainParam.SVM           = nk_LIBSVM_config(NM,[],1);
-%             NM.TrainParam.SVM.prog      = 'LIBSVM';
-%             NM.TrainParam.SVM           = nk_Kernel_config(NM.TrainParam.SVM,1);
-%             NM.TrainParam.SVM.GridParam = 1;
-%             if strcmp(NM.modeflag, 'regression'), NM.TrainParam.SVM.GridParam = 18; end
-%             NM.TrainParam.MULTI.flag    = 0;
-%             NM.TrainParam               = nk_Grid_config(NM.TrainParam, NM.TrainParam.SVM, varind, true);
-%             [~,NM.TrainParam.RFE]       = nk_RFE_config([], NM.TrainParam, NM.TrainParam.SVM, modeflag, NM.TrainParam.MULTI, NM.TrainParam.GRD, 1);
-%             NM.TrainParam.verbosity     = 1;
-% 
-%             NM.TrainParam.LABEL         = LABEL;
-%             NM.modeflag                 = origmodefl;
-%         elseif LABEL.flag % but same learning framework
-%             NM.TrainParam.LABEL         = LABEL;
-%         elseif ~LABEL.flag
-%              % Create default NM parameters space
-%             nk_CVpartition_config(true);
-%             NM.TrainParam.STACKING.flag = 2;
-%             NM.TrainParam.FUSION.flag   = 0;
-%             NM.TrainParam.FUSION.M      = 1;
-%             NM.TrainParam.SVM           = nk_LIBSVM_config(NM,[],1);
-%             NM.TrainParam.SVM.prog      = 'LIBSVM';
-%             NM.TrainParam.SVM           = nk_Kernel_config(NM.TrainParam.SVM,1);
-%             NM.TrainParam.SVM.GridParam = 1;
-%             if strcmp(NM.modeflag, 'regression'), NM.TrainParam.SVM.GridParam = 18; end
-%             NM.TrainParam.MULTI.flag    = 0;
-%             NM.TrainParam               = nk_Grid_config(NM.TrainParam, NM.TrainParam.SVM, varind, true);
-%             [~,NM.TrainParam.RFE]       = nk_RFE_config([], NM.TrainParam, NM.TrainParam.SVM, modeflag, NM.TrainParam.MULTI, NM.TrainParam.GRD, 1);
-%             NM.TrainParam.verbosity     = 1;
-%             NM.TrainParam.LABEL         = LABEL;
-%         end
+    case 99
+        nk_PrintLogo
+        fprintf('\n*************************************')
+        fprintf('\n****  DEFINE ALTERNATIVE LABEL  *****')
+        fprintf('\n*************************************')
+        fprintf('\n')
+        if isfield(NM.TrainParam, 'LABEL')
+            LABEL = NM.TrainParam.LABEL;
+        else
+            LABEL = [];
+        end
+        while act>0  
+            [LABEL, act] = nk_Label_config(LABEL);
+        end
+        if LABEL.flag && ~strcmp(LABEL.newmode, modeflag)
+            origmodefl                  = NM.modeflag;
+            NM.modeflag                 = LABEL.newmode;
+
+            % Create default NM parameters space
+            nk_CVpartition_config(true);
+            NM.TrainParam.STACKING.flag = 2;
+            NM.TrainParam.FUSION.flag   = 0;
+            NM.TrainParam.FUSION.M      = 1;
+            NM.TrainParam.SVM           = nk_LIBSVM_config(NM,[],1);
+            NM.TrainParam.SVM.prog      = 'LIBSVM';
+            NM.TrainParam.SVM           = nk_Kernel_config(NM.TrainParam.SVM,1);
+            NM.TrainParam.SVM.GridParam = 1;
+            if strcmp(NM.modeflag, 'regression'), NM.TrainParam.SVM.GridParam = 18; end
+            NM.TrainParam.MULTI.flag    = 0;
+            NM.TrainParam               = nk_Grid_config(NM.TrainParam, NM.TrainParam.SVM, varind, true);
+            [~,NM.TrainParam.RFE]       = nk_RFE_config([], NM.TrainParam, NM.TrainParam.SVM, modeflag, NM.TrainParam.MULTI, NM.TrainParam.GRD, 1);
+            NM.TrainParam.verbosity     = 1;
+
+            NM.TrainParam.LABEL         = LABEL;
+            NM.modeflag                 = origmodefl;
+        elseif LABEL.flag % but same learning framework
+            NM.TrainParam.LABEL         = LABEL;
+        elseif ~LABEL.flag
+             % Create default NM parameters space
+            nk_CVpartition_config(true);
+            NM.TrainParam.STACKING.flag = 2;
+            NM.TrainParam.FUSION.flag   = 0;
+            NM.TrainParam.FUSION.M      = 1;
+            NM.TrainParam.SVM           = nk_LIBSVM_config(NM,[],1);
+            NM.TrainParam.SVM.prog      = 'LIBSVM';
+            NM.TrainParam.SVM           = nk_Kernel_config(NM.TrainParam.SVM,1);
+            NM.TrainParam.SVM.GridParam = 1;
+            if strcmp(NM.modeflag, 'regression'), NM.TrainParam.SVM.GridParam = 18; end
+            NM.TrainParam.MULTI.flag    = 0;
+            NM.TrainParam               = nk_Grid_config(NM.TrainParam, NM.TrainParam.SVM, varind, true);
+            [~,NM.TrainParam.RFE]       = nk_RFE_config([], NM.TrainParam, NM.TrainParam.SVM, modeflag, NM.TrainParam.MULTI, NM.TrainParam.GRD, 1);
+            NM.TrainParam.verbosity     = 1;
+            NM.TrainParam.LABEL         = LABEL;
+        end
 
 end
 act = 1;
