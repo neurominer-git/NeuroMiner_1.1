@@ -365,7 +365,7 @@ if fromData
             % check whether it's a categorical variable  TO DO 
             condName = xNM.covnames(condIdx);
             %[tf, condIdxY] = ismember(condName, xNM.co);
-            condGroupVec = repelem(unique(xNM.covars(:,condIdx)),nc);
+            condGroupVec = repelem(unique(xNM.covars(condIdx)),nc);
         end
     end
 
