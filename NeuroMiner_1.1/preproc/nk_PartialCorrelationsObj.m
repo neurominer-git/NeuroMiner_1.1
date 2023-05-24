@@ -127,13 +127,17 @@ if eIN|| ~isfield(IN,'G') || isempty(IN.G), error('No covariates defined in para
 
 % Combat needs data, batch variables and covariates transposed 
 Y=Y'; G = IN.G'; if islogical(G), [~,G] = max(G); end
-M = []; if isfield(IN,'M'), M = IN.M; end
+if size(IN.G,2) > 1
+    M = []; if isfield(IN,'M'), M = IN.M; end
 
-if eIN || (~isfield(IN,'estimators') || isempty(IN.estimators) ) 
-    
-    [~,IN.estimators] = combat( Y, G, M );
+    if eIN || (~isfield(IN,'estimators') || isempty(IN.estimators) )
+
+        [~,IN.estimators] = combat( Y, G, M );
+    end
+
+    Y = combat( Y, G, M, IN.estimators);
 end
-
-Y = combat( Y, G, M, IN.estimators);
-
 Y=Y';
+
+
+
