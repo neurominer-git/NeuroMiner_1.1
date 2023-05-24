@@ -1,0 +1,126 @@
+function y = nm_nanmedian(x,dim, protect)
+% FORMAT: Y = NANMEDIAN(X,DIM)
+% 
+%    Median ignoring NaNs
+%
+%    This function enhances the functionality of NANMEDIAN as distributed
+%    in the MATLAB Statistics Toolbox and is meant as a replacement (hence
+%    the identical name).  
+%
+%    NANMEDIAN(X,DIM) calculates the mean along any dimension of the N-D
+%    array X ignoring NaNs.  If DIM is omitted NANMEDIAN averages along the
+%    first non-singleton dimension of X.
+%
+%    Similar replacements exist for NANMEAN, NANSTD, NANMIN, NANMAX, and
+%    NANSUM which are all part of the NaN-suite.
+%
+%    See also MEDIAN
+
+% -------------------------------------------------------------------------
+%    author:      Jan Gläscher
+%    affiliation: Neuroimage Nord, University of Hamburg, Germany
+%    email:       glaescher@uke.uni-hamburg.de
+%    
+%    $Revision: 1.2 $ $Date: 2007/07/30 17:19:19 $
+
+if isempty(x)
+	y = [];
+	return
+end
+
+if exist('protect','var') && ~isempty(protect), protectflag = protect; else protectflag = false; end
+
+if nargin < 2
+	dim = min(find(size(x)~=1));
+	if isempty(dim)
+		dim = 1;
+	end
+end
+
+siz  = size(x);
+n    = size(x,dim);
+
+% Permute and reshape so that DIM becomes the row dimension of a 2-D array
+perm = [dim:max(length(size(x)),dim) 1:dim-1];
+x = reshape(permute(x,perm),n,prod(siz)/n);
+x = sort(x,1);
+% identify and replace NaNs
+nans = isnan(x);
+x(isnan(x)) = 0;
+
+x1 = reshape(permute(x(1:270,:),perm),n,prod([270,n])/n);
+x1 = sort(x,1);
+x2 = reshape(permute(x(271:end,:),perm),n,prod([270,n])/n);
+x2 = sort(x,1);
+
+
+
+nans1 = isnan(x1);
+x1(isnan(x1)) = 0;
+nans2 = isnan(x2);
+x2(isnan(x2)) = 0;
+
+% new dimension of x
+%[n m] = size(x);
+
+[n1 m1] = size(x1);
+[n2 m2] = size(x2);
+
+% number of non-NaN element in each column
+%s = size(x,1) - sum(nans);
+%y = zeros(size(s));
+
+s1 = size(x1,1) - sum(nans1);
+y1 = zeros(size(s1));
+s2 = size(x2,1) - sum(nans2);
+y2 = zeros(size(s2));
+
+% % now calculate median for every element in y
+% % (does anybody know a more eefficient way than with a 'for'-loop?)
+% for i = 1:length(s)
+% 	if rem(s(i),2) & s(i) > 0
+% 		y(i) = x((s(i)+1)/2,i);
+% 	elseif rem(s(i),2)==0 & s(i) > 0
+% 		y(i) = (x(s(i)/2,i) + x((s(i)/2)+1,i))/2;
+% 	end
+% end
+
+for i = 1:length(s1)
+	if rem(s1(i),2) & s1(i) > 0
+		y1(i) = x1((s1(i)+1)/2,i);
+	elseif rem(s1(i),2)==0 & s1(i) > 0
+		y(1i) = (x1(s1(i)/2,i) + x1((s1(i)/2)+1,i))/2;
+	end
+end
+
+for i = 1:length(s2)
+	if rem(s2(i),2) & s2(i) > 0
+		y2(i) = x2((s2(i)+1)/2,i);
+	elseif rem(s2(i),2)==0 & s2(i) > 0
+		y2(i) = (x2(s2(i)/2,i) + x2((s2(i)/2)+1,i))/2;
+	end
+end
+
+% Protect against a column of NaNs
+% if protectflag
+%     i = find(y==0);
+%     y(i) = i + nan;
+% end
+
+if protectflag
+    i = find(y1==0);
+    y1(i) = i + nan1;
+end
+
+if protectflag
+    i = find(y2==0);
+    y2(i) = i + nan2;
+end
+
+% permute and reshape back
+siz(dim) = 1;
+%y = ipermute(reshape(y,siz(perm)),perm);
+% $Id: nm_nanmedian.m,v 1.2 2007/07/30 17:19:19 glaescher Exp glaescher $
+y1 = ipermute(reshape(y1,siz(perm)),perm);
+y2 = ipermute(reshape(y2,siz(perm)),perm);
+y = [y1;y2];

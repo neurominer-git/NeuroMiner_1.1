@@ -509,10 +509,10 @@ for curclass = 1: nclass
         case 'classification'
             Results.BinCV2Predictions_DecisionValues{curclass}  = binOOCVD{curclass};
             Results.BinCV2Predictions_Targets{curclass}         = sign(binOOCVD{curclass});
-            % CV: out of memory issue: clear unecessary variables:
+            % out of memory issue: CV clear unecessary variables:
             clearvars('analysis', 'binOOCVDh', 'binOOCVDhx', 'binOOCVDhx_ll', 'cntOOCVDh');
             Results.StdCV2PredictedValues{curclass}             = nm_nanstd(Results.BinCV2Predictions_DecisionValues{curclass},2);
-            Results.MeanCV2PredictedValues{curclass}            = nm_nanmedian(Results.BinCV2Predictions_DecisionValues{curclass},2);
+            RResults.MeanCV2PredictedValues{curclass}            = nm_nanmedian(Results.BinCV2Predictions_DecisionValues{curclass},2);
             Results.CICV2PredictedValues{curclass}              = cell2mat(arrayfun( @(i) percentile(Results.BinCV2Predictions_DecisionValues{curclass}(i,:),[2.5 97.5]), ...
                                                                     1:length(Results.MeanCV2PredictedValues{curclass}),'UniformOutput',false)');
             [Results.BinProbPredictions{curclass},...

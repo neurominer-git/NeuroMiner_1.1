@@ -35,6 +35,9 @@ if eIN || ~isfield(IN,'indNonRem') || isempty(IN.indNonRem)
        end
     end
     IN.indNonRem = false(1,n); IN.indNonRem(nD) = true ; 
+    if length(nD) > n
+        IN.indNonRem = true(1,n);
+    end
 end
 if VERBOSE, fprintf(' extracting %g components.', sum(IN.indNonRem)); end
 pY = Y(:,IN.indNonRem);

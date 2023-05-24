@@ -932,7 +932,8 @@ elseif trfl
     if tsfl, tsproc = true; end
 end
 
-if tsproc, InputParam.Ts = graph_PerfSparsityThres(InputParam.Ts, TrParami); end
+if tsproc
+    InputParam.Ts = graph_PerfSparsityThres(InputParam.Ts, TrParami); end
 end
 
 function [SrcParam, InputParam, TrParami, actparam ] = act_graphMetrics(SrcParam, InputParam, ~, TrParami, actparam)
@@ -951,6 +952,7 @@ if paramfl && tsfl
      tsproc = true;
 elseif trfl
     if VERBOSE;fprintf('\tGraph metrics computation ...'); end
+    InputParam.P{i}.GRAPHMETRICS.sparsity = InputParam.P{i-1}.GRAPHSPARSITY
     [InputParam.Tr, TrParami] = graph_PerfGraphMetrics(InputParam.Tr, InputParam.P{i}.GRAPHMETRICS);
     % All 
     if tsfl, tsproc = true; end
