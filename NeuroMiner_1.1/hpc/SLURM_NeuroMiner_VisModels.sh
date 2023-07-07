@@ -11,11 +11,11 @@ echo '          VERSION 1.1 Beorn	       '
 echo '*************************************'
 echo  
 
-# compiled with matlab R2022a so MCR main is v912. Needs to change if different MCR is used.
-export LD_LIBRARY_PATH=/net/PE1/raid1/apps/MATLAB/R2022a/runtime/glnxa64:/net/PE1/raid1/apps/MATLAB/R2022a/bin/glnxa64:/net/PE1/raid1/apps/MATLAB/R2022a/sys/os/glnxa64:/net/PE1/raid1/apps/MATLAB/R2022a/sys/opengl/lib/glnxa64
+# compiled with matlab R2022b so MCR main is v913. Needs to change if different MCR is used.
+export LD_LIBRARY_PATH=/share/cluster/apps/MATLAB/R2022b/runtime/glnxa64:/share/cluster/apps/MATLAB/R2022b/bin/glnxa64:/share/cluster/apps/MATLAB/R2022b/sys/os/glnxa64:/share/cluster/apps/MATLAB/R2022b/sys/opengl/lib/glnxa64
 
 export JOB_DIR=$PWD
-export NEUROMINER=/ndl/NM/NeuroMinerMCCMain_1.1_v912/for_testing
+export NEUROMINER=/ndl/NM/NeuroMinerMCCMain_1.1_v913/for_testing
 export ACTION=visualize
 
 read -e -p 'Path to NM structure: ' datpath
