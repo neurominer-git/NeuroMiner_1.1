@@ -4,6 +4,10 @@
 format: jb-book
 root: intro
 parts:
+  - caption: News
+    chapters:
+      - file: 0.0_summerschool_previous
+      - file: 0.1_summerschool2023
   - caption: Getting started
     chapters:
       - file: 1.0_introduction

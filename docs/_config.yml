@@ -41,7 +41,7 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
-  # announcement              : "Machine Learning Online School 2022, 19-23 Sep" # A banner announcement at the top of the site.
+  announcement              : "Machine Learning Online School 2023, 25-29 Sep" # A banner announcement at the top of the site.
 
 sphinx:
   config:
