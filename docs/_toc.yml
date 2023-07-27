@@ -6,8 +6,8 @@ root: intro
 parts:
   - caption: News
     chapters:
-      - file: 0.0_summerschool_previous
-      - file: 0.1_summerschool2023
+      - file: 0.0_previous_MLSchool
+      - file: 0.1_MLSchool
   - caption: Getting started
     chapters:
       - file: 1.0_introduction
