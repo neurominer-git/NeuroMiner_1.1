@@ -8,6 +8,7 @@ parts:
     chapters:
       - file: 0.0_previous_MLSchool
       - file: 0.1_MLSchool
+      - file: 0.1_MLSchool_AsiaPacific
   - caption: Getting started
     chapters:
       - file: 1.0_introduction
