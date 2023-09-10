@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Model saving options &#8212; NeuroMiner Manual</title>
+    <title>Use different label &#8212; NeuroMiner Manual</title>
   
   
   
@@ -67,13 +67,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '4.2.08_paramtemp_model_saving_options';</script>
-    <link rel="canonical" href="https://neurominer-git.github.io/NeuroMiner_1.1/4.2.08_paramtemp_model_saving_options.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '4.2.15_paramtemp_different_label';</script>
+    <link rel="canonical" href="https://neurominer-git.github.io/NeuroMiner_1.1/4.2.15_paramtemp_different_label.html" />
     <link rel="shortcut icon" href="_static/nm_logo2.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Define verbosity level" href="4.2.09_paramtemp_define_verbosity_level.html" />
-    <link rel="prev" title="Prediction interpretation options" href="4.2.07_paramtemp_interpretation_options.html" />
+    <link rel="next" title="Initialize analyses" href="4.3_mainmenu_initialize_delete_analyses.html" />
+    <link rel="prev" title="Stacking" href="4.2.14_paramtemp_stacking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,14 +202,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="4.2.05_paramtemp_ensemble_generation_strategies.html">Ensemble generation strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.06_paramtemp_visualization_options.html">Visualization options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.07_paramtemp_interpretation_options.html">Prediction interpretation options</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Model saving options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.2.08_paramtemp_model_saving_options.html">Model saving options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.09_paramtemp_define_verbosity_level.html">Define verbosity level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.10_paramtemp_inspect_workspace.html">Inspect workspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.11_paramtemp_save_parameter_template.html">Save parameter template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">Load training template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.13_paramtemp_multigroup.html">Multi-group analyses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.14_paramtemp_stacking.html">Stacking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4.2.15_paramtemp_different_label.html">Use different label</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Use different label</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="4.3_mainmenu_initialize_delete_analyses.html">Initialize analyses</a></li>
@@ -294,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.2.08_paramtemp_model_saving_options.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.2.15_paramtemp_different_label.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/4.2.08_paramtemp_model_saving_options.md" target="_blank"
+      <li><a href="_sources/4.2.15_paramtemp_different_label.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -404,7 +404,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Model saving options</h1>
+    <h1>Use different label</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -418,9 +418,30 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="model-saving-options">
-<span id="paramtemp-model-saving-options"></span><h1>Model saving options<a class="headerlink" href="#model-saving-options" title="Permalink to this heading">#</a></h1>
-<p>This option will save all the models used in training and testing. This is generally not a good idea because it will take up too much space.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="use-different-label">
+<span id="paramtemp-different-label"></span><h1>Use different label<a class="headerlink" href="#use-different-label" title="Permalink to this heading">#</a></h1>
+<p>from NeuroMiner version &gt; 1.2 (Sep 2023)</p>
+<p>This option allows you to read in another outcome label to the one entered during initialization. When you activate this option and then initialze a new analysis, this analysis will be trained to predict this new label.</p>
+<p>When activating the different label option (by entering <strong>1</strong> to select <strong>Use alternative label</strong>), the menu will look like this:</p>
+<div class="figure align-default" id="fig-3-2-02-nm-differentlabel-menu">
+<img alt="neurominer different label menu" src="_images/NM_differentlabel_menu.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">NeuroMiner different label setup</span><a class="headerlink" href="#fig-3-2-02-nm-differentlabel-menu" title="Permalink to this image">#</a></p>
+</div>
+<p>Next, enter <strong>2</strong> and you can define the new label:</p>
+<ol class="arabic simple">
+<li><p>Enter the name of variable from the Matlab workspace (you need to load it while NeuroMiner is not running).</p></li>
+<li><p>Enter the name of the new label variable.</p></li>
+<li><p>Choose whether it’s classification or regression.</p></li>
+<li><p>In case you entered a classification label, you can now enter the names of the groups as a cell vector such as: {‘Group1’, ‘Group2’}. This name vector can also be loaded from a variable in the NM workspace.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>** No 0 in classification labels **
+Make sure that your binary new label is consists of 1 and 2 (instead of 0 and 1). While the model and predictions will not be impacted by this, the plots in the result viewer expect a label &gt; 0.</p>
+<p>** No mulitclass classification labels supported **
+The different label functionality currently only works for regression and binary classification labels since the cross validation setup in the multiclass classification setting is different (one vs. one or one vs. all).</p>
+</div>
+<p>In case of a new classification label, NeuroMiner checks whether you’re cross-validation structure fits with the new label, i.e., whether in each partition, there is at least one case from each of the new groups. If this is not the case, NeuroMiner will deactivate the different label functionality. In this case, you either need to create a new cv-structure and try again or choose another new label. Another work around would be to add the new label as a constraint vector during cv structure creation prior to training any of the analyses with the new label. We are planning to add a function to create a cross validation structure that takes several labels into account. This will allow you to plan ahead and make sure that you can train several models with different classification labels using the same structure.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -455,20 +476,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="4.2.07_paramtemp_interpretation_options.html"
+       href="4.2.14_paramtemp_stacking.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Prediction interpretation options</p>
+        <p class="prev-next-title">Stacking</p>
       </div>
     </a>
     <a class="right-next"
-       href="4.2.09_paramtemp_define_verbosity_level.html"
+       href="4.3_mainmenu_initialize_delete_analyses.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Define verbosity level</p>
+        <p class="prev-next-title">Initialize analyses</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
