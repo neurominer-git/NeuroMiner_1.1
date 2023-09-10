@@ -81,7 +81,7 @@ if flags.train
             params = struct('Edges',Edges,'H',H,'N',N,'SelEdgeIndex',sH_max_ind,'I',I,'meanY',meanY,'indL',indL);
         case 3
             fprintf('\nCorrecting centers offsets using center offset correction to global mean')
-            [~, meanY, meanG] = nk_PerfRemMeanDiff(ObjY(I,:), G(I,:), G(I,:));
+            [~, meanY, meanG] = nk_PerfRemMeanDiff(Y(I,:), G(I,:), G(I,:));
             params = struct('Edges',Edges,'H',H,'N',N,'SelEdgeIndex',sH_max_ind,'I',I,'meanY',meanY,'meanG',meanG);
     end
 end

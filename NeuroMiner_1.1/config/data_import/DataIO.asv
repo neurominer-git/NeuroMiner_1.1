@@ -590,7 +590,7 @@ switch datasource
                             end
 
                             if ~oocvflag || IO.labels_known
-                                IO.label_edit = label_edit;
+                                IO.label_col = NM.label
                                 [check_str, mess, IO] = CheckTabFile(IO, 'check_label', na_str, mess);
                                 if isfield(IO,'t_Y') && ~isempty(IO.t_Y),fprintf('Successfully opened %g x %g table file.',size(IO.t_Y,1),size(IO.t_Y,2)); end
                                 mn_label_edit = sprintf('Specify column header containing the label data [ %s ]|', check_str); 

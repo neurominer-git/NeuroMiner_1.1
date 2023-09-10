@@ -10,9 +10,9 @@ if handles.curranal ~= handles.prevanal && handles.OOCVinfo.Analyses{handles.pre
     descprev = handles.OOCVinfo.Analyses{handles.prevanal}.descriptor{handles.oocvind};
     descnew = handles.OOCVinfo.Analyses{handles.curranal}.descriptor;
     I = find(strcmp(descnew,descprev));
-    if ~isempty(I) && I ~= oocvind 
-        handles.selCVoocv.Value = I+1;
-        oocvind = I;
-    end
+    %if ~isempty(I) && I ~= oocvind 
+     %   handles.selCVoocv.Value = I+1;
+      %  oocvind = I;
+    %end
 end
 handles.prevanal = handles.curranal;

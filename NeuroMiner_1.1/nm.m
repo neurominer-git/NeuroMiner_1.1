@@ -337,7 +337,7 @@ try
 
         case 'visual'
             if isfield(NM,'analysis')
-                inp = []; act = 1; while act>0, [act, inp] = nk_VisModelsPrep(act, inp, 'MAIN INTERFACE >> VISUALIZE MODELS'); end
+inp = []; act = 1; while act>0, [act, inp] = nk_VisModelsPrep(act, inp, 'MAIN INTERFACE >> VISUALIZE MODELS'); end
             end
 
         case 'interpret'

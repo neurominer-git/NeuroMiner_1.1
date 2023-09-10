@@ -5,7 +5,7 @@ function [act, inp] = nk_VisModelsPrep(act, inp, parentstr)
 % Wrapper function of the NM visualization module, which allows the user to
 % interactively chose run-time options for the analysis of model patterns.
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% (c) Nikolaos Koutsouleris, 07/2021
+% (c) Nikolaos Koutsouleris, 09/2022
 
 global MULTI CV NM
 
@@ -38,23 +38,12 @@ OverWriteAct = []; GridSelectAct = []; LoadModelsAct = []; LoadParamsAct = []; L
 %% Configure menu
 if numel(NM.analysis)>1
     if numel(inp.analind)<2
-        AnalSelStr = sprintf('Analysis %g', inp.analind);   
-    else
-        AnalSelStr = sprintf('%g Analyses: %s',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '));
-    end
-    AnalSelectStr = sprintf('Choose analysis to work on [ %s ]|', AnalSelStr);                                             AnalSelectAct = 1;         
-else
-    AnalSelectStr = ''; AnalSelectAct = [];
-end
-
-if numel(NM.analysis)>1
-    if numel(inp.analind)<2
         AnalSelStr = sprintf('Analysis %g', inp.analind);
     else
-        if ~inp.HideGridAct, cvequalstr = 'identical CV structures'; else, cvequalstr = 'different CV structures'; end
+        if ~inp.HideGridAct, cvequalstr = 'same-size CV structures'; else, cvequalstr = 'different CV structures'; end
         AnalSelStr = sprintf('%g Analyses: %s [ %s ]',numel(inp.analind), strjoin(cellstr(num2str(inp.analind'))',', '), cvequalstr);
     end 
-    AnalSelectStr = sprintf('Choose analysis to work on [ %s ]|', AnalSelStr);        
+    AnalSelectStr = sprintf('Choose analysis to work on [ %s ]|', AnalSelStr);  AnalSelectAct = 1;
 else
     AnalSelectStr = ''; AnalSelectAct = [];
 end
@@ -89,9 +78,12 @@ if ~isempty(analysis)
     end
     
     % Retrieve CV2 partitions to operate on
-    if ~isfield(inp,'GridAct'), inp.GridAct = analysis.GDdims{1}.GridAct; end;                                              
-    GridSelectStr = sprintf('Select CV2 partitions to operate on [ %g selected ]|',  sum(inp.GridAct(:)));                  GridSelectAct = 4;
-
+    if ~isfield(inp,'GridAct'), inp.GridAct = analysis.GDdims{1}.GridAct; end
+    if ~inp.HideGridAct
+        GridSelectStr = sprintf('Select CV2 partitions to operate on [ %g selected ]|',  sum(inp.GridAct(:)));                  GridSelectAct = 4;
+    else
+        GridSelectStr =''; GridSelectAct=[];
+    end
     % Configure extra label dialogue
     if inp.permfl
         if ~isempty(inp.extraL)
@@ -201,7 +193,7 @@ switch act
             nA = numel(inp.analind);
             if nA>1
                 AS = nk_GetAnalysisStatus(NM, inp.analind);
-                if ~AS.betweenequal_cv
+                if ~AS.betweenfoldpermequal_cv
                     inp.HideGridAct = true; 
                 else
                     inp.GridAct = NM.analysis{inp.analind(1)}.GDdims{1}.GridAct;
@@ -262,18 +254,15 @@ switch act
         if MULTI.flag && MULTI.train && ~MULTI.BinBind, inp.multiflag = 1; else, inp.multiflag = 2; end
         nA = 1; if numel(inp.analind)>1, nA = numel(inp.analind); end
         for i=1:nA
-            nk_SetupGlobVars2(NM.analysis{inp.analind(i)}.params, 'setup_main', 0); 
             NM.runtime.curanal = inp.analind(i);
-            if nA>1
-                inp = nk_GetAnalModalInfo_config(NM, inp);
-                if inp.HideGridAct, inp.GridAct = NM.analysis{inp.analind(i)}.GDdims{1}.GridAct; end
-            end
+            inp = nk_GetAnalModalInfo_config(NM, inp);
+            if inp.HideGridAct,[ ix, jx ] = size(NM.analysis{inp.analind(i)}.params.cv.TrainInd); inp.GridAct = true(ix,jx); end
             inp.analysis_id = NM.analysis{inp.analind(i)}.id;
             inp.saveoptdir = [ NM.analysis{inp.analind(i)}.rootdir filesep 'opt' ];
             NM.analysis{inp.analind(i)} = VisModelsPrep(NM, inp, NM.analysis{inp.analind(i)});
             nk_SetupGlobVars2(NM.analysis{inp.analind(i)}.params, 'clear', 0); 
         end
-        
+        NM = rmfield(NM,'runtime');
 end
 
 function tdir = create_defpath(analysis)
