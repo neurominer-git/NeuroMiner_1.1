@@ -209,6 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="4.2.12_paramtemp_load_training_template.html">Load training template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.13_paramtemp_multigroup.html">Multi-group analyses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.14_paramtemp_stacking.html">Stacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.2.15_paramtemp_different_label.html">Use different label</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="4.3_mainmenu_initialize_delete_analyses.html">Initialize analyses</a></li>
@@ -426,6 +427,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equalize-class-sizes-at-the-cv1-cycle-by-undersampling">Equalize class sizes at the CV1 cycle by undersampling</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiclass-classification-setting-define-decomposition-mode">Multiclass classification setting: Define decomposition mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrain-cross-validation-structure-based-on-a-group-index-variable">Constrain Cross-Validation structure based on a group index variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-load-save-the-cross-validation-structure">Build, load &amp; save the cross-validation structure</a></li>
 </ul>
             </nav>
@@ -551,6 +554,20 @@ The models in the inner CV1 cycle will only be trained in one group prior to bei
 </div>
 </div>
 <hr class="docutils" />
+<div class="section" id="multiclass-classification-setting-define-decomposition-mode">
+<h2>Multiclass classification setting: Define decomposition mode<a class="headerlink" href="#multiclass-classification-setting-define-decomposition-mode" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>1 | One-vs-One</p>
+<p>2 | One-vs-All</p>
+</div></blockquote>
+<p>This option only shows in case your label is a multiclass classification label. You have to define the decomposition mode you want to use.</p>
+<p><strong>One vs. One</strong> means that pairwise classification models will be fit between all possible group pairs. If you have a label containing three groups, the following binary three models will be trained: group 1 vs. 2, group 1 vs. 3, group 2 vs. 3.</p>
+<p><strong>One vs. All</strong> means that for each of the groups in your label, a model will be fit to classify this group from all other groups. If you have a label containing three groups, the following models will be trained: group 1 vs. (2+3), 2 vs. (1+3), 3 vs. (1+2).</p>
+</div>
+<div class="section" id="constrain-cross-validation-structure-based-on-a-group-index-variable">
+<h2>Constrain Cross-Validation structure based on a group index variable<a class="headerlink" href="#constrain-cross-validation-structure-based-on-a-group-index-variable" title="Permalink to this heading">#</a></h2>
+<p>You can enter a vector defining groups which will be used additionally to the label to stratify the cross validation folds, i.e., the function will make sure to distribute the groups equally across folds.</p>
+</div>
 <div class="section" id="build-load-save-the-cross-validation-structure">
 <h2>Build, load &amp; save the cross-validation structure<a class="headerlink" href="#build-load-save-the-cross-validation-structure" title="Permalink to this heading">#</a></h2>
 <p><strong>Build CV2/CV1 structure</strong>
@@ -647,6 +664,8 @@ containing the folds and permutations for later use. It is saved in a .mat file.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equalize-class-sizes-at-the-cv1-cycle-by-undersampling">Equalize class sizes at the CV1 cycle by undersampling</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiclass-classification-setting-define-decomposition-mode">Multiclass classification setting: Define decomposition mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrain-cross-validation-structure-based-on-a-group-index-variable">Constrain Cross-Validation structure based on a group index variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-load-save-the-cross-validation-structure">Build, load &amp; save the cross-validation structure</a></li>
 </ul>
   </nav></div>
