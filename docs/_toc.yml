@@ -41,6 +41,8 @@ parts:
           - file: 4.2.13_paramtemp_multigroup
           - file: 4.2.14_paramtemp_stacking
           - file: 4.2.15_paramtemp_different_label
+          - file: 4.2.16_paramtemp_synthetic_data
+          - file: 4.2.17_paramtemp_synthetic_data
       - file: 4.3_mainmenu_initialize_delete_analyses
       - file: 4.4_mainmenu_preprocess_features
       - file: 4.5_mainmenu_train_supervised_classifiers

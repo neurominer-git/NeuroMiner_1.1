@@ -212,6 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="4.2.13_paramtemp_multigroup.html">Multi-group analyses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.14_paramtemp_stacking.html">Stacking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.15_paramtemp_different_label.html">Use different label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.2.16_paramtemp_synthetic_data.html">Synthetic data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="4.3_mainmenu_initialize_delete_analyses.html">Initialize analyses</a></li>
@@ -725,11 +726,12 @@ NeuroMiner performs imputation using either single-subject median replacement, f
 <p>2 | Mean of non-NaN values in given feature</p>
 <p>3 | MANHATTAN distance-based nearest-neighbor search</p>
 <p>4 | EUCLIDEAN distance-based nearest-neighbor search</p>
-<p>5 | SEUCLIDEAN distance-based nearest-neighbor search</p>
-<p>6 | COSINE similarity-based nearest-neighbor search</p>
-<p>7 | HAMMING distance-based nearest-neighbor search</p>
-<p>8 | JACCARD distance-based nearest-neighbor search</p>
-<p>9 | Nearest-neighbor imputation using hybrid method</p>
+<p>5 | Sequential kNN-based imputation method (EUCLIDEAN)</p>
+<p>6 | SEUCLIDEAN distance-based nearest-neighbor search</p>
+<p>7 | COSINE similarity-based nearest-neighbor search</p>
+<p>8 | HAMMING distance-based nearest-neighbor search</p>
+<p>9 | JACCARD distance-based nearest-neighbor search</p>
+<p>10 | Nearest-neighbor imputation using hybrid method</p>
 </div></blockquote>
 <p>For median or mean replacement, values are imputed based on the data
 either across features for one subject or across subjects within the
@@ -748,7 +750,7 @@ be used for data with a continuous measurement scale or the Hamming
 could be used for binary nominal data (i.e., 0 or 1) data (see <a class="reference internal" href="#note-nominal-data"><span class="std std-ref"> Nominal Data</span></a>). There is also the option to use a hybrid approach that
 accounts for both continuous/ordinal and nominal data. It’s important to
 note that all options require the Statistics and Machine Learning Toolbox of MATLAB.</p>
-<p><strong>1 | Median of non-NaN values in given case</strong></p>
+<p><strong>Median of non-NaN values in given case</strong></p>
 <p>This function checks NaN values for each subject. When it finds a NaN
 value for a subject, it imputes the median of the non-NaN values across
 the other features for that subject. Therefore, this would make no sense
@@ -756,32 +758,31 @@ at all if it was done across features that weren’t equivalent in scale
 or from the same scale (e.g., a questionnaire). As such, it could be
 used in combination with the option to “2 | Select features for
 imputation” described below.</p>
-<p><strong>2 | Mean of non-NaN values in given feature</strong></p>
-<p>This function cycles through each feature and if it finds a NaN value
-then it imputes the mean of non-NaN values.</p>
-<p><strong>3 | MANHATTAN distance-based nearest-neighbor search</strong></p>
-<p>This function determines the Manhattan distance between cases and then
-selects nearest-neighbors. You must scale, unit-normalize or standardize the data first, otherwise the distance measure will be dominated by high-variance features.</p>
-<p><strong>4 | EUCLIDEAN distance-based nearest-neighbor search</strong></p>
-<p>Determines the Euclidean distance between cases and then selects
-nearest-neighbors. You must scale, unit-normalize or standardize the data first, otherwise the distance measure will be dominated by high-variance features.</p>
-<p><strong>5 | SEUCLIDEAN distance-based nearest-neighbor search</strong></p>
+<p><strong>Mean of non-NaN values in given feature</strong></p>
+<p>This function cycles through each feature and if it finds a NaN value then it imputes the mean of non-NaN values.</p>
+<p><strong>MANHATTAN distance-based nearest-neighbor search</strong></p>
+<p>This function determines the Manhattan distance between cases and then selects nearest-neighbors. You must scale, unit-normalize or standardize the data first, otherwise the distance measure will be dominated by high-variance features.</p>
+<p><strong>EUCLIDEAN distance-based nearest-neighbor search</strong></p>
+<p>Determines the Euclidean distance between cases and then selects nearest-neighbors. You must scale, unit-normalize or standardize the data first, otherwise the distance measure will be dominated by high-variance features.</p>
+<p><strong>Sequential kNN-based imputation method (EUCLIDEAN)</strong></p>
+<p>Faster than previous option.</p>
+<p><strong>SEUCLIDEAN distance-based nearest-neighbor search</strong></p>
 <p>The Seuclidean distance between cases is measured using the pdist2
 function that is built into the Statistics and Machine Learning Toolbox
 of MATLAB.</p>
-<p><strong>6 | COSINE similarity-based nearest-neighbor search</strong></p>
+<p><strong>COSINE similarity-based nearest-neighbor search</strong></p>
 <p>The Cosine distance between cases is measured using the pdist2 function
 that is built into the Statistics and Machine Learning Toolbox of
 MATLAB.</p>
-<p><strong>7 | HAMMING distance-based nearest-neighbor search</strong></p>
+<p><strong>HAMMING distance-based nearest-neighbor search</strong></p>
 <p>The Hamming distance between cases can be used for nominal data (e.g.,
 0/1 data) and is measured using the pdist2 function that is built into
 the Statistics and Machine Learning Toolbox of MATLAB.</p>
-<p><strong>8 | JACCARD distance-based nearest-neighbor search</strong></p>
+<p><strong>JACCARD distance-based nearest-neighbor search</strong></p>
 <p>The Jaccard distance between cases is measured using the pdist2 function
 that is built into the Statistics and Machine Learning Toolbox of
 MATLAB.</p>
-<p><strong>9 | Nearest-neighbor imputation using hybrid method</strong></p>
+<p><strong>Nearest-neighbor imputation using hybrid method</strong></p>
 <p>This option combines techniques that can be used for binary nominal data
 (i.e., 0/1) and ordinal/continuous data. You must define a method for
 nominal features (e.g., Hamming or Jaccard) and then define a method for
