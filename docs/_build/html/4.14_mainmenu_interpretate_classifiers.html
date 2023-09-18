@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Synthetic data &#8212; NeuroMiner Manual</title>
+    <title>Interprete models &#8212; NeuroMiner Manual</title>
   
   
   
@@ -67,13 +67,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '4.2.16_paramtemp_synthetic_data';</script>
-    <link rel="canonical" href="https://neurominer-git.github.io/NeuroMiner_1.1/4.2.16_paramtemp_synthetic_data.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '4.14_mainmenu_interpretate_classifiers';</script>
+    <link rel="canonical" href="https://neurominer-git.github.io/NeuroMiner_1.1/4.14_mainmenu_interpretate_classifiers.html" />
     <link rel="shortcut icon" href="_static/nm_logo2.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Initialize analyses" href="4.3_mainmenu_initialize_delete_analyses.html" />
-    <link rel="prev" title="Use different label" href="4.2.15_paramtemp_different_label.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,10 +188,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NeuroMiner interface</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="4.0_mainmenu.html">Main interface overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.1_mainmenu_input_data.html">Data entry in NeuroMiner</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="4.2_mainmenu_define_parameter_template.html">Define parameter template</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="4.2_mainmenu_define_parameter_template.html">Define parameter template</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="4.2.00_paramtemp_data_fusion.html">Data Fusion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.01_paramtemp_cv_settings.html">Cross-validation settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.02_paramtemp_preprocessing_pipeline.html">Preprocessing pipeline</a></li>
@@ -210,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="4.2.13_paramtemp_multigroup.html">Multi-group analyses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.14_paramtemp_stacking.html">Stacking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.2.15_paramtemp_different_label.html">Use different label</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Synthetic data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.2.16_paramtemp_synthetic_data.html">Synthetic data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="4.3_mainmenu_initialize_delete_analyses.html">Initialize analyses</a></li>
@@ -295,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.2.16_paramtemp_synthetic_data.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.14_mainmenu_interpretate_classifiers.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/4.2.16_paramtemp_synthetic_data.md" target="_blank"
+      <li><a href="_sources/4.14_mainmenu_interpretate_classifiers.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,9 +392,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -407,21 +403,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Synthetic data</h1>
+    <h1>Interprete models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-based-data-generation">kNN-based data generation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adasyn-adaptive-synthetic-sampling">ADASYN (Adaptive Synthetic Sampling)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-random-interpolation-with-pca-based-data-generation-pcagauss">Gaussian random interpolation with PCA-based data generation (PCAGauss)</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -431,29 +417,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="synthetic-data">
-<span id="paramtemp-synthetic-data"></span><h1>Synthetic data<a class="headerlink" href="#synthetic-data" title="Permalink to this heading">#</a></h1>
-<p>This module allows the users to generate and synthetic data to their existing dataset, and, as a result, increase the sample size. The synthetic data is generated within the cross-validation framework and prior to the preprocessing from the original, ‘raw’ data in the current cross-validation fold. The data is then, together with the original data, used to train the models. Importantly, it undergoes the same procedures as the real data, i.e., also all the preprocessing steps.</p>
-<p>The user can decide between different data generation mthods (see below), whether the original data should be standardized prior to data generation, how many synthetic observations to generate, and whether the synthetic data should be saved to disk.</p>
-<p>There are different methods available to generate the artificial data:</p>
-<div class="section" id="knn-based-data-generation">
-<h2>kNN-based data generation<a class="headerlink" href="#knn-based-data-generation" title="Permalink to this heading">#</a></h2>
-<p>The kNN-based method interpolates new data points depending on the k nearest neighboring observations of randomly selected real observations.
-The user can define the number of nearest neighbors to use for data interpolation and which distance measure (Euclidean, Manhattan, Cosine, Mahalanobis) to use to find the k-nearest neighbors.</p>
-</div>
-<div class="section" id="adasyn-adaptive-synthetic-sampling">
-<h2>ADASYN (Adaptive Synthetic Sampling)<a class="headerlink" href="#adasyn-adaptive-synthetic-sampling" title="Permalink to this heading">#</a></h2>
-<p>ADASYN (Adaptive Synthetic Sampling) is an oversampling technique commonly used in machine learning to address class imbalance in datasets. It focuses on the minority class by generating synthetic examples that are similar to the existing minority class instances. What sets ADASYN apart is its adaptability: it increases the number of synthetic samples for minority class instances that are more challenging to classify correctly, helping to balance the class distribution effectively. This adaptiveness makes ADASYN a powerful tool for improving the performance of classifiers, particularly in situations where one class is significantly underrepresented.</p>
-</div>
-<div class="section" id="gaussian-random-interpolation-with-pca-based-data-generation-pcagauss">
-<h2>Gaussian random interpolation with PCA-based data generation (PCAGauss)<a class="headerlink" href="#gaussian-random-interpolation-with-pca-based-data-generation-pcagauss" title="Permalink to this heading">#</a></h2>
-<p>Gaussian random interpolation with PCA is useful when you want to create synthetic data that captures the statistical characteristics of the original data. First, a PCA is performed on the original dataset to identify the principal components (PCs) and their corresponing eigenvectors and eigenvalues. Next, the original data is projected onto the principal components (dimensionality = n features - 1). For each to-be-generated synthetic data point, values are randomly sampled from a Gaussian distribution for each of the PCs and added to the projected representation of the original data. Finally, PCA is backprojected to obtain the synthetic data point in the original feature space.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p><strong>Use data permanently by writing it to disk</strong>
-It is very important to save the generated data to disk if you want to do further analyses beyond training the model, such as model <a class="reference internal" href="4.6_mainmenu_visualize_classifiers.html#visualize-classifiers"><span class="std std-ref">visualization</span></a>, <span class="xref myst">interpretation</span> and <a class="reference internal" href="4.8_mainmenu_OOCV_analysis.html#oocv-analysis"><span class="std std-ref">external validation</span></a>].</p>
-</div>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="interprete-models">
+<span id="interpretate-classifiers"></span><h1>Interprete models<a class="headerlink" href="#interprete-models" title="Permalink to this heading">#</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -487,24 +452,6 @@ It is very important to save the generated data to disk if you want to do furthe
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="4.2.15_paramtemp_different_label.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Use different label</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="4.3_mainmenu_initialize_delete_analyses.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Initialize analyses</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -514,22 +461,6 @@ It is very important to save the generated data to disk if you want to do furthe
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-based-data-generation">kNN-based data generation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adasyn-adaptive-synthetic-sampling">ADASYN (Adaptive Synthetic Sampling)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-random-interpolation-with-pca-based-data-generation-pcagauss">Gaussian random interpolation with PCA-based data generation (PCAGauss)</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
