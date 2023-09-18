@@ -49,7 +49,7 @@ parts:
       - file: 4.14_mainmenu_interprete_classifiers
       - file: 4.7_mainmenu_display_training_results
       - file: 4.8_mainmenu_OOCV_analysis
-      - file: 4.15_mainmenu_export_models
+      - file: 4.15_mainmenu_export_model
       - file: 4.9_mainmenu_load_struct
       - file: 4.10_mainmenu_save_struct
       - file: 4.11_mainmenu_change_wd
