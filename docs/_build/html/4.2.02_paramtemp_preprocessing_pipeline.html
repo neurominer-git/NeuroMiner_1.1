@@ -444,6 +444,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-weight-features">Rank / Weight features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-variance-components-from-data">Extract variance components from data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-deviation-from-normative-data">Measure deviation from normative data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-mode-target-scaling-transformation">Regression mode: Target scaling &amp; transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiclass-mode-one-vs-one-one-vs-all-modus">Multiclass mode: One vs. One, One vs. All Modus</a></li>
 </ul>
             </nav>
         </div>
@@ -620,8 +622,9 @@ Low dimensional data only.</p></li>
 Maaten</a>
 This option is only for low-dimensional problems.</p></li>
 <li><p>fastICA - <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.FastICA.html">fastICA, sklearn function</a>, [fastICA, publications, A. Hyvärinen] (<a class="reference external" href="https://www.cs.helsinki.fi/u/ahyvarin/papers/fastica.shtml">https://www.cs.helsinki.fi/u/ahyvarin/papers/fastica.shtml</a>)</p></li>
+<li><p>Orthogonal Projective Non-Negative Matrix Factorization -
+<em>For an overview and the implementation of all techniques see nk_PerfRedObj.m and files in the preproc directory.</em></p></li>
 </ol>
-<p><em>For an overview and the implementation of all techniques see nk_PerfRedObj.m and files in the preproc directory.</em></p>
 </div>
 </div>
 </div>
@@ -933,6 +936,15 @@ This option allows the user to either upweight or downweight the features based 
 <h2>Measure deviation from normative data<a class="headerlink" href="#measure-deviation-from-normative-data" title="Permalink to this heading">#</a></h2>
 <p>This function calculates a PLS and then determines how much the data deviates from the model that is produced. The hypothesis here is that the PLS model will represent a normative variation between the primary features (e.g., the brain) and the second feature matrix (e.g., the labels or another variable set). By calculating the deviation from this model, it is hypothesized that normative deviation will be modeled and then included in further processing steps.</p>
 </div>
+<hr class="docutils" />
+<div class="section" id="regression-mode-target-scaling-transformation">
+<h2>Regression mode: Target scaling &amp; transformation<a class="headerlink" href="#regression-mode-target-scaling-transformation" title="Permalink to this heading">#</a></h2>
+<p>In the regression setting, one has the option to enable scaling of the outcome variable (default). Further, a number of transformations for the outcome variable are available as well.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="multiclass-mode-one-vs-one-one-vs-all-modus">
+<h2>Multiclass mode: One vs. One, One vs. All Modus<a class="headerlink" href="#multiclass-mode-one-vs-one-one-vs-all-modus" title="Permalink to this heading">#</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1025,6 +1037,8 @@ This option allows the user to either upweight or downweight the features based 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-weight-features">Rank / Weight features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-variance-components-from-data">Extract variance components from data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-deviation-from-normative-data">Measure deviation from normative data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-mode-target-scaling-transformation">Regression mode: Target scaling &amp; transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiclass-mode-one-vs-one-one-vs-all-modus">Multiclass mode: One vs. One, One vs. All Modus</a></li>
 </ul>
   </nav></div>
 
