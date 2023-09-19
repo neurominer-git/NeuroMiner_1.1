@@ -477,9 +477,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-modality-in-nm-workspace">2 | Modify modality in NM workspace</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-modality-from-nm-workspace">3 | Delete modality from NM workspace</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-all-data-from-nm-workspace">4 | Delete all data from NM workspace</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-covariate-s-to-nm-workspace">5 | Add covariate(s) to NM workspace</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-covariate-s-from-nm-workspace">6 | Delete covariate(s) from NM workspace</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-data-import-for-discovery-cross-validation">6/7 | Finish data import for discovery &amp; cross-validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-nm-modality-manager">5 | Open NM Modality Manager</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-covariate-s-to-nm-workspace">6 | Add covariate(s) to NM workspace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-covariate-s-from-nm-workspace">7 | Delete covariate(s) from NM workspace</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-data-import-for-discovery-cross-validation">7/8 | Finish data import for discovery &amp; cross-validation</a></li>
 </ul>
 </li>
 </ul>
@@ -527,11 +528,11 @@ menu that is configured for classification using NIFTI (neuroimaging) :</p>
 <p>These <a class="reference internal" href="#datainput-format"><span class="std std-ref">data input format</span></a> options will be described in more detail in the following sections.</p>
 <div class="admonition-notification-warning-error-messages admonition">
 <p class="admonition-title">Notification, Warning, &amp; Error Messages</p>
-<p>When data is entered, NeuroMiner checks whether it has been successfully entered and performs a number of pre-screening quality control measures. Messages related to successful data entry (<span style="color:blue">blue</span>), unsuccessful data entry (<span style="color:red">red</span>), or warnings (<span style="color:cyan">cyan</span>) are issued at the top of the screen, such as:</p>
+<p>When data is entered, NeuroMiner checks whether it has been successfully entered and performs a number of pre-screening quality control measures. Messages related to successful data entry, unsuccessful data entry, or warnings are issued at the top of the screen, such as:</p>
 <ul class="simple">
-<li><p><span style="color:red">Error in RetrieveImageInfo: Image /your/directory/here/image.img not found!</span></p></li>
-<li><p><span style="color:cyan">Warning in check matrix: I found only one column in the MATLAB workspace</span></p></li>
-<li><p><span style="color:blue">Label tests passed</span> or <span style="color:blue">Predictor matrix tests passed</span></p></li>
+<li><p>Error in RetrieveImageInfo: Image /your/directory/here/image.img not found!</p></li>
+<li><p>Warning in check matrix: I found only one column in the MATLAB workspace</p></li>
+<li><p>Label tests passed or Predictor matrix tests passed</p></li>
 </ul>
 <p>Please take note of these messages and adjust your data accordingly.</p>
 </div>
@@ -792,8 +793,15 @@ A common situation is when you have a vector containing numbers representing gro
 <h3>4 | Delete all data from NM workspace<a class="headerlink" href="#delete-all-data-from-nm-workspace" title="Permalink to this heading">#</a></h3>
 <p>Delete all data and start again.</p>
 </div>
+<div class="section" id="open-nm-modality-manager">
+<h3>5 | Open NM Modality Manager<a class="headerlink" href="#open-nm-modality-manager" title="Permalink to this heading">#</a></h3>
+<p>Check which modalities you’ve loaded, export them to files on disk and create links to these files (to reduce size of NM structure) or replace them.</p>
+<div class="figure align-default" id="fig-3-0-nm-dataentry-modality-manager">
+<img alt="NeuroMiner data entry menu modality manager menu" src="_images/NM_dataentry_modality_manager.png" />
+</div>
+</div>
 <div class="section" id="add-covariate-s-to-nm-workspace">
-<h3>5 | Add covariate(s) to NM workspace<a class="headerlink" href="#add-covariate-s-to-nm-workspace" title="Permalink to this heading">#</a></h3>
+<h3>6 | Add covariate(s) to NM workspace<a class="headerlink" href="#add-covariate-s-to-nm-workspace" title="Permalink to this heading">#</a></h3>
 <p>This is a critical feature of NeuroMiner that allows the entry of matrix data that can be used in later preprocessing steps to control for nuisance covariance (e.g., age and sex). It is critical to note that this step simply enters the data and does not actually regress out the effects of the variables from your data. However, these data can be used to correct data for nuisance covariates later in the preprocessing steps (see section 4.2.3.3).</p>
 <p>Please also note that if you want to normalize the data to a specific group (see section 4.2.3.7), a binary vector (i.e., zeros and ones) must be entered at this stage containing ones for the individuals in the group that you want to normalize to.</p>
 <div class="admonition important">
@@ -803,10 +811,10 @@ A common situation is when you have a vector containing numbers representing gro
 <p>After the entry of the MATLAB matrix name, the variables’ names can be defined one by-one or by using a vector. The covariate names will then be displayed in the ”MODALITIES” section at the top of the screen.</p>
 </div>
 <div class="section" id="delete-covariate-s-from-nm-workspace">
-<h3>6 | Delete covariate(s) from NM workspace<a class="headerlink" href="#delete-covariate-s-from-nm-workspace" title="Permalink to this heading">#</a></h3>
+<h3>7 | Delete covariate(s) from NM workspace<a class="headerlink" href="#delete-covariate-s-from-nm-workspace" title="Permalink to this heading">#</a></h3>
 <p>Once covariates have been added, this option will pop up in the menu. Select “6” if you want to delete the covariates from the workspace.</p>
 <div class="section" id="finish-data-import-for-discovery-cross-validation">
-<h4>6/7 | Finish data import for discovery &amp; cross-validation<a class="headerlink" href="#finish-data-import-for-discovery-cross-validation" title="Permalink to this heading">#</a></h4>
+<h4>7/8 | Finish data import for discovery &amp; cross-validation<a class="headerlink" href="#finish-data-import-for-discovery-cross-validation" title="Permalink to this heading">#</a></h4>
 <p>This option will finish the data import section. It is important to note that once this is selected <strong>you will no longer be able to modify any part of the data</strong>, including the addition of other modalities, covariates, or anything else. If there are changes, then you will need to enter the data again. Once the data has been processed, the user can however test models by entering <a class="reference internal" href="4.8_mainmenu_OOCV_analysis.html#oocv-analysis"><span class="std std-ref">out-of-sample data</span></a> (e.g., external data from another center or group).</p>
 </div>
 </div>
@@ -938,9 +946,10 @@ A common situation is when you have a vector containing numbers representing gro
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-modality-in-nm-workspace">2 | Modify modality in NM workspace</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-modality-from-nm-workspace">3 | Delete modality from NM workspace</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-all-data-from-nm-workspace">4 | Delete all data from NM workspace</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-covariate-s-to-nm-workspace">5 | Add covariate(s) to NM workspace</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-covariate-s-from-nm-workspace">6 | Delete covariate(s) from NM workspace</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-data-import-for-discovery-cross-validation">6/7 | Finish data import for discovery &amp; cross-validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-nm-modality-manager">5 | Open NM Modality Manager</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-covariate-s-to-nm-workspace">6 | Add covariate(s) to NM workspace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-covariate-s-from-nm-workspace">7 | Delete covariate(s) from NM workspace</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finish-data-import-for-discovery-cross-validation">7/8 | Finish data import for discovery &amp; cross-validation</a></li>
 </ul>
 </li>
 </ul>

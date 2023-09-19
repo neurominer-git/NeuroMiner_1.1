@@ -426,6 +426,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fill-these-empty-data-containers">3. Fill these empty data containers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-data">4. Enter the data</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#covariates-and-additional-modalities">5. Covariates and additional modalities</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-subgroup-information-to-oocv-data">6. Add subgroup information to OOCV data</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-parameters-for-model-application">3 | Set up parameters for model application</a><ul class="nav section-nav flex-column">
@@ -553,6 +554,15 @@ be loaded into the matlab workspace (see <a class="reference internal" href="4.1
 <p>The covariates table of the validation sample needs to contain the same covariates in the same order as for the discovery data. NeuroMiner will assume that this is the case and will <strong>not</strong> ask you to define the covariate names anymore.</p>
 </div>
 <p>Once you are finished with data entry, return to the main menu of the application mode (<a class="reference internal" href="#fig-nm-oocv-mainmenu"><span class="std std-numref">Fig. 29</span></a>).</p>
+</div>
+<div class="section" id="add-subgroup-information-to-oocv-data">
+<h4>6. Add subgroup information to OOCV data<a class="headerlink" href="#add-subgroup-information-to-oocv-data" title="Permalink to this heading">#</a></h4>
+<p>This option allows you to read sugroup information about the OOCV data. By doing so you will be able to see the performance of your trained model when applied to these subgroups individually. Further, you can also specify whether one of your groups should act as a reference group. In this case performance of the model on each subgroup is compared to the performance of the model on the reference group.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The variable has to be in the form of a logical, dummy-coded matrix and should be present in your Matlab workspace, then you can simply enter the name of the variable.</p>
+<p>It has to be data-type logical, simply defining a matrix with ‘O’ and ‘1’ but <em>double</em> type will lead to an error.</p>
+</div>
 </div>
 </div>
 <hr class="docutils" />
@@ -700,6 +710,7 @@ to ‘Use all available CV data (CV1+CV2)’.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fill-these-empty-data-containers">3. Fill these empty data containers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-data">4. Enter the data</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#covariates-and-additional-modalities">5. Covariates and additional modalities</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-subgroup-information-to-oocv-data">6. Add subgroup information to OOCV data</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-parameters-for-model-application">3 | Set up parameters for model application</a><ul class="nav section-nav flex-column">
