@@ -48,6 +48,8 @@ parts:
       - file: 4.6_mainmenu_visualize_classifiers
       - file: 4.14_mainmenu_interprete_classifiers
       - file: 4.7_mainmenu_display_training_results
+          - file: 4.7.01_mainmenu_display_visualization_results
+          - file: 4.7.02_mainmenu_display_interpretation_results
       - file: 4.8_mainmenu_OOCV_analysis
       - file: 4.15_mainmenu_export_model
       - file: 4.9_mainmenu_load_struct
