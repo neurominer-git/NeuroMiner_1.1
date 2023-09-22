@@ -1,3 +1,7 @@
+# Latest release Sep 2023 (NeuroMiner 1.2 Feanor)
+https://github.com/neurominer-git/NeuroMiner_1.2
+
+
 # NeuroMiner 1.1 Beorn
 
 NeuroMiner has been continuously developed since 2009 to provide clinical researchers with cutting-edge machine learning methods for the analysis of heterogeneous data, such as clinical and neurocognitive read-outs, structural and functional neuroimaging data, and genetic information. 
