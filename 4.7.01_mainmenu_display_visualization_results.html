@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Estimate sample size (simulation tool) &#8212; NeuroMiner Manual</title>
+    <title>Visualization results &#8212; NeuroMiner Manual</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '4.12_mainmenu_estimate_sample_size';</script>
-    <link rel="canonical" href="https://neurominer-git.github.io/NeuroMiner_1.1/4.12_mainmenu_estimate_sample_size.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '4.7.01_mainmenu_display_visualization_results';</script>
+    <link rel="canonical" href="https://neurominer-git.github.io/NeuroMiner_1.1/4.7.01_mainmenu_display_visualization_results.html" />
     <link rel="shortcut icon" href="_static/nm_logo2.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -238,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.12_mainmenu_estimate_sample_size.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/neurominer-git/NeuroMiner_1.1/issues/new?title=Issue%20on%20page%20%2F4.7.01_mainmenu_display_visualization_results.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/4.12_mainmenu_estimate_sample_size.md" target="_blank"
+      <li><a href="_sources/4.7.01_mainmenu_display_visualization_results.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +350,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Estimate sample size (simulation tool)</h1>
+    <h1>Visualization results</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -360,20 +360,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-analysis-simulation-tool"><em>Pre</em>-analysis simulation tool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-analysis-simulated-tool"><em>Post</em>-analysis simulated tool</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-plan-setup">Simulation plan setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-simulation-rounds">N simulation rounds</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-repetitions-per-simulation">N repetitions per simulation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#group-specific-simulation">Group-specific simulation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amount-of-data-to-simulate">Amount of data to simulate</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-simulated-data-to-the-original-dataset">Add simulated data to the original dataset</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dummy-coded-covariates">Dummy-coded covariates</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Visualization results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-mapper">ROI mapper</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+
             </nav>
         </div>
     </div>
@@ -384,102 +374,48 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="estimate-sample-size-simulation-tool">
-<span id="estimate-sample-size"></span><h1>Estimate sample size (simulation tool)<a class="headerlink" href="#estimate-sample-size-simulation-tool" title="Permalink to this heading">#</a></h1>
-<p>NeuroMiner allows you to estimate the performance of models trained with simulated data. To open the simulation tool, select the option from the mainmenu.</p>
+  <div class="section" id="visualization-results">
+<h1>Visualization results<a class="headerlink" href="#visualization-results" title="Permalink to this heading">#</a></h1>
+<p>See <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:Display_VisualizationResults</span></code> to <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:Display_VisPermPVals</span></code>: As described in <a class="reference internal" href="4.2.06_paramtemp_visualization_options.html#paramtemp-visualization-options"><span class="std std-ref">visualization</span></a>, various graphs or maps are displayed if the visualization has been run and can be viewed when selecting <em>Visualization results</em> in the drop-down menu.</p>
+<div class="figure align-default" id="fig-display-visualizationresults">
+<img alt="Neurominer result viewer, visualization results" src="_images/NM_Display_visualizationresults.png" />
+<p class="caption"><span class="caption-text">Overall mean results including standard errors with matrix data. A similar image is displayed for the grand mean results.</span><a class="headerlink" href="#fig-display-visualizationresults" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-default" id="fig-display-visualizationresults2">
+<img alt="Neurominer result viewer, visualization results" src="_images/NM_Display_visualizationresults2.png" />
+<p class="caption"><span class="caption-text">CV-ratio of feature weights with matrix data.</span><a class="headerlink" href="#fig-display-visualizationresults2" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-default" id="fig-display-visualizationresults3">
+<img alt="Neurominer result viewer, visualization results" src="_images/NM_Display_visualizationresults3.png" />
+</div>
+<div class="figure align-default" id="fig-display-visualizationresults4">
+<img alt="Neurominer result viewer, visualization results" src="_images/NM_Display_visualizationresults4.png" />
+<p class="caption"><span class="caption-text">Probability of feature reliability (upper left), sign-based-consistency (upper right), sign-based consistency - Z score (lower left), sign-based consistency -log10 - P value (lower right) with matrix data.</span><a class="headerlink" href="#fig-display-visualizationresults4" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-default" id="fig-display-vispermpvals">
+<img alt="Neurominer result viewer, visualization results" src="_images/NM_Display_visPermPVals.png" />
+<p class="caption"><span class="caption-text">Histogram of the p-values derived from permutation testing.</span><a class="headerlink" href="#fig-display-vispermpvals" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-default" id="fig-nm-display-visimaging">
+<img alt="Neurominer result viewer, visualization results" src="_images/NM_Display_visImaging.png" />
+<p class="caption"><span class="caption-text">Mean results with imaging data. Example of the depiction of the mean feature weights with standard errors for imaging data. A similar image is displayed for all other visualization parameters (i.e., CV-ratio, probability of feature reliability, sign-based consistency).</span><a class="headerlink" href="#fig-nm-display-visimaging" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<div class="section" id="roi-mapper">
+<h1>ROI mapper<a class="headerlink" href="#roi-mapper" title="Permalink to this heading">#</a></h1>
+<p>For neuroimaging data, NM provides a functionality for mapping the result maps described above (e.g. cross-validation ratio, sign-based consistency) to regions of interest (ROI), as defined by a desired brain atlas. This can be especially useful for visually summarizing your results for a publication and ease of interpretation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This feature only works with Matlab 2021b or newer.</p>
+<p>This functionality is only available in MATLAB R2021b or above.</p>
 </div>
-<p>The simulation tools runs in two modes: <em>pre</em> and <em>post</em>:</p>
-<div class="section" id="pre-analysis-simulation-tool">
-<h2><em>Pre</em>-analysis simulation tool<a class="headerlink" href="#pre-analysis-simulation-tool" title="Permalink to this heading">#</a></h2>
-<p>The <em>pre</em>-method generates synthetic data based on the user’s input and runs a simple classification pipeline on the data. The use can tweak a number of hyperparameters that determine how the synthetic will be generated:</p>
-<ul class="simple">
-<li><p>N features: Absolute number of features to be generated</p></li>
-<li><p>Ratio of predictive markers: the relative amount of features in the matrix that contain discriminative information</p></li>
-<li><p>N cases: the absolute number of observations to be generated</p></li>
-<li><p>Event rate: the proportion of observations labeled as group 1</p></li>
-</ul>
-<p>If some or all of these 4 parameters are entered as ranges, the simulation tool will generate hyperparameter combinations and generate synthetic data for these combinations. Accordingly, the prediction analysis will be repeated for each of these combinations, and the learning curve of this analyses will be plotted in the simulation graph of the tool GUI:</p>
-<div class="figure align-default" id="fig-nm-simulation-pre">
-<img alt="NeuroMiner simulation pre app" src="_images/NM_simulation_pre.png" />
-</div>
-<p>Then, there are several static parameters that determine the generation of the synthetic data matrix:</p>
-<ul class="simple">
-<li><p>max/min AUC: The separability induced by the predictive features in the matrix. NM uses an exponential decay function over these features spanning max to min AUC.</p></li>
-<li><p>N batches: Number of batch effects to be added to the data. Batches simulate site/group effects and can therefore be used to estimate model performance e.g. in a multi-site setting.</p></li>
-<li><p>Batch %: Fraction of the feature value range within which batch effects can be randomly introduced into the data matrix.
-Cases with missing values: Fraction of observations in the data matrix that contain missing values.</p></li>
-<li><p>Fraction of missing features per case: Fraction of features values set randomly to “Not a Number” in those cases randomly selected to contain missings.</p></li>
-<li><p>ML method: The user can select one algorithm from 5 different options to be used in the simulation analysis.</p></li>
-<li><p>N repetitions: Number of repetitions of the analysis at given hyperparameter combination. Note: The “pre”-tool will run a nested 5-fold cross validation with one permutation at the outer and inner CV levels for each generated data matrix.
-The results of the pre-tool can be used to inform critical decisions during the planning of a prospective machine learning study, e.g. how many features to record, the targeted sample size, the number of sites to include, etc.</p></li>
-</ul>
-</div>
-<div class="section" id="post-analysis-simulated-tool">
-<h2><em>Post</em>-analysis simulated tool<a class="headerlink" href="#post-analysis-simulated-tool" title="Permalink to this heading">#</a></h2>
-<p>In contrast, the “post-tool” evaluates the sample size requirements for an analysis with existing data. The user can use this tool to generate a learning curve for the given analysis pipeline (this includes the whole cross-validation pipeline, i.e., preprocessing + learning algorithm) by simulating new data from pre-existing data in NM by using a <a class="reference external" href="https://sdv.dev/SDV/user_guides/single_table/gaussian_copula.html#gaussian-copula">Gaussian copula function</a>.</p>
-<p>You can get to that tool by selecting the ‘post’ tab at the upper left side the GUI.</p>
-<div class="figure align-default" id="fig-nm-simulation-post">
-<img alt="NeuroMiner simulation post app" src="_images/NM_simulation_post.png" />
-</div>
-<p><strong>Select the analysis to simulate</strong>
-To select the analysis pipeline you want to simulate, select the analysis from the list on the left-hand side. The list box shows all initialized analyses of the NM structure.
-The data is simulated based on the original, ‘real’ data associated with the selected NM analysis using the Python sdv implementation of a <a class="reference external" href="https://sdv.dev/SDV/user_guides/single_table/gaussian_copula.html#gaussian-copula">Gaussian copula model</a>.</p>
-<div class="section" id="simulation-plan-setup">
-<h3>Simulation plan setup<a class="headerlink" href="#simulation-plan-setup" title="Permalink to this heading">#</a></h3>
-<p>By clicking the gray button <strong>Change simulation plan</strong> you open the setup window:</p>
-<div class="figure align-default" id="fig-nm-simulation-post-setup">
-<img alt="NeuroMiner simulation post app" src="_images/NM_simulation_post_setup.png" />
-<p class="caption"><span class="caption-text">NeuroMiner post-simulation setup window</span><a class="headerlink" href="#fig-nm-simulation-post-setup" title="Permalink to this image">#</a></p>
-</div>
-<p>Here, you can specify how the data should be simulated. You can change the following settings:</p>
-<div class="section" id="n-simulation-rounds">
-<h4>N simulation rounds<a class="headerlink" href="#n-simulation-rounds" title="Permalink to this heading">#</a></h4>
-<p>How many rounds of simulations do you want to run? You can specify the amount here. Simply click the arrows or type into the field.</p>
-<p>The estimated performance per simulation round represents the mean of the repetitions.</p>
-</div>
-<div class="section" id="n-repetitions-per-simulation">
-<h4>N repetitions per simulation<a class="headerlink" href="#n-repetitions-per-simulation" title="Permalink to this heading">#</a></h4>
-<p>How often should each simulation round be repeated? You can specify the amount here. Simply click the arrows or type into the field.</p>
+<p>The ROI mapper can be accessed from the Visualization results window in the NeuroMiner Result Viewer by clicking on the blue button <strong>ROI mapping</strong> (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:NM_Display_visImaging</span></code>). This will open a separate window, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:NM_roi_mapper</span></code>. The window has two sub-menus in which you can set up the parameters for a two-step procedure: first analyzing and then plotting the ROI percentages occupied by the selected results map, thresholded accordingly.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We recommend running repeated simulations to increase the stability of the performance estimations since the models are then trained on newly simulated data for each repetition.</p>
+<p>The <em>plotting menu</em> and <em>active button</em> will only appear once you run the analysis part (the mapping itself).</p>
 </div>
-</div>
-<div class="section" id="group-specific-simulation">
-<h4>Group-specific simulation<a class="headerlink" href="#group-specific-simulation" title="Permalink to this heading">#</a></h4>
-<p>By default, NeuroMiner assumes that you want to add data simulated across the whole original dataset. It is also possible, however, to simulate data dependent on a grouping variable, i.e. one of the covariates or, in the classification setting, the label. To activate this option, simply check the <em>simulate dependent on variable</em> check box on the left side. A list box will appear from which you can select the grouping variable.</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Currently, NeuroMiner does <em>not</em> preselect those covariates that are categorical but simply shows all of them. Therefore, the user has to make sure to <strong>only select a categorical variable</strong> here. This is a known issue and we hope to fix it in future releases.</p>
-</div>
-<p>If you make use of the group-specific simulation option, you will see that a row for each group will appear in the panel on the right (as in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:NM_simulation_post_setup</span></code>).</p>
-</div>
-<div class="section" id="amount-of-data-to-simulate">
-<h4>Amount of data to simulate<a class="headerlink" href="#amount-of-data-to-simulate" title="Permalink to this heading">#</a></h4>
-<p>To specify how much data to simulate, type the requested number of simulated observations in the associated field in the panel on the right-hand side. There should be one field for each simulation round and each group.</p>
-</div>
-<div class="section" id="add-simulated-data-to-the-original-dataset">
-<h4>Add simulated data to the original dataset<a class="headerlink" href="#add-simulated-data-to-the-original-dataset" title="Permalink to this heading">#</a></h4>
-<p>By activating this option (by checking <strong>add to original data</strong> on the left-hand side), the models will be trained on the simulated data <em>and</em> the original dataset.</p>
-</div>
-<div class="section" id="dummy-coded-covariates">
-<h4>Dummy-coded covariates<a class="headerlink" href="#dummy-coded-covariates" title="Permalink to this heading">#</a></h4>
-<p>In case you read dummy-coded covariates intro NeuroMiner, you can indicate so by first checking the box next to <strong>dummy-coded covariate</strong> and then selecting the respective entries in the appearing list box. This ensures that during simulation, dummy-coding will be preserved, i.e. each simulated observation will only have a “1” in one of these variables (and “0” for the others).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Currently, it is not possible to indicate dummy-coded feature variables but we hope to fix this issue in future releases.</p>
-</div>
-<p>Once you are happy with your simulation plan setup, click the ‘Ok’ button. The setup window will close and you will see a summary of the settings within the main simulation tool GUI. To start the simulation, click on the green ‘simulate’ button.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Depending on your analysis pipeline, simulation plan and computational resources, the simulation can run for a (very) long time. Be aware of this!</p>
-<p>You can follow the progress of the simulation by checking the plot within the GUI which will update once a new simualtion round (not repetition) starts.</p>
-</div>
-</div>
-</div>
+<div class="figure align-default" id="fig-nm-roi-mapper">
+<img alt="Neurominer result viewer, visualization results roi mapper" src="_images/NM_roi_mapper.png" />
+<p class="caption"><span class="caption-text">ROI Mapper options for analyzing/mapping the results (left) and plotting (right).</span><a class="headerlink" href="#fig-nm-roi-mapper" title="Permalink to this image">#</a></p>
 </div>
 </div>
 
@@ -532,20 +468,10 @@ The data is simulated based on the original, ‘real’ data associated with the
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-analysis-simulation-tool"><em>Pre</em>-analysis simulation tool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-analysis-simulated-tool"><em>Post</em>-analysis simulated tool</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-plan-setup">Simulation plan setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-simulation-rounds">N simulation rounds</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-repetitions-per-simulation">N repetitions per simulation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#group-specific-simulation">Group-specific simulation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amount-of-data-to-simulate">Amount of data to simulate</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-simulated-data-to-the-original-dataset">Add simulated data to the original dataset</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dummy-coded-covariates">Dummy-coded covariates</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Visualization results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-mapper">ROI mapper</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+
   </nav></div>
 
 </div></div>
